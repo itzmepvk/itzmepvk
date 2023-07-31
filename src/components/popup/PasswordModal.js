@@ -1,6 +1,7 @@
 import { TokyoContext } from "@/src/Context";
 import { useContext, useState } from "react";
 import ModalContainer from "./ModalContainer";
+import axios from "axios";
 
 const PasswordModal = () => {
   const [password, setPassword] = useState(null);
@@ -9,17 +10,19 @@ const PasswordModal = () => {
   const { passwordModal, setPasswordModal, setNewsModal } =
     useContext(TokyoContext);
 
-  const onSubmit = () => {
-    if (password == 1234) {
-      setNewsModal(passwordModal);
-      setPasswordModal(null);
-    } else if (!password) {
-      setEmpty(true);
-      setException(false);
-    } else {
-      setException(true);
-      setEmpty(false);
-    }
+  const onSubmit = async () => {
+    await axios.get("/api/password").then((res) => {
+      if (res?.data?.[0]?.password == password) {
+        setNewsModal(passwordModal);
+        setPasswordModal(null);
+      } else if (!password) {
+        setEmpty(true);
+        setException(false);
+      } else {
+        setException(true);
+        setEmpty(false);
+      }
+    });
   };
   return (
     <ModalContainer nullValue={setPasswordModal} type={"password"}>
