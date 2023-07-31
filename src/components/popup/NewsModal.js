@@ -4,7 +4,7 @@ import ModalContainer from "./ModalContainer";
 const NewsModal = () => {
   const { newsModal, setNewsModal } = useContext(TokyoContext);
   return (
-    <ModalContainer nullValue={setNewsModal}>
+    <ModalContainer nullValue={setNewsModal} type={"news"}>
       <div className="image relative overflow-hidden">
         <img
           className="min-w-full opacity-0"

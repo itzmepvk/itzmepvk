@@ -13,19 +13,40 @@ const ModalContainer = ({ children, nullValue, type }) => {
         className={type === "password" ? "password" : " box_inner"}
         ref={domNode}
       >
-        <div className="close">
-          <a
-            href="#"
-            onClick={() => {
-              modalToggle(false);
-              nullValue(null);
-            }}
-          >
-            <i className="icon-cancel" />
-          </a>
-        </div>
+        {type === "password" && (
+          <div className="close">
+            <a
+              href="#"
+              onClick={() => {
+                modalToggle(false);
+                nullValue(null);
+              }}
+            >
+              <i className="icon-cancel" />
+            </a>
+          </div>
+        )}
 
-        <div className="description_wrap">{children}</div>
+        <div className="description_wrap">
+          {type === "news" && (
+            <a
+              href="#"
+              onClick={() => {
+                modalToggle(false);
+                nullValue(null);
+              }}
+              style={{
+                float: "right",
+                position: "-webkit-sticky",
+                position: "sticky",
+                top: 0,
+              }}
+            >
+              <i className="icon-cancel" />
+            </a>
+          )}
+          {children}
+        </div>
       </div>
     </div>
   );
