@@ -3,7 +3,7 @@ import { TokyoContext } from "../Context";
 import SectionContainer from "./SectionContainer";
 import SectionTitle from "./SectionTitle";
 
-const news = [
+const data = [
   {
     id: 1,
     title: "Platform to find global talent & quality service providers",
@@ -14,7 +14,7 @@ const news = [
   },
   {
     id: 2,
-    title: "Platform to find global talent & quality service providers",
+    title: "The platform enables users to book and lists spaces",
     image: "assets/img/news/2.svg",
     author: "prototype • UX Design • branding",
     date: "15 Oct 2022",
@@ -22,7 +22,7 @@ const news = [
   },
   {
     id: 3,
-    title: "Platform to find global talent & quality service providers",
+    title: "Europe’s largest asset management system",
     image: "assets/img/news/3.svg",
     author: "prototype • UX Design • branding",
     date: "07 Oct 2022",
@@ -30,19 +30,50 @@ const news = [
   },
   {
     id: 4,
-    title: "Platform to find global talent & quality service providers",
+    title: "The platform brings skilled cooks to the homes",
     image: "assets/img/news/4.svg",
     author: "prototype • UX Design • branding",
     date: "25 Sep 2022",
-    colorCode: "white",
+    colorCode: "#E6F7F4",
+  },
+  {
+    id: 5,
+    title: "Real-time video consultation with doctors.",
+    image: "assets/img/news/5.svg",
+    author: "prototype • UX Design",
+    date: "25 Sep 2022",
+    colorCode: "#E9F6F8",
   },
 ];
 
 const Portfolio = () => {
   const [enter, setEnter] = useState({ id: null, visible: false });
   const { setPasswordModal, modalToggle } = useContext(TokyoContext);
+  const [news, setNews] = useState(data);
+  const [loader, setLoader] = useState(false);
   const handleFilterKeyChange = (key) => () => {
-    setFilterKey(key);
+    setLoader(true);
+    setTimeout(() => {
+      setLoader(false);
+    }, [500]);
+    switch (key) {
+      case "*":
+        setNews(data);
+        break;
+      case "UX Design":
+        setNews(
+          data.filter((el) =>
+            el.author.toLowerCase().includes(key.toLowerCase())
+          )
+        );
+        break;
+      case "Branding":
+        setNews(
+          data.filter((el) =>
+            el.author.toLowerCase().includes(key.toLowerCase())
+          )
+        );
+    }
   };
   return (
     <SectionContainer name={"portfolio"}>
@@ -115,90 +146,93 @@ const Portfolio = () => {
             </div>
           </div>
           <ul className="ml-[-50px] list-none">
-            {news.map((item, index) => (
-              <li
-                className="mb-[50px] float-left w-1/2 pl-[50px]"
-                key={item.id}
-              >
-                <div className="list_inner w-full clear-both float-left h-auto relative">
-                  <div
-                    className="image relative overflow-hidden"
-                    style={{
-                      backgroundColor:
-                        enter.visible && item.id === enter.id
-                          ? item.colorCode
-                          : "",
-                    }}
-                    onMouseOver={() =>
-                      setEnter({ id: index + 1, visible: true })
-                    }
-                    onMouseLeave={() => setEnter({ id: null, visible: false })}
-                  >
-                    <img
-                      className="min-w-full opacity-0"
-                      src="assets/img/thumbs/40-25.jpg"
-                      alt="image"
-                    />
+            {!loader &&
+              news.map((item, index) => (
+                <li
+                  className="mb-[50px] float-left w-1/2 pl-[50px]"
+                  key={item.id}
+                >
+                  <div className="list_inner w-full clear-both float-left h-auto relative">
                     <div
-                      className="main absolute inset-0 bg-no-repeat  bg-center transition-all duration-300"
-                      data-img-url={item.image}
-                      style={{ backgroundImage: `url(${item.image})` }}
-                    />
-                    <a
-                      className="tokyo_tm_full_link"
-                      href="#"
-                      onClick={() => {
-                        modalToggle(true);
-                        setPasswordModal(item);
+                      className="image relative overflow-hidden"
+                      style={{
+                        backgroundColor:
+                          enter.visible && item.id === enter.id
+                            ? item.colorCode
+                            : "",
                       }}
-                    />
-                  </div>
-                  <div className="details w-full float-left px-[40px] pt-[30px] pb-[25px] bg-white transition-all duration-300">
-                    <div className="extra flex items-center justify-between mb-[25px] relative">
-                      <div className="short">
-                        <p className="date font-montserrat text-[13px] text-[#767676]">
-                          {/* By{" "} */}
-                          <a
-                            className="text-[#767676] transition-all duration-300 hover:text-black uppercase"
-                            href="#"
-                            onClick={() => {
-                              modalToggle(true);
-                              setPasswordModal(item);
-                            }}
-                          >
-                            {item.author}
-                          </a>{" "}
-                          {/* <span className="relative">{item.date}</span> */}
-                        </p>
+                      onMouseOver={() =>
+                        setEnter({ id: index + 1, visible: true })
+                      }
+                      onMouseLeave={() =>
+                        setEnter({ id: null, visible: false })
+                      }
+                    >
+                      <img
+                        className="min-w-full opacity-0"
+                        src="assets/img/thumbs/40-25.jpg"
+                        alt="image"
+                      />
+                      <div
+                        className="main absolute inset-0 bg-no-repeat  bg-center transition-all duration-300"
+                        data-img-url={item.image}
+                        style={{ backgroundImage: `url(${item.image})` }}
+                      />
+                      <a
+                        className="tokyo_tm_full_link"
+                        href="#"
+                        onClick={() => {
+                          modalToggle(true);
+                          setPasswordModal(item);
+                        }}
+                      />
+                    </div>
+                    <div className="details w-full float-left px-[40px] pt-[30px] pb-[25px] bg-white transition-all duration-300">
+                      <div className="extra flex items-center justify-between mb-[25px] relative">
+                        <div className="short">
+                          <p className="date font-montserrat text-[13px] text-[#767676]">
+                            {/* By{" "} */}
+                            <a
+                              className="text-[#767676] transition-all duration-300 hover:text-black uppercase"
+                              href="#"
+                              onClick={() => {
+                                modalToggle(true);
+                                setPasswordModal(item);
+                              }}
+                            >
+                              {item.author}
+                            </a>{" "}
+                            {/* <span className="relative">{item.date}</span> */}
+                          </p>
+                        </div>
+                      </div>
+                      <h3 className="title mb-[10px] leading-[1.4]">
+                        <a
+                          className="text-black text-[18px] font-semibold inline-block transition-all duration-300 hover:text-black"
+                          href="#"
+                          onClick={() => {
+                            modalToggle(true);
+                            setPasswordModal(item);
+                          }}
+                        >
+                          {item.title}
+                        </a>
+                      </h3>
+                      <div className="tokyo_tm_read_more">
+                        <a
+                          href="#"
+                          onClick={() => {
+                            modalToggle(true);
+                            setPasswordModal(item);
+                          }}
+                        >
+                          <span>Read More</span>
+                        </a>
                       </div>
                     </div>
-                    <h3 className="title mb-[10px] leading-[1.4]">
-                      <a
-                        className="text-black text-[18px] font-semibold inline-block transition-all duration-300 hover:text-black"
-                        href="#"
-                        onClick={() => {
-                          modalToggle(true);
-                          setPasswordModal(item);
-                        }}
-                      >
-                        {item.title}
-                      </a>
-                    </h3>
-                    <div className="tokyo_tm_read_more">
-                      <a
-                        href="#"
-                        onClick={() => {
-                          modalToggle(true);
-                          setPasswordModal(item);
-                        }}
-                      >
-                        <span>Read More</span>
-                      </a>
-                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
+                </li>
+              ))}
           </ul>
         </div>
       </div>
