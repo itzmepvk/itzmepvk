@@ -48,7 +48,8 @@ const data = [
 
 const Portfolio = () => {
   const [enter, setEnter] = useState({ id: null, visible: false });
-  const { setPasswordModal, modalToggle } = useContext(TokyoContext);
+  const { setPasswordModal, setNewsModal, modalToggle } =
+    useContext(TokyoContext);
   const [news, setNews] = useState(data);
   const [loader, setLoader] = useState(false);
   const handleFilterKeyChange = (key) => () => {
@@ -183,7 +184,7 @@ const Portfolio = () => {
                         href="#"
                         onClick={() => {
                           modalToggle(true);
-                          setPasswordModal(item);
+                          setNewsModal(item);
                         }}
                       />
                     </div>
@@ -197,7 +198,7 @@ const Portfolio = () => {
                               href="#"
                               onClick={() => {
                                 modalToggle(true);
-                                setPasswordModal(item);
+                                setNewsModal(item);
                               }}
                             >
                               {item.author}
@@ -212,7 +213,7 @@ const Portfolio = () => {
                           href="#"
                           onClick={() => {
                             modalToggle(true);
-                            setPasswordModal(item);
+                            setNewsModal(item);
                           }}
                         >
                           {item.title}
@@ -223,7 +224,7 @@ const Portfolio = () => {
                           href="#"
                           onClick={() => {
                             modalToggle(true);
-                            setPasswordModal(item);
+                            setNewsModal(item);
                           }}
                         >
                           <span>Read More</span>
