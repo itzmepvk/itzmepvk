@@ -2,9 +2,7 @@
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 @import "swiper/css/scrollbar";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 /* image popup */
 img.mfp-img {
