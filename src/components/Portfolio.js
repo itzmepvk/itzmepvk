@@ -184,7 +184,7 @@ const Portfolio = () => {
                         href="#"
                         onClick={() => {
                           modalToggle(true);
-                          setNewsModal(item);
+                          setPasswordModal(item);
                         }}
                       />
                     </div>
@@ -198,7 +198,7 @@ const Portfolio = () => {
                               href="#"
                               onClick={() => {
                                 modalToggle(true);
-                                setNewsModal(item);
+                                setPasswordModal(item);
                               }}
                             >
                               {item.author}
@@ -213,7 +213,7 @@ const Portfolio = () => {
                           href="#"
                           onClick={() => {
                             modalToggle(true);
-                            setNewsModal(item);
+                            setPasswordModal(item);
                           }}
                         >
                           {item.title}
@@ -224,7 +224,7 @@ const Portfolio = () => {
                           href="#"
                           onClick={() => {
                             modalToggle(true);
-                            setNewsModal(item);
+                            setPasswordModal(item);
                           }}
                         >
                           <span>Read More</span>
