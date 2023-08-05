@@ -29,11 +29,10 @@ const data = [
     offeringImg: "assets/img/news/offering.svg",
     achivements: [
       "Current frustrations & pain points",
+      "Interviewed with Clients, Service Providers & Admin",
       "What did they really want?",
-      "What did they really need?",
-      "Interviewed with Clients",
-      "Service Providers & Admin",
       "20+ user interviews",
+      "What did they really need?",
       "Gathered the insights",
     ],
     researchQuestions: [
@@ -89,208 +88,264 @@ const NewsModal = () => {
   const { newsModal, setNewsModal } = useContext(TokyoContext);
   return (
     <ModalContainer nullValue={setNewsModal} type={"news"}>
-      <div>
+      <div className="pb-20">
         <img src={data[newsModal.id - 1].headerImg} />
-        <p className="date font-montserrat text-[13px] text-[#767676]">
-          <a
-            className="text-[#767676] transition-all duration-300 hover:text-black"
-            href="#"
-          >
+        <p className="date text-neutral-500 text-base font-normal uppercase leading-loose mt-5 md:mt-10">
+          <a className="transition-all duration-300 hover:text-black" href="#">
             {newsModal.author}
           </a>
         </p>
-        <h1>{data[newsModal.id - 1].headerTxt}</h1>
-        <img src={data[newsModal.id - 1].headerBodyImg} />
-        <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <div>
-            <div
-              style={{
-                color: "#2E303A",
-                fontFamily: "Poppins",
-                fontSize: "16px",
-                fontStyle: "normal",
-                fontWeight: 600,
-                lineHeight: "32px",
-              }}
-            >
+        <h1 className="text-gray-800 md:text-5xl text-xl font-normal md:leading-[60px] md:w-[1120px] w-full mt-5 md:mt-10">
+          {data[newsModal.id - 1].headerTxt}
+        </h1>
+        <div className=" bg-rose-50 md:py-14 md:px-28 p-4 grayscale hover:grayscale-0 mt-10 ">
+          <img
+            src={data[newsModal.id - 1].headerBodyImg}
+            className="justify-center mx-auto"
+          />
+        </div>
+
+        <div className="md:flex flex-wrap md:mt-10 mt-7">
+          <div className="md:w-1/4 ">
+            <div className="text-gray-800 text-base font-semibold leading-loose">
               Timeline & Client
             </div>
-            <div>● {data[newsModal.id - 1].timelineAndClient.time}dvdd</div>
-            <div>● {data[newsModal.id - 1].timelineAndClient.client}</div>
+            <div className="text-neutral-500 text-base font-normal leading-loose">
+              <span className=" text-xs">●</span>{" "}
+              {data[newsModal.id - 1].timelineAndClient.time}
+            </div>
+            <div className="text-neutral-500 text-base font-normal leading-loose">
+              <span className=" text-xs">●</span> &nbsp;
+              {data[newsModal.id - 1].timelineAndClient.client}
+            </div>
           </div>
-          <div>
-            <div
-              style={{
-                color: "#2E303A",
-                fontFamily: "Poppins",
-                fontSize: "16px",
-                fontStyle: "normal",
-                fontWeight: 600,
-                lineHeight: "32px",
-              }}
-            >
+          <div className="md:w-1/4 mt-3 md:mt-0">
+            <div className="text-gray-800 text-base font-semibold leading-loose">
               My Role
             </div>
             <div>
               {data[newsModal.id - 1].myRole.map((el) => (
-                <p>● {el}</p>
+                <p className="text-neutral-500 text-base font-normal leading-loose">
+                  <span className=" text-xs">●</span>&nbsp; {el}
+                </p>
               ))}
             </div>
           </div>
-          <div>
-            <div
-              style={{
-                color: "#2E303A",
-                fontFamily: "Poppins",
-                fontSize: "16px",
-                fontStyle: "normal",
-                fontWeight: 600,
-                lineHeight: "32px",
-              }}
-            >
+          <div className="md:w-1/4 mt-3 md:mt-0">
+            <div className="text-gray-800 text-base font-semibold leading-loose">
               Tools
             </div>
             <div>
               {data[newsModal.id - 1].tools.map((el) => (
-                <p>● {el}</p>
+                <p className="text-neutral-500 text-base font-normal leading-loose">
+                  <span className=" text-xs">●</span> &nbsp;{el}
+                </p>
               ))}
             </div>
           </div>
-          <div>
-            <div
-              style={{
-                color: "#2E303A",
-                fontFamily: "Poppins",
-                fontSize: "16px",
-                fontStyle: "normal",
-                fontWeight: 600,
-                lineHeight: "32px",
-              }}
-            >
+          <div className="md:w-1/4 mt-3 md:mt-0">
+            <div className="text-gray-800 text-base font-semibold leading-loose">
               Framework
             </div>
             <div>
               {data[newsModal.id - 1].frameworks.map((el) => (
-                <p>● {el}</p>
+                <p className="text-neutral-500 text-base font-normal leading-loose">
+                  <span className=" text-xs">●</span> &nbsp; {el}
+                </p>
               ))}
             </div>
           </div>
         </div>
-        <hr />
-        <div>
-          <div>THE CONTEXT</div>
-          <div>{data[newsModal.id - 1].context}</div>
+        <hr className="mt-10 bg-neutral-200" />
+        <div className=" md:mt-20 mt-10">
+          <div className="text-neutral-500 md:text-base text-sm font-normal uppercase leading-loose ">
+            THE CONTEXT
+          </div>
+          <div className="md:mt-4 mt-3 text-gray-800 md:text-[32px] text-lg font-normal leading-snug">
+            {data[newsModal.id - 1].context}
+          </div>
         </div>
-        <div>
-          <div>THE PROBLEM</div>
-          <div>{data[newsModal.id - 1].problem}</div>
+        <div className="md:mt-20 mt-10">
+          <div className="text-neutral-500 md:text-base text-sm font-normal uppercase leading-loose ">
+            THE PROBLEM
+          </div>
+          <div className="md:mt-4 mt-3 text-gray-800 md:text-[32px] text-lg font-normal leading-snug">
+            {data[newsModal.id - 1].problem}
+          </div>
         </div>
-        <div>
-          <div>SOLUTION</div>
-          <div>{data[newsModal.id - 1].solution}</div>
+        <div className="md:mt-20 mt-10">
+          <div className="text-neutral-500 md:text-base text-sm font-normal uppercase leading-loose ">
+            SOLUTION
+          </div>
+          <div className="md:mt-4 mt-3 text-gray-800 md:text-[32px] text-lg font-normal leading-snug">
+            {data[newsModal.id - 1].solution}
+          </div>
         </div>
-        <div>
-          <div>THE OBJECTIVE</div>
-          <div>{data[newsModal.id - 1].objective}</div>
+        <div className="md:mt-20 mt-10">
+          <div className="text-neutral-500 md:text-base text-sm font-normal uppercase leading-loose ">
+            THE OBJECTIVE
+          </div>
+          <div className="md:mt-4 mt-3 text-gray-800 md:text-[32px] text-lg font-normal leading-snug">
+            {data[newsModal.id - 1].objective}
+          </div>
         </div>
-        <hr />
-        <div>
+        <hr className="md:mt-20 mt-10 bg-neutral-200" />
+        <div className="text-neutral-500 text-base font-normal uppercase leading-loose mt-10 md:mt-20">
           <div>TACKLING THE PROBLEM</div>
-          <div>
+          <div className=" md:flex md:flex-wrap ">
             {data[newsModal.id - 1].tackling.map((el) => (
-              <img src={el} />
-            ))}
-          </div>
-        </div>
-        <hr />
-        <div>
-          <img src="assets/img/news/competitive-analysis.svg" />
-          <div>Research and analyze what the competitors are offering.</div>
-          <img src={data[newsModal.id - 1].offeringImg} />
-        </div>
-        <hr />
-        <div>
-          <img src="assets/img/news/interviews.svg" />
-          <div>Questions focused on what each user expects to achieve.</div>
-          <div>
-            {data[newsModal.id - 1].achivements.map((el) => (
-              <p>● {el}</p>
-            ))}
-          </div>
-          <div>Some Research Questions</div>
-          <div>
-            {data[newsModal.id - 1].researchQuestions.map((el, index) => (
-              <div>
-                <span>
-                  0{index + 1} {el}
-                </span>
+              <div className="md:w-1/4 w-full mr-0 mt-10">
+                <img src={el} className="w-full md:w-auto" />
               </div>
             ))}
           </div>
         </div>
-        <hr />
+        <hr className="md:mt-20 mt-10 bg-neutral-200" />
         <div>
+          <img
+            src="assets/img/news/competitive-analysis.svg"
+            className="md:mt-20 mt-10 "
+          />
+          <div className="text-gray-800 md:text-[32px] font-normal mt-10 text-xl">
+            Research and analyze what the competitors are offering.
+          </div>
+          <div className="bg-opacity-10 bg-rose-400 border p-5 grayscale hover:grayscale-0 mt-10">
+            <img src={data[newsModal.id - 1].offeringImg} className="mx-auto" />
+          </div>
+        </div>
+        <hr className="md:mt-20 mt-10 bg-neutral-200" />
+        <div className="md:mt-20 mt-10">
+          <img src="assets/img/news/interviews.svg" />
+          <div className="mt-10 text-gray-800 md:text-[32px] text-lg font-normal ">
+            Questions focused on what each user expects to achieve.
+          </div>
+          <div className="mt-10 md:mt-20 md:flex flex-wrap">
+            {data[newsModal.id - 1].achivements.map((el) => (
+              <p className="md:w-1/2 text-neutral-500 text-base font-normal leading-loose">
+                <span className=" text-xs">●</span> &nbsp; {el}
+              </p>
+            ))}
+          </div>
+          <div className="text-gray-800 text-base font-bold leading-[30px] mt-10 md:mt-20">
+            Some Research Questions
+          </div>
+          <div>
+            {data[newsModal.id - 1].researchQuestions.map((el, index) => (
+              <div className="mt-4">
+                <span className="bg-zinc-300 rounded-[100px]  border w-10 h-10 text-center text-gray-800 text-sm font-medium leading-[30px] p-1">
+                  0{index + 1}{" "}
+                </span>{" "}
+                &nbsp;&nbsp; {el}
+              </div>
+            ))}
+          </div>
+        </div>
+        <hr className="md:mt-20 mt-10 bg-neutral-200" />
+        <div className="md:mt-20 mt-10">
           <img src="assets/img/news/personal-mapping.svg" />
-          <div>Overwhelmed with insights, so we needed to…</div>
-          <div>
+          <div className="mt-10 text-gray-800 md:text-[32px] font-normal text-xl">
+            Overwhelmed with insights, so we needed to…
+          </div>
+          <div className="mt-10 text-neutral-500 text-base font-normal leading-loose">
             {data[newsModal.id - 1].insights.map((el, index) => (
-              <p>● {el}</p>
+              <p>
+                <span className=" text-xs">●</span> &nbsp; {el}
+              </p>
             ))}
           </div>
-          <div>Persona Mapping (Screenshot from Miro)</div>
-          <div>
+          <div className="md:mt-20 mt-10 text-gray-800 text-base font-bold leading-[30px]">
+            Persona Mapping (Screenshot from Miro)
+          </div>
+          <div className=" md:grid grid-cols-2 gap-6 mt-5">
             {data[newsModal.id - 1].personaMappingSS.map((el, index) => (
-              <img src={el} />
+              <div className=" mt-5 md:mt-0">
+                <img src={el} className="w-full " />
+              </div>
             ))}
           </div>
-          <div>Persona Identifying</div>
-          <div>
+          <div className="mt-16 text-gray-800 text-base font-bold leading-[30px]">
+            Persona Identifying
+          </div>
+          <div className="md:grid grid-cols-3 gap-8 mt-12">
             {data[newsModal.id - 1].personaIdentifyingSS.map((el, index) => (
-              <img src={el} />
+              <div className=" mt-5 md:mt-0">
+                <img src={el} className="w-full" />
+              </div>
             ))}
           </div>
-          <div>Key Takeaways</div>
-          <div>
+          <div className="text-gray-800 text-base font-bold leading-[30px] mt-10 md:mt-20">
+            Key Takeaways
+          </div>
+          <div className="mt-4 text-neutral-500 md:text-base text-sm font-normal leading-loose">
             {data[newsModal.id - 1].keyTakeaways.map((el, index) => (
-              <p>● {el}</p>
+              <p className="md:mt-0 mt-5">
+                <span className=" text-xs">●</span> &nbsp; {el}
+              </p>
             ))}
           </div>
         </div>
-        <hr />
-        <div>
+        <hr className="mt-10 md:mt-20 bg-neutral-200" />
+        <div className="mt-10">
           <img src="assets/img/news/final-design.svg" />
-          <div>We were on tight deadline, to prototype to test</div>
-          <div>
+          <div className="mt-10 text-gray-800 md:text-[32px] text-xl font-normal">
+            We were on tight deadline, to prototype to test
+          </div>
+          <div className="mt-10 text-neutral-500 md:text-base text-sm font-normal leading-loose">
             {data[newsModal.id - 1].prototypeTxt.map((el, index) => (
-              <p>● {el}</p>
+              <p className="mt-3">
+                <span className=" text-xs">●</span> &nbsp; {el}
+              </p>
             ))}
           </div>
-          <div>Brand Identify & Logo</div>
-          <img src={data[newsModal.id - 1].brandLogo} />
+          <div className="text-gray-800 text-base font-bold leading-[30px] mt-10 md:mt-20">
+            Brand Identify & Logo
+          </div>
+          <div className="bg-opacity-10 bg-rose-400 border md:p-16 p-6 mt-10">
+            <img src={data[newsModal.id - 1].brandLogo} className="mx-auto" />
+          </div>
         </div>
-        <div>
+        <hr className="mt-10 md:mt-20 bg-neutral-200" />
+        <div className="mt-10 md:mt-20">
           <img src="assets/img/news/final-design.svg" />
-          <div>Stakeholder approval & developer handover</div>
-          <div>
+          <div className="text-gray-800 md:text-[32px] text-xl font-normal mt-10">
+            Stakeholder approval & developer handover
+          </div>
+          <div className="text-neutral-500 text-base font-normal leading-loose mt-10">
             {data[newsModal.id - 1].handOver.map((el, index) => (
-              <p>● {el}</p>
+              <p className="mt-5 md:mt-0">
+                <span className=" text-xs">●</span> &nbsp; {el}
+              </p>
             ))}
           </div>
-          <img src={data[newsModal.id - 1].finalDesign} />
+          <div className="mt-10 md:mt-20">
+            <img src={data[newsModal.id - 1].finalDesign} />
+          </div>
           <div>
-            <div>{data[newsModal.id - 1].finalDesignTxt}</div>
+            <div className="md:w-[1120px]  text-gray-800 md:text-5xl text-lg font-normal md:leading-[60px] mt-10 md:mt-20">
+              {data[newsModal.id - 1].finalDesignTxt}
+            </div>
           </div>
         </div>
-        <hr />
-        <div>Take aways & Learning</div>
-        <div>What I would do better next time.</div>
-        <div>● Always focus on user feedback and do iterations</div>
-        <div>
+        <hr className="mt-10 md:mt-20 bg-neutral-200" />
+        <div className="text-red-500 text-sm font-medium uppercase mt-10 md:mt-20">
+          Take aways & Learning
+        </div>
+        <div className="text-gray-800 md:text-[25px] text-lg font-semibold md:mt-8 mt-5">
+          What I would do better next time.
+        </div>
+        <div className="text-gray-800 text-base font-bold md:leading-[30px] leading-normal mt-5 md:mt-8 ml-2">
+          <span className=" text-xs">●</span> &nbsp; More focus on user feedback
+          and do iterations
+        </div>
+        <div className="text-gray-800 text-base font-normal leading-[30px] mt-3 md:mt-0">
           It is important to focus on users’ qualitative research and how they
           are interacting with the application.
         </div>
-        <div>● Make sure your assumptions are actually usable</div>
-        <div>
+        <div className="text-gray-800 text-base font-bold leading-[30px] mt-5 md:mt-8 ml-2">
+          <span className=" text-xs">●</span> &nbsp; Make sure your assumptions
+          are actually usable
+        </div>
+        <div className="text-gray-800 text-base font-normal leading-[30px] mt-3 md:mt-0">
           During testing, I learned that some of my assumptions were different
           from what the users wanted, which was a valuable learning experience.
         </div>

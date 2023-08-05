@@ -31,6 +31,7 @@ const PasswordModal = () => {
       <br />
       <input
         type="password"
+        className="w-full"
         onChange={(e) => {
           if (!e.target.value) {
             setEmpty(true);
@@ -41,7 +42,7 @@ const PasswordModal = () => {
             setException(false);
           }
         }}
-      />{" "}
+      />{" "}<br />
       {empty && <span className="span-warning">Please Enter Password</span>}
       {exception && <span className="span-warning">Wrong Password</span>}
       <br />
@@ -49,7 +50,7 @@ const PasswordModal = () => {
       <br />
       <button
         type="button"
-        className="button-submit"
+        className="button-submit bg-black "
         onClick={() => onSubmit()}
       >
         SUBMIT

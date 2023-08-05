@@ -1297,7 +1297,7 @@ h6 {
     width: 500px;
   }
   .tokyo_tm_modalbox .password {
-    width: 200px;
+    width: 40%;
   }
 
   .tokyo_tm_modalbox .main_details {
@@ -1392,6 +1392,11 @@ h6 {
   .tokyo_tm_modalbox .service_popup_informations .main_title h3 {
     font-size: 20px;
   }
+
+  .tokyo_tm_modalbox .password {
+    width: 50%;
+    height: 50%;
+  }
 }
 
 /******** Small Screens *********/
@@ -1458,7 +1463,8 @@ h6 {
     width: 300px;
   }
   .tokyo_tm_modalbox .password {
-    width: 150px;
+    width: 50%;
+    height: 40%;
   }
 
   .tokyo_tm_modalbox .description_wrap {
@@ -1592,6 +1598,28 @@ h6 {
 
   .tokyo_tm_modalbox .portfolio_main_title {
     margin-bottom: 20px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .tokyo_tm_modalbox .password {
+    width: 70%;
+    height: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .tokyo_tm_modalbox .password {
+    width: 90%;
+    height: 50%;
+  }
+}
+
+@media (max-width: 300px) {
+  .tokyo_tm_modalbox .password {
+    width: 90%;
+    height: 100%;
   }
 }
 

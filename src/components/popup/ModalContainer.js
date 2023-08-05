@@ -42,7 +42,8 @@ const ModalContainer = ({ children, nullValue, type }) => {
                 top: 0,
               }}
             >
-              <i className="icon-cancel" />
+              
+              <img src="assets/img/news/close.svg" className="" />
             </a>
           )}
           {children}
