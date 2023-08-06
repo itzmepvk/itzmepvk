@@ -355,7 +355,7 @@
 	background: #ffffff;
 	font-size: 18px;
 	padding: 5px 15px;
-	font-family: "Montserrat";
+	font-family: "Poppins";
 	font-weight: 600;
 	color: #000;
 	position: fixed;
@@ -631,7 +631,7 @@ body.dark .tokyo_tm_modalbox_about .description_wrap{
 .tokyo_tm_intro_fixed_price .pricing-info,
 .tokyo_tm_intro_fixed_price .anim {text-decoration: none;
 	color: #fff;
-    font-family: "Montserrat";
+    font-family: "Poppins";
     background-color: #e54b4b;
     position: fixed;
     font-size: 22px;
