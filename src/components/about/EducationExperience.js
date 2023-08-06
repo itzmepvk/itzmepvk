@@ -2,40 +2,40 @@ const experiencesData = [
   {
     id: 1,
     date: "2018 - Now",
-    designation: "Exclusive Author",
-    company: "Envato Market",
+    designation: "Product Designer",
+    company: "1 Billion Tech",
   },
   {
     id: 2,
-    date: "2016 - 2018",
-    designation: "UX Designer",
-    company: "RGB Studio",
+    date: "2018 - Now",
+    designation: "Product Designer",
+    company: "MillionSpaces",
   },
   {
     id: 3,
-    date: "2012 - 2016",
-    designation: "Web Designer",
-    company: "Innovations Park",
+    date: "2015 - 2018",
+    designation: "UX Designer",
+    company: "oDoc",
   },
 ];
 const educationData = [
   {
     id: 1,
-    date: "2014 - 2016",
-    degree: "Master Degree",
-    institute: "Oxford Univercity",
+    date: "2023",
+    degree: "UX design for AR, VR, MR & XR.",
+    institute: "UXR Design",
   },
   {
     id: 2,
-    date: "2010 - 2014",
-    degree: "Bachelor Degree",
-    institute: "Texas Univercity",
+    date: "2021",
+    degree: "Interaction Design Foundation member & certification",
+    institute: "IxDF Certification",
   },
   {
     id: 3,
-    date: "2008 - 2010",
-    degree: "Associate Degree",
-    institute: "Simone College",
+    date: "2017 - 2018",
+    degree: "BSc (Hons) Business Information Systems & Management",
+    institute: "BSc (Hons) BISM",
   },
 ];
 
