@@ -6,14 +6,11 @@ import Sidebar from "@/src/layout/Sidebar";
 import { tokyo } from "@/src/utils";
 import ImageView from "components/popup/ImageView";
 import MediaPopup from "components/popup/MediaPopup";
-import NewsModal from "components/popup/NewsModal";
 import ServiceModal from "components/popup/ServiceModal";
 import dynamic from "next/dynamic";
 import { Fragment, useContext, useEffect } from "react";
 import PasswordModal from "../components/popup/PasswordModal";
-const Portfolio = dynamic(() => import("@/src/components/News"), {
-  ssr: false,
-});
+
 const Layout = ({ children }) => {
   useEffect(() => {
     tokyo.dataImage();
@@ -32,7 +29,6 @@ const Layout = ({ children }) => {
       <MediaPopup />
       <ImageView />
       {modal && serviceModal && <ServiceModal />}
-      {modal && newsModal && <NewsModal />}
       {modal && portfolioDetailsModal && <DetailsModal />}
       {modal && passwordModal && <PasswordModal />}
       {/* WRAPPER ALL */}

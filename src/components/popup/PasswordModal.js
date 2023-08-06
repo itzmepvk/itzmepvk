@@ -7,8 +7,14 @@ const PasswordModal = () => {
   const [password, setPassword] = useState(null);
   const [exception, setException] = useState(false);
   const [empty, setEmpty] = useState(false);
-  const { passwordModal, setPasswordModal, setNewsModal, savePwdDetails } =
-    useContext(TokyoContext);
+  const {
+    passwordModal,
+    setPasswordModal,
+    setNewsModal,
+    savePwdDetails,
+    savePwd,
+    navChange,
+  } = useContext(TokyoContext);
 
   const onSubmit = async () => {
     await axios.get("/api/password").then((res) => {
@@ -16,6 +22,7 @@ const PasswordModal = () => {
         setNewsModal(passwordModal);
         setPasswordModal(null);
         savePwdDetails(true);
+        navChange("detailview");
       } else if (!password) {
         setEmpty(true);
         setException(false);

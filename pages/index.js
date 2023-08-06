@@ -5,6 +5,7 @@ import Home from "components/Home";
 import News from "@/src/components/Portfolio";
 import Service from "components/Service";
 import dynamic from "next/dynamic";
+import DetailView from "@/src/components/detailView/DetailView";
 const Portfolio = dynamic(() => import("@/src/components/News"), {
   ssr: false,
 });
@@ -30,6 +31,7 @@ const Index = () => {
       {/* CONTACT */}
       <Contact />
       {/* /CONTACT */}
+      <DetailView />
     </Layout>
   );
 };

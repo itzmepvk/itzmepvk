@@ -48,7 +48,7 @@ const data = [
 
 const Portfolio = () => {
   const [enter, setEnter] = useState({ id: null, visible: false });
-  const { setPasswordModal, setNewsModal, modalToggle, savePwd } =
+  const { setPasswordModal, setNewsModal, modalToggle, savePwd, navChange } =
     useContext(TokyoContext);
   const [news, setNews] = useState(data);
   const [loader, setLoader] = useState(false);
@@ -186,6 +186,7 @@ const Portfolio = () => {
                           modalToggle(true);
                           if (savePwd) {
                             setNewsModal(item);
+                            navChange("detailview");
                           } else setPasswordModal(item);
                         }}
                       />
@@ -202,6 +203,7 @@ const Portfolio = () => {
                                 modalToggle(true);
                                 if (savePwd) {
                                   setNewsModal(item);
+                                  navChange("detailview");
                                 } else setPasswordModal(item);
                               }}
                             >
@@ -219,6 +221,7 @@ const Portfolio = () => {
                             modalToggle(true);
                             if (savePwd) {
                               setNewsModal(item);
+                              navChange("detailview");
                             } else setPasswordModal(item);
                           }}
                         >
@@ -232,6 +235,7 @@ const Portfolio = () => {
                             modalToggle(true);
                             if (savePwd) {
                               setNewsModal(item);
+                              navChange("detailview");
                             } else setPasswordModal(item);
                           }}
                         >
