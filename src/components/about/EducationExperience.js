@@ -91,12 +91,20 @@ const EducationExperience = () => {
                     <div className="list_inner  w-full h-auto clear-both float-left relative flex">
                       <div className="time w-1/2 pr-[20px]">
                         <span className="inline-block py-[5px] px-[25px] bg-[rgba(0,0,0,.05)] rounded-[50px] text-[14px] whitespace-nowrap">
-                          {edu.date}
+                          {edu.date.length === 4 ? (
+                            <>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              {edu.date}
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </>
+                          ) : (
+                            edu.date
+                          )}
                         </span>
                       </div>
                       <div className="place w-1/2 pl-[20px]">
                         <h3 className="text-[16px] mb-[2px] font-semibold">
-                          {edu. institute }
+                          {edu.institute}
                         </h3>
                         <span className="text-[14px]">{edu.degree}</span>
                       </div>
