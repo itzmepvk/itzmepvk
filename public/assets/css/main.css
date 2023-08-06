@@ -1186,6 +1186,11 @@ h6 {
   .tokyo_tm_modalbox .box_inner {
     width: 850px;
   }
+  
+  .back-arrow{
+    margin-top: 1.5rem; /* 24px */
+    margin-left: 1.5rem; /* 24px */;
+  }
 }
 
 /******** Larger Screens *********/
@@ -1265,6 +1270,12 @@ h6 {
 
   .tokyo_tm_modalbox .description_wrap:before {
     height: 40px;
+  }
+
+  .back-arrow{
+    margin-top: 4rem; /* 24px */
+    margin-left: 1rem; /* 24px */;
+    
   }
 }
 
