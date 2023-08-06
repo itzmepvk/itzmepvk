@@ -153,7 +153,7 @@ const Portfolio = () => {
                   className="mb-[50px] float-left w-1/2 pl-[50px]"
                   key={item.id}
                 >
-                  <div className="list_inner w-full clear-both float-left h-auto relative">
+                  <div className="list_inner w-full clear-both float-left h-auto relative img-remake">
                     <div
                       className="image relative overflow-hidden"
                       style={{
@@ -170,7 +170,7 @@ const Portfolio = () => {
                       }
                     >
                       <img
-                        className="min-w-full opacity-0"
+                        className="min-w-full opacity-0 "
                         src="assets/img/thumbs/40-25.jpg"
                         alt="image"
                       />

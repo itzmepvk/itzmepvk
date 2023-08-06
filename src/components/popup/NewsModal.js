@@ -1,355 +1,91 @@
 import { TokyoContext } from "@/src/Context";
 import { useContext } from "react";
 import ModalContainer from "./ModalContainer";
-
-const data = [
-  {
-    id: 1,
-    headerImg: "assets/img/news/sg.svg",
-    headerTxt: `The SquadGurus Global Network has the marketplace for cloud & software development outsourcing.`,
-    headerBodyImg: "assets/img/news/sg-body.svg",
-    timelineAndClient: {
-      time: "July 2021, Current",
-      client: "United States, Boston",
-    },
-    myRole: ["User Research", "UX Design", "Developer Hand-off"],
-    tools: ["Miro", "Figma & Adobe XD", "Adobe Illustrator"],
-    frameworks: ["Ant Design"],
-    context: ` In July 2021, a Boston -based company wanted to develop a platform
-    for finding global software development talent.`,
-    problem: `It is time- and money-consuming to find the highest-quality technical talent and capabilities in the vast global market.`,
-    solution: `Developing a platform that allows for a seamless experience in connecting service providers and clients.`,
-    objective: `Conduct research, develop strategies, and design an end-to-end experience to increase the conversion rate of the platform.`,
-    tackling: [
-      "assets/img/news/Group 14016.svg",
-      "assets/img/news/Group 14017.svg",
-      "assets/img/news/Group 14018.svg",
-      "assets/img/news/Group 14019.svg",
-    ],
-    offeringImg: "assets/img/news/offering.svg",
-    achivements: [
-      "Current frustrations & pain points",
-      "Interviewed with Clients, Service Providers & Admin",
-      "What did they really want?",
-      "20+ user interviews",
-      "What did they really need?",
-      "Gathered the insights",
-    ],
-    researchQuestions: [
-      "What do SquadGurus admins expect to do in the platform and what are their permissions?",
-      "How will clients and service providers be onboarded?",
-      "What details do clients need to create an opportunity?",
-      "How do service providers receive the opportunity?",
-      "How does user management work?",
-      "Is the app global? If so, how does region/location impact the system?",
-    ],
-    insights: [
-      "Start prioritise to form strategy",
-      "Identify each personas",
-      "Classify personas",
-    ],
-    personaMappingSS: [
-      "assets/img/news/Group 1000001905.svg",
-      "assets/img/news/Group 1000001906.svg",
-      "assets/img/news/Group 1000001904.svg",
-      "assets/img/news/Group 1000001907.svg",
-    ],
-    personaIdentifyingSS: [
-      "assets/img/news/Group 10193.svg",
-      "assets/img/news/Group 10195.svg",
-      "assets/img/news/Group 10196.svg",
-    ],
-    keyTakeaways: [
-      `Client should be able to create 3 types of opportunities. And receive proposals will be able to accept/reject. Also send invitation
-as public, private or exclusive.`,
-      `Service Providers should be able to filter and look the opportunities. And also evaluate and submit candidate to the Proposal.`,
-      `SquadGurus users able to create opportunity on behalf of client, and send proposal on behalf of service providers.`,
-    ],
-    prototypeTxt: [
-      "Should we design mobile first?",
-      "Do we have a brand identity/ visual design language?",
-      "I did the Design System & SquagGurus logo &  brand identity",
-      "Straight away jumped in to high-fidelity design",
-      "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
-    ],
-    brandLogo: "assets/img/news/brandLogoSg.svg",
-    handOver: [
-      " Final MVP prototype design approval",
-      "Hand over the MVP design to developers and QAs with references along with the design documents",
-      "Daily sync-up with the team to make sure everything on-track",
-    ],
-    finalDesign: "assets/img/news/finalDesign.svg",
-    finalDesignTxt: ` Finally, we successfully launched the MVP 3 months later, in
-    December 2021. We celebrated over a team call with 300+ clients and
-    service providers listed.`,
-  },
-];
 const NewsModal = () => {
   const { newsModal, setNewsModal } = useContext(TokyoContext);
   return (
-    <ModalContainer nullValue={setNewsModal} type={"news"}>
-      <div className="pb-20">
-        <img src={data[newsModal.id - 1].headerImg} />
-        <p className="date text-neutral-500 text-base font-normal uppercase leading-loose mt-5 md:mt-10">
-          <a className="transition-all duration-300 hover:text-black" href="#">
-            {newsModal.author}
-          </a>
-        </p>
-        <h1 className="text-gray-800 md:text-5xl text-xl font-normal md:leading-[60px] md:w-[1120px] w-full mt-5 md:mt-10">
-          {data[newsModal.id - 1].headerTxt}
-        </h1>
-        <div className=" bg-rose-50 md:py-14 md:px-28 p-4 grayscale hover:grayscale-0 mt-10 ">
-          <img
-            src={data[newsModal.id - 1].headerBodyImg}
-            className="justify-center mx-auto"
-          />
+    <ModalContainer nullValue={setNewsModal}>
+      <div className="image relative overflow-hidden">
+        <img
+          className="min-w-full opacity-0"
+          src="assets/img/thumbs/40-25.jpg"
+          alt="image"
+        />
+        <div
+          className="main absolute inset-0 bg-no-repeat bg-cover bg-center transition-all duration-300"
+          data-img-url={newsModal.image}
+          style={{ backgroundImage: `url(${newsModal.image})` }}
+        />
+        <a className="tokyo_tm_full_link" href="#" />
+      </div>
+      <div className="details w-full float-left px-[40px] pt-[30px] pb-[25px] bg-white transition-all duration-300">
+        <div className="extra flex items-center justify-between mb-[25px] relative">
+          <div className="short">
+            <p className="date font-montserrat text-[13px] text-[#767676]">
+              By{" "}
+              <a
+                className="text-[#767676] transition-all duration-300 hover:text-black"
+                href="#"
+              >
+                {newsModal.author}
+              </a>{" "}
+              <span className="relative">{newsModal.date}</span>
+            </p>
+          </div>
         </div>
-
-        <div className="md:flex flex-wrap md:mt-10 mt-7">
-          <div className="md:w-1/4 ">
-            <div className="text-gray-800 text-base font-semibold leading-loose">
-              Timeline & Client
+        <h3 className="title mb-[10px] leading-[1.4]">{newsModal.title}</h3>
+      </div>
+      {/* News Popup Start */}
+      <div className="main_content w-full float-left">
+        <div className="descriptions w-full float-left">
+          <p className="bigger text-[#888] text-[20px] mb-[31px]">
+            Just because we can't get out and about like we normally would,
+            doesn’t mean we have to stop taking pictures. There’s still plenty
+            you can do, provided you're prepared to use some imagination. Here
+            are a few ideas to keep you shooting until normal life resumes.
+          </p>
+          <p className="mb-[22px]">
+            Most photographers love to shoot the unusual, and you don’t get much
+            more unusual than These Unprecedented Times. Right now everything
+            counts as out of the ordinary. There are a number of remarkable
+            things about these lockdown days that are worth photographing now so
+            we can remember them when it is all over.
+          </p>
+          <div className="quotebox w-full clear-both float-left h-auto relative pl-[70px] mb-[24px]">
+            <div className="icon absolute left-0 top-[5px]">
+              <i className="icon-quote-left text-[40px] text-black" />
             </div>
-            <div className="text-neutral-500 text-base font-normal leading-loose">
-              <span className=" text-xs">●</span>{" "}
-              {data[newsModal.id - 1].timelineAndClient.time}
-            </div>
-            <div className="text-neutral-500 text-base font-normal leading-loose">
-              <span className=" text-xs">●</span> &nbsp;
-              {data[newsModal.id - 1].timelineAndClient.client}
-            </div>
+            <p className="text-[20px]">
+              Most photographers find it hard to see interesting pictures in
+              places in which they are most familiar. A trip somewhere new seems
+              always exactly what our photography needed, as shooting away from
+              home consistently inspires us to new artistic heights.
+            </p>
           </div>
-          <div className="md:w-1/4 mt-3 md:mt-0">
-            <div className="text-gray-800 text-base font-semibold leading-loose">
-              My Role
-            </div>
-            <div>
-              {data[newsModal.id - 1].myRole.map((el) => (
-                <p className="text-neutral-500 text-base font-normal leading-loose">
-                  <span className=" text-xs">●</span>&nbsp; {el}
-                </p>
-              ))}
-            </div>
-          </div>
-          <div className="md:w-1/4 mt-3 md:mt-0">
-            <div className="text-gray-800 text-base font-semibold leading-loose">
-              Tools
-            </div>
-            <div>
-              {data[newsModal.id - 1].tools.map((el) => (
-                <p className="text-neutral-500 text-base font-normal leading-loose">
-                  <span className=" text-xs">●</span> &nbsp;{el}
-                </p>
-              ))}
-            </div>
-          </div>
-          <div className="md:w-1/4 mt-3 md:mt-0">
-            <div className="text-gray-800 text-base font-semibold leading-loose">
-              Framework
-            </div>
-            <div>
-              {data[newsModal.id - 1].frameworks.map((el) => (
-                <p className="text-neutral-500 text-base font-normal leading-loose">
-                  <span className=" text-xs">●</span> &nbsp; {el}
-                </p>
-              ))}
-            </div>
-          </div>
-        </div>
-        <hr className="mt-10 bg-neutral-200" />
-        <div className=" md:mt-20 mt-10">
-          <div className="text-neutral-500 md:text-base text-sm font-normal uppercase leading-loose ">
-            THE CONTEXT
-          </div>
-          <div className="md:mt-4 mt-3 text-gray-800 md:text-[32px] text-lg font-normal leading-snug">
-            {data[newsModal.id - 1].context}
-          </div>
-        </div>
-        <div className="md:mt-20 mt-10">
-          <div className="text-neutral-500 md:text-base text-sm font-normal uppercase leading-loose ">
-            THE PROBLEM
-          </div>
-          <div className="md:mt-4 mt-3 text-gray-800 md:text-[32px] text-lg font-normal leading-snug">
-            {data[newsModal.id - 1].problem}
-          </div>
-        </div>
-        <div className="md:mt-20 mt-10">
-          <div className="text-neutral-500 md:text-base text-sm font-normal uppercase leading-loose ">
-            SOLUTION
-          </div>
-          <div className="md:mt-4 mt-3 text-gray-800 md:text-[32px] text-lg font-normal leading-snug">
-            {data[newsModal.id - 1].solution}
-          </div>
-        </div>
-        <div className="md:mt-20 mt-10">
-          <div className="text-neutral-500 md:text-base text-sm font-normal uppercase leading-loose ">
-            THE OBJECTIVE
-          </div>
-          <div className="md:mt-4 mt-3 text-gray-800 md:text-[32px] text-lg font-normal leading-snug">
-            {data[newsModal.id - 1].objective}
-          </div>
-        </div>
-        <hr className="md:mt-20 mt-10 bg-neutral-200" />
-        <div className="text-neutral-500 text-base font-normal uppercase leading-loose mt-10 md:mt-20">
-          <div>TACKLING THE PROBLEM</div>
-          <div className=" md:flex md:flex-wrap ">
-            {data[newsModal.id - 1].tackling.map((el) => (
-              <div className="md:w-1/4 w-full mr-0 mt-10">
-                <img src={el} className="w-full md:w-auto" />
-              </div>
-            ))}
-          </div>
-        </div>
-        <hr className="md:mt-20 mt-10 bg-neutral-200" />
-        <div>
-          <img
-            src="assets/img/news/competitive-analysis.svg"
-            className="md:mt-20 mt-10 "
-          />
-          <div className="text-gray-800 md:text-[32px] font-normal mt-10 text-xl">
-            Research and analyze what the competitors are offering.
-          </div>
-          <div className="bg-opacity-10 bg-rose-400 border p-5 grayscale hover:grayscale-0 mt-10">
-            <img src={data[newsModal.id - 1].offeringImg} className="mx-auto" />
-          </div>
-        </div>
-        <hr className="md:mt-20 mt-10 bg-neutral-200" />
-        <div className="md:mt-20 mt-10">
-          <img src="assets/img/news/interviews.svg" />
-          <div className="mt-10 text-gray-800 md:text-[32px] text-lg font-normal ">
-            Questions focused on what each user expects to achieve.
-          </div>
-          <div className="mt-10 md:mt-20 md:flex flex-wrap">
-            {data[newsModal.id - 1].achivements.map((el) => (
-              <p className="md:w-1/2 text-neutral-500 text-base font-normal leading-loose">
-                <span className=" text-xs">●</span> &nbsp; {el}
-              </p>
-            ))}
-          </div>
-          <div className="text-gray-800 text-base font-bold leading-[30px] mt-10 md:mt-20">
-            Some Research Questions
-          </div>
-          <div>
-            {data[newsModal.id - 1].researchQuestions.map((el, index) => (
-              <div className="mt-4">
-                <span className="bg-zinc-300 rounded-[100px]  border w-10 h-10 text-center text-gray-800 text-sm font-medium leading-[30px] p-1">
-                  0{index + 1}{" "}
-                </span>{" "}
-                &nbsp;&nbsp; {el}
-              </div>
-            ))}
-          </div>
-        </div>
-        <hr className="md:mt-20 mt-10 bg-neutral-200" />
-        <div className="md:mt-20 mt-10">
-          <img src="assets/img/news/personal-mapping.svg" />
-          <div className="mt-10 text-gray-800 md:text-[32px] font-normal text-xl">
-            Overwhelmed with insights, so we needed to…
-          </div>
-          <div className="mt-10 text-neutral-500 text-base font-normal leading-loose">
-            {data[newsModal.id - 1].insights.map((el, index) => (
-              <p>
-                <span className=" text-xs">●</span> &nbsp; {el}
-              </p>
-            ))}
-          </div>
-          <div className="md:mt-20 mt-10 text-gray-800 text-base font-bold leading-[30px]">
-            Persona Mapping (Screenshot from Miro)
-          </div>
-          <div className=" md:grid grid-cols-2 gap-6 mt-5">
-            {data[newsModal.id - 1].personaMappingSS.map((el, index) => (
-              <div className=" mt-5 md:mt-0">
-                <img src={el} className="w-full " />
-              </div>
-            ))}
-          </div>
-          <div className="mt-16 text-gray-800 text-base font-bold leading-[30px]">
-            Persona Identifying
-          </div>
-          <div className="md:grid grid-cols-3 gap-8 mt-12">
-            {data[newsModal.id - 1].personaIdentifyingSS.map((el, index) => (
-              <div className=" mt-5 md:mt-0">
-                <img src={el} className="w-full" />
-              </div>
-            ))}
-          </div>
-          <div className="text-gray-800 text-base font-bold leading-[30px] mt-10 md:mt-20">
-            Key Takeaways
-          </div>
-          <div className="mt-4 text-neutral-500 md:text-base text-sm font-normal leading-loose">
-            {data[newsModal.id - 1].keyTakeaways.map((el, index) => (
-              <p className="md:mt-0 mt-5">
-                <span className=" text-xs">●</span> &nbsp; {el}
-              </p>
-            ))}
-          </div>
-        </div>
-        <hr className="mt-10 md:mt-20 bg-neutral-200" />
-        <div className="mt-10">
-          <img src="assets/img/news/final-design.svg" />
-          <div className="mt-10 text-gray-800 md:text-[32px] text-xl font-normal">
-            We were on tight deadline, to prototype to test
-          </div>
-          <div className="mt-10 text-neutral-500 md:text-base text-sm font-normal leading-loose">
-            {data[newsModal.id - 1].prototypeTxt.map((el, index) => (
-              <p className="mt-3">
-                <span className=" text-xs">●</span> &nbsp; {el}
-              </p>
-            ))}
-          </div>
-          <div className="text-gray-800 text-base font-bold leading-[30px] mt-10 md:mt-20">
-            Brand Identify & Logo
-          </div>
-          <div className="bg-opacity-10 bg-rose-400 border md:p-16 p-6 mt-10">
-            <img src={data[newsModal.id - 1].brandLogo} className="mx-auto" />
-          </div>
-        </div>
-        <hr className="mt-10 md:mt-20 bg-neutral-200" />
-        <div className="mt-10 md:mt-20">
-          <img src="assets/img/news/final-design.svg" />
-          <div className="text-gray-800 md:text-[32px] text-xl font-normal mt-10">
-            Stakeholder approval & developer handover
-          </div>
-          <div className="text-neutral-500 text-base font-normal leading-loose mt-10">
-            {data[newsModal.id - 1].handOver.map((el, index) => (
-              <p className="mt-5 md:mt-0">
-                <span className=" text-xs">●</span> &nbsp; {el}
-              </p>
-            ))}
-          </div>
-          <div className="mt-10 md:mt-20">
-            <img src={data[newsModal.id - 1].finalDesign} />
-          </div>
-          <div>
-            <div className="md:w-[1120px]  text-gray-800 md:text-5xl text-lg font-normal md:leading-[60px] mt-10 md:mt-20">
-              {data[newsModal.id - 1].finalDesignTxt}
-            </div>
-          </div>
-        </div>
-        <hr className="mt-10 md:mt-20 bg-neutral-200" />
-        <div className="text-red-500 text-sm font-medium uppercase mt-10 md:mt-20">
-          Take aways & Learning
-        </div>
-        <div className="text-gray-800 md:text-[25px] text-lg font-semibold md:mt-8 mt-5">
-          What I would do better next time.
-        </div>
-        <div className="text-gray-800 text-base font-bold md:leading-[30px] leading-normal mt-5 md:mt-8 ml-2">
-          <span className=" text-xs">●</span> &nbsp; More focus on user feedback
-          and do iterations
-        </div>
-        <div className="text-gray-800 text-base font-normal leading-[30px] mt-3 md:mt-0">
-          It is important to focus on users’ qualitative research and how they
-          are interacting with the application.
-        </div>
-        <div className="text-gray-800 text-base font-bold leading-[30px] mt-5 md:mt-8 ml-2">
-          <span className=" text-xs">●</span> &nbsp; Make sure your assumptions
-          are actually usable
-        </div>
-        <div className="text-gray-800 text-base font-normal leading-[30px] mt-3 md:mt-0">
-          During testing, I learned that some of my assumptions were different
-          from what the users wanted, which was a valuable learning experience.
+          <p className="mb-[22px]">
+            Streets empty that are usually busy are remarkable and can evoke the
+            sense of historical pictures from before the invention of the
+            motorcar. Other things that are different at the moment will be
+            queues to get into stores and the lines marked out on the floor to
+            show how far apart we should be.
+          </p>
+          <p className="mb-[22px]">
+            Pretend everything is new and that you haven’t seen it before, and
+            then you will be free to notice the leading lines, the places where
+            one edge meets another in delightful geometric harmony, and how the
+            ordinary things in the kitchen are transformed when the light is on
+            or off.
+          </p>
+          <p>
+            The trick here is to look slowly, and then look again. Take the time
+            to look in detail and to look at the same thing from different
+            angles, with different light, long lenses and wide lenses. Then move
+            to the left a bit. You may never feel the need to leave the house
+            again.
+          </p>
         </div>
       </div>
+      {/* /News Popup End */}
     </ModalContainer>
   );
 };

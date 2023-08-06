@@ -139,7 +139,7 @@ textarea {
   border-radius: 0;
   font-size: 15px;
   resize: vertical;
-  font-family: "Poppins";
+  font-family: "Montserrat";
   letter-spacing: 0px !important;
 
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -183,7 +183,7 @@ input[type="color"],
   -ms-box-sizing: border-box; /* IE 10 + */
   box-sizing: border-box; /* Opera/IE 8+ */
 
-  font-family: "Poppins";
+  font-family: "Montserrat";
 
   line-height: 1.6;
   padding: 10px !important;
@@ -7543,7 +7543,7 @@ button::-moz-focus-inner {
   padding: 0 0 18px 10px;
   font-style: normal;
   font-size: 28px;
-  font-family: Arial, Baskerville, monospace, Poppins;
+  font-family: Arial, Baskerville, monospace;
 }
 .mfp-close:focus,
 .mfp-close:hover {

@@ -39,13 +39,7 @@ const Sidebar = () => {
         </div>
         <div className="copyright w-full float-left">
           <p className="text-[15px] text-[#999] font-montserrat leading-[25px]">
-            <a
-              className="text-[#787878] font-medium transition-all duration-300 hover:text-black"
-              href="https://themeforest.net/user/Codeefly"
-              target="_blank"
-            >
-              © {new Date().getFullYear()} itzmepvk
-            </a>
+            © {new Date().getFullYear()} itzmepvk
           </p>
         </div>
       </div>

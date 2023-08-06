@@ -323,7 +323,7 @@
 	left: 0px;
 	right: 0px;
 	background-repeat: no-repeat;
-	/* background-size: cover; */
+	background-size: cover;
 	background-position: center;
 }
 .tokyo_tm_modalbox .description_wrap::-webkit-scrollbar{
@@ -355,7 +355,7 @@
 	background: #ffffff;
 	font-size: 18px;
 	padding: 5px 15px;
-	font-family: "Poppins";
+	font-family: "Montserrat";
 	font-weight: 600;
 	color: #000;
 	position: fixed;
@@ -370,16 +370,8 @@
 .tokyo_tm_news ul li .list_inner{
 	box-shadow: 0px 0px 20px rgba(0,0,0,.07);
 }
-.tokyo_tm_news ul li .list_inner .image .main{
-	transform: scale(1.1) translateZ(0);
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
-}
-
 .tokyo_tm_news ul li .list_inner .image:hover .main{
 	transform: scale(1.1) translateZ(0);
-    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(0%);
 }
 .tokyo_tm_news ul li .list_inner:hover .details{
 	box-shadow: 0px 0px 20px rgba(0,0,0,.12);
@@ -639,7 +631,7 @@ body.dark .tokyo_tm_modalbox_about .description_wrap{
 .tokyo_tm_intro_fixed_price .pricing-info,
 .tokyo_tm_intro_fixed_price .anim {text-decoration: none;
 	color: #fff;
-    font-family: "Poppins";
+    font-family: "Montserrat";
     background-color: #e54b4b;
     position: fixed;
     font-size: 22px;
@@ -713,3 +705,21 @@ body.dark .tokyo_tm_modalbox_about .description_wrap{
 @media (max-width: 1040px) {
 	.tokyo_tm_intro .demos img{max-width: 100px;}
 }
+
+.img-remake {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
+
+  .img-remake:hover {
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+  }
+
+  .mb-6{
+    margin-bottom: 1.5rem; /* 24px */
+  }
+
+  .mb-16{
+    margin-bottom: 4rem; /* 64px */
+  }
