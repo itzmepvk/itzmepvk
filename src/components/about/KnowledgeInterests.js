@@ -1,17 +1,18 @@
 const knowledge = [
-  { id: 1, text: "Bootstrap, Angular" },
-  { id: 2, text: "React, Vue, Laravel" },
-  { id: 3, text: "Stylus, Sass, Less" },
-  { id: 4, text: "Gulp, Webpack, Grunt" },
-  { id: 5, text: "Tweenmax, GSAP" },
+  { id: 1, text: "Dev Framework Understanding" },
+  { id: 2, text: "Domain Understanding" },
+  { id: 3, text: "UX Research & Persona Identifying" },
+  { id: 4, text: "Wireframing/ Prototyping" },
+  { id: 5, text: "High Fidelity Design (Web, Mobile & SaaS)" },
 ];
 const interests = [
-  { id: 1, text: "Make UI/UX Design" },
-  { id: 2, text: "Create Mobile App" },
-  { id: 3, text: "Site Optimization" },
-  { id: 4, text: "Custom Website" },
-  { id: 5, text: "Learn Ecommerce" },
+  { id: 1, text: "Brand Identity & Logo Desining" },
+  { id: 2, text: "Explainer Video (Adobe Suite)" },
+  { id: 3, text: "Website Designing (Webflow & Tailwind)" },
+  { id: 4, text: "Search Engine Optimization (SEO)" },
+  { id: 5, text: "Photography & Videography" },
 ];
+
 
 const KnowledgeInterests = () => {
   return (
