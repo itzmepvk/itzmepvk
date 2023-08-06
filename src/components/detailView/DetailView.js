@@ -1,6 +1,7 @@
 import { TokyoContext } from "@/src/Context";
 import { useContext } from "react";
 import SectionContainer from "../SectionContainer";
+import SectionTitle from "../SectionTitle";
 
 const data = [
   {
@@ -12,8 +13,8 @@ const data = [
       time: "July 2021, Current",
       client: "United States, Boston",
     },
-    myRole: ["User Research", "UX Design", "Developer Hand-off"],
-    tools: ["Miro", "Figma & Adobe XD", "Adobe Illustrator"],
+    myRole: ["User Research", "UX Design & Developer Hand-off"],
+    tools: ["Miro", "Figma", "Adobe XD & Adobe Illustrator"],
     frameworks: ["Ant Design"],
     context: ` In July 2021, a Boston -based company wanted to develop a platform
     for finding global software development talent.`,
@@ -89,211 +90,220 @@ const DetailView = () => {
   const { newsModal, setNewsModal } = useContext(TokyoContext);
   return (
     <SectionContainer name={"detailview"}>
-      <div>
-        <img src={data[newsModal?.id - 1]?.headerImg} />
-        <p className="date font-montserrat text-[13px] text-[#767676]">
-          <a
-            className="text-[#767676] transition-all duration-300 hover:text-black"
-            href="#"
+      <div className="mt-6 ml-6">
+        <img src="assets/img/news/back-arrow.svg" />
+      </div>
+      <div className="container">
+        <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[45px] px-0 pb-[45px]">
+          <img src={data[newsModal?.id - 1]?.headerImg} className="" />
+          <p
+            className="date font-montserrat text-[13px] text-[#767676]"
+            style={{ marginTop: "32px" }}
           >
-            {newsModal?.author}
-          </a>
-        </p>
-        <h1>{data[newsModal?.id - 1]?.headerTxt}</h1>
-        <img src={data[newsModal?.id - 1]?.headerBodyImg} />
-        <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <div>
-            <div
-              style={{
-                color: "#2E303A",
-                fontFamily: "Poppins",
-                fontSize: "16px",
-                fontStyle: "normal",
-                fontWeight: 600,
-                lineHeight: "32px",
-              }}
+            <a
+              className="text-[#767676] transition-all duration-300 hover:text-black uppercase"
+              href="#"
             >
-              Timeline & Client
-            </div>
-            <div>● {data[newsModal?.id - 1]?.timelineAndClient.time}dvdd</div>
-            <div>● {data[newsModal?.id - 1]?.timelineAndClient.client}</div>
+              {newsModal?.author}
+            </a>
+          </p>
+          <div
+            className="title_flex w-full h-auto clear-both flex justify-between items-end"
+            style={{ marginTop: "32px" }}
+          >
+            <SectionTitle title={data[newsModal?.id - 1]?.headerTxt} />
           </div>
-          <div>
-            <div
-              style={{
-                color: "#2E303A",
-                fontFamily: "Poppins",
-                fontSize: "16px",
-                fontStyle: "normal",
-                fontWeight: 600,
-                lineHeight: "32px",
-              }}
-            >
-              My Role
-            </div>
-            <div>
-              {data[newsModal?.id - 1]?.myRole.map((el) => (
-                <p>● {el}</p>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div
-              style={{
-                color: "#2E303A",
-                fontFamily: "Poppins",
-                fontSize: "16px",
-                fontStyle: "normal",
-                fontWeight: 600,
-                lineHeight: "32px",
-              }}
-            >
-              Tools
-            </div>
-            <div>
-              {data[newsModal?.id - 1]?.tools.map((el) => (
-                <p>● {el}</p>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div
-              style={{
-                color: "#2E303A",
-                fontFamily: "Poppins",
-                fontSize: "16px",
-                fontStyle: "normal",
-                fontWeight: 600,
-                lineHeight: "32px",
-              }}
-            >
-              Framework
-            </div>
-            <div>
-              {data[newsModal?.id - 1]?.frameworks.map((el) => (
-                <p>● {el}</p>
-              ))}
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div>
-          <div>THE CONTEXT</div>
-          <div>{data[newsModal?.id - 1]?.context}</div>
-        </div>
-        <div>
-          <div>THE PROBLEM</div>
-          <div>{data[newsModal?.id - 1]?.problem}</div>
-        </div>
-        <div>
-          <div>SOLUTION</div>
-          <div>{data[newsModal?.id - 1]?.solution}</div>
-        </div>
-        <div>
-          <div>THE OBJECTIVE</div>
-          <div>{data[newsModal?.id - 1]?.objective}</div>
-        </div>
-        <hr />
-        <div>
-          <div>TACKLING THE PROBLEM</div>
-          <div>
-            {data[newsModal?.id - 1]?.tackling.map((el) => (
-              <img src={el} />
-            ))}
-          </div>
-        </div>
-        <hr />
-        <div>
-          <img src="assets/img/news/competitive-analysis.svg" />
-          <div>Research and analyze what the competitors are offering.</div>
-          <img src={data[newsModal?.id - 1]?.offeringImg} />
-        </div>
-        <hr />
-        <div>
-          <img src="assets/img/news/interviews.svg" />
-          <div>Questions focused on what each user expects to achieve.</div>
-          <div>
-            {data[newsModal?.id - 1]?.achivements.map((el) => (
-              <p>● {el}</p>
-            ))}
-          </div>
-          <div>Some Research Questions</div>
-          <div>
-            {data[newsModal?.id - 1]?.researchQuestions.map((el, index) => (
-              <div>
-                <span>
-                  0{index + 1} {el}
-                </span>
+
+          <img
+            src={data[newsModal?.id - 1]?.headerBodyImg}
+            className="img-remake  w-full"
+            style={{ marginTop: "40px" }}
+          />
+
+          <div
+            className="tokyo_tm_short_info w-full h-auto clear-both float-left flex  pb-[30px] mb-[40px]"
+            style={{ marginTop: "40px" }}
+          >
+            <div className="left w-1/2 pr-[50px]">
+              <div className="tokyo_tm_info w-full h-auto clear-both float-left">
+                <ul className="m-0 list-none">
+                  <li className="m-0">
+                    <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                      Client:
+                    </span>
+                    <span>
+                      <div>
+                        {data[newsModal?.id - 1]?.timelineAndClient.client}
+                      </div>
+                    </span>
+                  </li>
+                  <li className="m-0">
+                    <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                      Timeline:
+                    </span>
+                    <span>
+                      <div>
+                        {data[newsModal?.id - 1]?.timelineAndClient.time}
+                      </div>
+                    </span>
+                  </li>
+                  <li className="m-0">
+                    <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                      Framework:
+                    </span>
+                    <span>
+                      {data[newsModal?.id - 1]?.frameworks.toLocaleString()}
+                    </span>
+                  </li>
+                </ul>
               </div>
-            ))}
+            </div>
+            <div className="right w-1/2 pl-[50px]">
+              <div className="tokyo_tm_info">
+                <ul className="m-0 list-none">
+                  <li className="m-0">
+                    <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                      My Role:
+                    </span>
+                    <span>
+                      {data[newsModal?.id - 1]?.myRole.toLocaleString()}
+                    </span>
+                  </li>
+                  <li className="m-0">
+                    <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                      Tools:
+                    </span>
+                    <span>{data[newsModal?.id - 1]?.tools.toString()}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <hr />
+      </div>
+      <div className="tokyo_tm_resumebox w-full h-auto clear-both float-left bg-white py-[93px] px-0">
+        <div className="container">
+          <div className="in w-full h-auto clear-both float-left flex">
+           
+            <div>
+              <div>THE CONTEXT</div>
+              <div>{data[newsModal?.id - 1]?.context}</div>
+            </div>
+            <div>
+              <div>THE PROBLEM</div>
+              <div>{data[newsModal?.id - 1]?.problem}</div>
+            </div>
+            <div>
+              <div>SOLUTION</div>
+              <div>{data[newsModal?.id - 1]?.solution}</div>
+            </div>
+            <div>
+              <div>THE OBJECTIVE</div>
+              <div>{data[newsModal?.id - 1]?.objective}</div>
+            </div>
+            <hr />
+            <div>
+              <div>TACKLING THE PROBLEM</div>
+              <div>
+                {data[newsModal?.id - 1]?.tackling.map((el) => (
+                  <img src={el} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <img src="assets/img/news/competitive-analysis.svg" />
+        <div>Research and analyze what the competitors are offering.</div>
+        <img src={data[newsModal?.id - 1]?.offeringImg} />
+      </div>
+      <hr />
+      <div>
+        <img src="assets/img/news/interviews.svg" />
+        <div>Questions focused on what each user expects to achieve.</div>
         <div>
-          <img src="assets/img/news/personal-mapping.svg" />
-          <div>Overwhelmed with insights, so we needed to…</div>
-          <div>
-            {data[newsModal?.id - 1]?.insights.map((el, index) => (
-              <p>● {el}</p>
-            ))}
-          </div>
-          <div>Persona Mapping (Screenshot from Miro)</div>
-          <div>
-            {data[newsModal?.id - 1]?.personaMappingSS.map((el, index) => (
-              <img src={el} />
-            ))}
-          </div>
-          <div>Persona Identifying</div>
-          <div>
-            {data[newsModal?.id - 1]?.personaIdentifyingSS.map((el, index) => (
-              <img src={el} />
-            ))}
-          </div>
-          <div>Key Takeaways</div>
-          <div>
-            {data[newsModal?.id - 1]?.keyTakeaways.map((el, index) => (
-              <p>● {el}</p>
-            ))}
-          </div>
+          {data[newsModal?.id - 1]?.achivements.map((el) => (
+            <p>● {el}</p>
+          ))}
         </div>
-        <hr />
+        <div>Some Research Questions</div>
         <div>
-          <img src="assets/img/news/final-design.svg" />
-          <div>We were on tight deadline, to prototype to test</div>
-          <div>
-            {data[newsModal?.id - 1]?.prototypeTxt.map((el, index) => (
-              <p>● {el}</p>
-            ))}
-          </div>
-          <div>Brand Identify & Logo</div>
-          <img src={data[newsModal?.id - 1]?.brandLogo} />
+          {data[newsModal?.id - 1]?.researchQuestions.map((el, index) => (
+            <div>
+              <span>
+                0{index + 1} {el}
+              </span>
+            </div>
+          ))}
         </div>
+      </div>
+      <hr />
+      <div>
+        <img src="assets/img/news/personal-mapping.svg" />
+        <div>Overwhelmed with insights, so we needed to…</div>
         <div>
-          <img src="assets/img/news/final-design.svg" />
-          <div>Stakeholder approval & developer handover</div>
-          <div>
-            {data[newsModal?.id - 1]?.handOver.map((el, index) => (
-              <p>● {el}</p>
-            ))}
-          </div>
-          <img src={data[newsModal?.id - 1]?.finalDesign} />
-          <div>
-            <div>{data[newsModal?.id - 1]?.finalDesignTxt}</div>
-          </div>
+          {data[newsModal?.id - 1]?.insights.map((el, index) => (
+            <p>● {el}</p>
+          ))}
         </div>
-        <hr />
-        <div>Take aways & Learning</div>
-        <div>What I would do better next time.</div>
-        <div>● Always focus on user feedback and do iterations</div>
+        <div>Persona Mapping (Screenshot from Miro)</div>
         <div>
-          It is important to focus on users’ qualitative research and how they
-          are interacting with the application.
+          {data[newsModal?.id - 1]?.personaMappingSS.map((el, index) => (
+            <img src={el} />
+          ))}
         </div>
-        <div>● Make sure your assumptions are actually usable</div>
+        <div>Persona Identifying</div>
         <div>
-          During testing, I learned that some of my assumptions were different
-          from what the users wanted, which was a valuable learning experience.
+          {data[newsModal?.id - 1]?.personaIdentifyingSS.map((el, index) => (
+            <img src={el} />
+          ))}
         </div>
+        <div>Key Takeaways</div>
+        <div>
+          {data[newsModal?.id - 1]?.keyTakeaways.map((el, index) => (
+            <p>● {el}</p>
+          ))}
+        </div>
+      </div>
+      <hr />
+      <div>
+        <img src="assets/img/news/final-design.svg" />
+        <div>We were on tight deadline, to prototype to test</div>
+        <div>
+          {data[newsModal?.id - 1]?.prototypeTxt.map((el, index) => (
+            <p>● {el}</p>
+          ))}
+        </div>
+        <div>Brand Identify & Logo</div>
+        <img src={data[newsModal?.id - 1]?.brandLogo} />
+      </div>
+      <div>
+        <img src="assets/img/news/final-design.svg" />
+        <div>Stakeholder approval & developer handover</div>
+        <div>
+          {data[newsModal?.id - 1]?.handOver.map((el, index) => (
+            <p>● {el}</p>
+          ))}
+        </div>
+        <img src={data[newsModal?.id - 1]?.finalDesign} />
+        <div>
+          <div>{data[newsModal?.id - 1]?.finalDesignTxt}</div>
+        </div>
+      </div>
+      <hr />
+      <div>Take aways & Learning</div>
+      <div>What I would do better next time.</div>
+      <div>● Always focus on user feedback and do iterations</div>
+      <div>
+        It is important to focus on users’ qualitative research and how they are
+        interacting with the application.
+      </div>
+      <div>● Make sure your assumptions are actually usable</div>
+      <div>
+        During testing, I learned that some of my assumptions were different
+        from what the users wanted, which was a valuable learning experience.
       </div>
     </SectionContainer>
   );

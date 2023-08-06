@@ -48,7 +48,7 @@ const data = [
 
 const Portfolio = () => {
   const [enter, setEnter] = useState({ id: null, visible: false });
-  const { setPasswordModal, setNewsModal, modalToggle, savePwd, navChange } =
+  const { setPasswordModal, setNewsModal, modalToggle, setPwd, navChange } =
     useContext(TokyoContext);
   const [news, setNews] = useState(data);
   const [loader, setLoader] = useState(false);
@@ -184,7 +184,7 @@ const Portfolio = () => {
                         href="#"
                         onClick={() => {
                           modalToggle(true);
-                          if (savePwd) {
+                          if (true) {
                             setNewsModal(item);
                             navChange("detailview");
                           } else setPasswordModal(item);
@@ -201,7 +201,7 @@ const Portfolio = () => {
                               href="#"
                               onClick={() => {
                                 modalToggle(true);
-                                if (savePwd) {
+                                if (true) {
                                   setNewsModal(item);
                                   navChange("detailview");
                                 } else setPasswordModal(item);
@@ -219,7 +219,7 @@ const Portfolio = () => {
                           href="#"
                           onClick={() => {
                             modalToggle(true);
-                            if (savePwd) {
+                            if (true) {
                               setNewsModal(item);
                               navChange("detailview");
                             } else setPasswordModal(item);
@@ -233,7 +233,7 @@ const Portfolio = () => {
                           href="#"
                           onClick={() => {
                             modalToggle(true);
-                            if (savePwd) {
+                            if (true) {
                               setNewsModal(item);
                               navChange("detailview");
                             } else setPasswordModal(item);

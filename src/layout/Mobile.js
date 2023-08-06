@@ -40,25 +40,27 @@ const Mobile = () => {
       >
         <div className="menu_list w-full h-auto clear-both float-left text-right px-[20px] pt-[100px] pb-[0px]">
           <ul className="transition_link list-none">
-            {menus.map((menu) => (
-              <li
-                className={`active mb-[7px] ${
-                  menu.href == nav ? "active" : ""
-                }`}
-                key={menu.id}
-              >
-                <a
-                  className="text-black font-montserrat"
-                  href={`#${menu.href}`}
-                  onClick={() => {
-                    navChange(menu.href);
-                    setToggle(!toggle);
-                  }}
+            {menus
+              .filter((el) => el.name !== "detailview")
+              .map((menu) => (
+                <li
+                  className={`active mb-[7px] ${
+                    menu.href == nav ? "active" : ""
+                  }`}
+                  key={menu.id}
                 >
-                  {menu.name}
-                </a>
-              </li>
-            ))}
+                  <a
+                    className="text-black font-montserrat"
+                    href={`#${menu.href}`}
+                    onClick={() => {
+                      navChange(menu.href);
+                      setToggle(!toggle);
+                    }}
+                  >
+                    {menu.name}
+                  </a>
+                </li>
+              ))}
           </ul>
         </div>
       </div>

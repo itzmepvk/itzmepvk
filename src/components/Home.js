@@ -29,7 +29,7 @@ const Home = () => {
     <SectionContainer name={"home"}>
       <div className="container">
         <div className="tokyo_tm_home w-full  clear-both flex items-center justify-center relative">
-          <div className="home_content flex items-center pt-[100px]">
+          <div className="home_content flex items-center pt-[100px] gap-x-20">
             <div
               className="avatar min-w-[300px] min-h-[300px]  "
               data-type="wave"
@@ -37,17 +37,18 @@ const Home = () => {
               {" "}
               {/* data-type values are: "wave", "circle", "square"*/}
               <img
-                className="  bg-no-repeat bg-center bg-cover img-remake"
+                className="  bg-no-repeat bg-center bg-cover img-remake w-full"
                 src="assets/img/svg/vinoth.svg"
+                
               />
               <hr />
             </div>
             <div className="details " >
-              <h3 className="name text-[55px] font-extrabold mb-[14px]">
+              <h3 className="name text-[55px] font-extrabold mb-8">
                 Vinoth K
               </h3>
-              <p className="job font-montserrat font-medium  mb-[25px]">
-              <strong className="text-black">Product Designer</strong> who solves real UX problems and delight users. Currently working as a <strong className="text-black">Lead Designer</strong> in Sri Lankan based company. <br /> And having <strong className="text-black">9 years of experience</strong> in Product Designing.
+              <p className="job font-montserrat font-normal mb-10  ">
+              <strong className="text-black ">Product Designer</strong> who solves real UX problems and delight users. Currently working as a <strong className="text-black">Lead Designer</strong> in Sri Lankan based company. <br /> And having <strong className="text-black">9 years of experience</strong> in Product Designing.
               </p>
               <div className="social w-full float-left">
                 <ul className="m-0 list-none ">
