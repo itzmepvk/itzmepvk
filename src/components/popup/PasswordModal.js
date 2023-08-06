@@ -7,7 +7,7 @@ const PasswordModal = () => {
   const [password, setPassword] = useState(null);
   const [exception, setException] = useState(false);
   const [empty, setEmpty] = useState(false);
-  const { passwordModal, setPasswordModal, setNewsModal } =
+  const { passwordModal, setPasswordModal, setNewsModal, savePwdDetails } =
     useContext(TokyoContext);
 
   const onSubmit = async () => {
@@ -15,6 +15,7 @@ const PasswordModal = () => {
       if (res?.data?.[0]?.password == password) {
         setNewsModal(passwordModal);
         setPasswordModal(null);
+        savePwdDetails(true);
       } else if (!password) {
         setEmpty(true);
         setException(false);
@@ -42,7 +43,8 @@ const PasswordModal = () => {
             setException(false);
           }
         }}
-      />{" "}<br />
+      />{" "}
+      <br />
       {empty && <span className="span-warning">Please Enter Password</span>}
       {exception && <span className="span-warning">Wrong Password</span>}
       <br />

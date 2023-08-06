@@ -11,6 +11,7 @@ const type = {
   SERVICEMODAL: "SERVICEMODAL",
   NEWSMODAL: "NEWSMODAL",
   PORTFOLIODETAILSMODAL: "PORTFOLIODETAILSMODAL",
+  SAVE_PWD: "SAVE_PWD",
 };
 const {
   NAV,
@@ -20,6 +21,7 @@ const {
   NEWSMODAL,
   PASSWORDMODAL,
   PORTFOLIODETAILSMODAL,
+  SAVE_PWD,
 } = type;
 
 // Initial Value
@@ -31,6 +33,7 @@ const initialState = {
   newsModal: null,
   portfolioDetailsModal: null,
   passwordModal: null,
+  savePwd: null,
   menus: [
     // { id: 1, name: "Home", href: "home" },
     // { id: 2, name: "about", href: "about" },
@@ -82,6 +85,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         portfolioDetailsModal: payload,
+      };
+    case SAVE_PWD:
+      return {
+        ...state,
+        savePwd: payload,
       };
     default:
       return state;
@@ -137,6 +145,12 @@ const TokyoState = ({ children }) => {
       payload: value,
     });
   }, []);
+  const savePwdDetails = useCallback((value) => {
+    dispatch({
+      type: SAVE_PWD,
+      payload: value,
+    });
+  }, []);
 
   const {
     nav,
@@ -146,6 +160,7 @@ const TokyoState = ({ children }) => {
     newsModal,
     passwordModal,
     portfolioDetailsModal,
+    savePwd,
     menus,
   } = state;
   return (
@@ -166,6 +181,8 @@ const TokyoState = ({ children }) => {
         setPasswordModal,
         portfolioDetailsModal,
         setPortfolioDetailsModal,
+        savePwd,
+        savePwdDetails,
       }}
     >
       {children}

@@ -48,7 +48,7 @@ const data = [
 
 const Portfolio = () => {
   const [enter, setEnter] = useState({ id: null, visible: false });
-  const { setPasswordModal, setNewsModal, modalToggle } =
+  const { setPasswordModal, setNewsModal, modalToggle, savePwd } =
     useContext(TokyoContext);
   const [news, setNews] = useState(data);
   const [loader, setLoader] = useState(false);
@@ -184,7 +184,9 @@ const Portfolio = () => {
                         href="#"
                         onClick={() => {
                           modalToggle(true);
-                          setPasswordModal(item);
+                          if (savePwd) {
+                            setNewsModal(item);
+                          } else setPasswordModal(item);
                         }}
                       />
                     </div>
@@ -198,7 +200,9 @@ const Portfolio = () => {
                               href="#"
                               onClick={() => {
                                 modalToggle(true);
-                                setPasswordModal(item);
+                                if (savePwd) {
+                                  setNewsModal(item);
+                                } else setPasswordModal(item);
                               }}
                             >
                               {item.author}
@@ -213,7 +217,9 @@ const Portfolio = () => {
                           href="#"
                           onClick={() => {
                             modalToggle(true);
-                            setPasswordModal(item);
+                            if (savePwd) {
+                              setNewsModal(item);
+                            } else setPasswordModal(item);
                           }}
                         >
                           {item.title}
@@ -224,7 +230,9 @@ const Portfolio = () => {
                           href="#"
                           onClick={() => {
                             modalToggle(true);
-                            setPasswordModal(item);
+                            if (savePwd) {
+                              setNewsModal(item);
+                            } else setPasswordModal(item);
                           }}
                         >
                           <span>Read More</span>
