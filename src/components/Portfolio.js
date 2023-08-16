@@ -16,7 +16,7 @@ const data = [
     id: 2,
     title: "The platform enables users to book and lists spaces",
     image: "assets/img/news/2.svg",
-    author: "prototype • UX Design • branding",
+    author: "prototype • UX Research • UX Design",
     date: "15 Oct 2022",
     colorCode: "#DFF2FB",
   },

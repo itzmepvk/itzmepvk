@@ -22,11 +22,45 @@ const data = [
     solution: `Developing a platform that allows for a seamless experience in connecting service providers and clients.`,
     objective: `Conduct research, develop strategies, and design an end-to-end experience to increase the conversion rate of the platform.`,
     tackling: [
-      "assets/img/news/Group 14016.svg",
-      "assets/img/news/Group 14017.svg",
-      "assets/img/news/Group 14018.svg",
-      "assets/img/news/Group 14019.svg",
+      {
+        id: 1,
+        name: "Competitive Analysis",
+        text: [
+          "Analyzing competitors such as GoCatalant, UpWork, Freelancer,and Zoho Recruite.",
+        ],
+        image: "assets/img/news/1.jpg",
+      },
+      {
+        id: 2,
+        name: "User Interview",
+        text: [
+          "Understanding the requirements, user journey, user needs, and pain points.",
+        ],
+        image: "assets/img/news/2.jpg",
+      },
+      {
+        id: 3,
+        name: "Persona Mapping",
+        text: [
+          "Mapping out the access and actions for each user (Client, and Service Provider).",
+        ],
+        image: "assets/img/news/3.jpg",
+      },
+      {
+        id: 4,
+        name: "Wireframe & Test",
+        text: [
+          "Create wireframes, turn into hi-fi prototypes, test with users, gather feedback, and iterate.",
+        ],
+        image: "assets/img/news/4.jpg",
+      },
     ],
+
+    step1: "assets/img/news/competitive-analysis.svg",
+    step2: "assets/img/news/interviews.svg",
+    step3: "assets/img/news/personal-mapping.svg",
+    step4: "assets/img/news/final-design.svg",
+
     offeringImg: "assets/img/news/offering.svg",
     achivements: [
       { id: 1, text: "Current frustrations & pain points" },
@@ -46,9 +80,9 @@ const data = [
       "Is the app global? If so, how does region/location impact the system?",
     ],
     insights: [
-      "Start prioritise to form strategy",
-      "Identify each personas",
-      "Classify personas",
+      { id: 1, text: "Current frustrations & pain points" },
+      { id: 2, text: "Identify each personas" },
+      { id: 3, text: "Classify personas" },
     ],
     personaMappingSS: [
       "assets/img/news/Group 1000001905.svg",
@@ -62,79 +96,182 @@ const data = [
       "assets/img/news/Group 10196.svg",
     ],
     keyTakeaways: [
-      `Client should be able to create 3 types of opportunities. And receive proposals will be able to accept/reject. Also send invitation
+      {
+        id: 1,
+        text: `Client should be able to create 3 types of opportunities. And receive proposals will be able to accept/reject. Also send invitation
 as public, private or exclusive.`,
-      `Service Providers should be able to filter and look the opportunities. And also evaluate and submit candidate to the Proposal.`,
-      `SquadGurus users able to create opportunity on behalf of client, and send proposal on behalf of service providers.`,
+      },
+      {
+        id: 2,
+        text: `Service Providers should be able to filter and look the opportunities. And also evaluate and submit candidate to the Proposal.`,
+      },
+      {
+        id: 3,
+        text: `SquadGurus users able to create opportunity on behalf of client, and send proposal on behalf of service providers.`,
+      },
     ],
     prototypeTxt: [
-      "Should we design mobile first?",
-      "Do we have a brand identity/ visual design language?",
-      "I did the Design System & SquagGurus logo &  brand identity",
-      "Straight away jumped in to high-fidelity design",
-      "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
+      {
+        id: 1,
+        text: "I did the Design System & SquagGurus logo &  brand identity",
+      },
+      { id: 2, text: "Straight away jumped in to high-fidelity design" },
+      {
+        id: 3,
+        text: "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
+      },
     ],
     brandLogo: "assets/img/news/brandLogoSg.svg",
     handOver: [
-      " Final MVP prototype design approval",
-      "Hand over the MVP design to developers and QAs with references along with the design documents",
-      "Daily sync-up with the team to make sure everything on-track",
+      { id: 1, text: " Final MVP prototype design approval" },
+      {
+        id: 2,
+        text: "Hand over the MVP design to developers and QAs with references along with the design documents",
+      },
+      {
+        id: 3,
+        text: "Daily sync-up with the team to make sure everything on-track",
+      },
     ],
     finalDesign: "assets/img/news/finalDesign.svg",
     finalDesignTxt: ` Finally, we successfully launched the MVP 3 months later, in
     December 2021. We celebrated over a team call with 300+ clients and
     service providers listed.`,
   },
-];
 
-const services = [
-  {
-    id: 1,
-    name: "Competitive Analysis",
-    text: [
-      "Analyzing competitors such as GoCatalant, UpWork, Freelancer,and Zoho Recruite.",
-    ],
-    image: "assets/img/news/1.jpg",
-  },
   {
     id: 2,
-    name: "User Interview",
-    text: [
-      "Understanding the requirements, user journey, user needs, and pain points.",
+    headerImg: "assets/img/news/million.svg",
+    headerTxt: `The MillionSpaces enables users to book co-working spaces & space owners to list in the platform.`,
+    headerBodyImg: "assets/img/news/million-bg.svg",
+    timelineAndClient: {
+      time: "May 2019 - June 2021",
+      client: "Australia, Singapore, Sri Lanka",
+    },
+    myRole: ["User Research, UX Design, Dev Hand-off"],
+    tools: ["Miro", " Figma", " Adobe XD & Adobe Illustrator"],
+    frameworks: ["Ant Design"],
+    context: ` In Mar 2018, MillionSpaces launched its start-up, allowing users to book co-working spaces.`,
+    problem: `Users spend time and effort to find the coworking space, and there are many under-utilised spaces available.`,
+    solution: `Developing a platform that allows for a seamless experience in connecting service providers and clients.`,
+    objective: `Conduct research, develop strategies, and design an end-to-end experience to increase the conversion rate of the platform.`,
+    tackling: [
+      {
+        id: 1,
+        name: "Domain Understand",
+        text: [
+          "User research: Insights from interviews and surveys drive understanding.",
+        ],
+        image: "assets/img/news/1.jpg",
+      },
+      {
+        id: 2,
+        name: "Define Information",
+        text: [
+          "User persona, empathy map - Understand needs and frustrations deeply.",
+        ],
+        image: "assets/img/news/2.jpg",
+      },
+      {
+        id: 3,
+        name: "Design Ideation",
+        text: [
+          "Idea brainstorming, whiteboard sessions fuel creativity, innovative solutions.",
+        ],
+        image: "assets/img/news/3.jpg",
+      },
+      {
+        id: 4,
+        name: "Wireframe & Test",
+        text: [
+          "Create wireframes, turn into hi-fi prototypes, test with users, gather feedback, and iterate.",
+        ],
+        image: "assets/img/news/4.jpg",
+      },
     ],
-    image: "assets/img/news/2.jpg",
-  },
-  {
-    id: 3,
-    name: "Persona Mapping",
-    text: [
-      "Mapping out the access and actions for each user (Client, and Service Provider).",
-    ],
-    image: "assets/img/news/3.jpg",
-  },
-  {
-    id: 4,
-    name: "Wireframe & Test",
-    text: [
-      "Create wireframes, turn into hi-fi prototypes, test with users, gather feedback, and iterate.",
-    ],
-    image: "assets/img/news/4.jpg",
-  },
-];
 
-const knowledge = [
-  { id: 1, text: "Dev Framework Understanding" },
-  { id: 2, text: "Domain Understanding" },
-  { id: 3, text: "UX Research & Persona Identifying" },
-  { id: 4, text: "Wireframing/ Prototyping" },
-  { id: 5, text: "High Fidelity Design (Web, Mobile & SaaS)" },
-];
-const interests = [
-  { id: 1, text: "Brand Identity & Logo Desining" },
-  { id: 2, text: "Explainer Video (Adobe Suite)" },
-  { id: 3, text: "Website Designing (Webflow & Tailwind)" },
-  { id: 4, text: "Search Engine Optimization (SEO)" },
-  { id: 5, text: "Photography & Videography" },
+    step1: "assets/img/news/domain-understand.svg",
+    step2: "assets/img/news/define-information.svg",
+    step3: "assets/img/news/design-ideation.svg",
+    step4: "assets/img/news/wireframe-test.svg",
+
+    offeringImg: "assets/img/news/offering.svg",
+    achivements: [
+      { id: 1, text: "Current frustrations & pain points" },
+      { id: 2, text: "What did they really want?" },
+      { id: 3, text: "What did they really need?" },
+      { id: 4, text: "Interviewed with Clients" },
+      { id: 5, text: "Service Providers & Admin" },
+      { id: 6, text: "20+ user interviews" },
+      { id: 7, text: "Gathered the insights" },
+    ],
+    researchQuestions: [
+      "What do SquadGurus admins expect to do in the platform and what are their permissions?",
+      "How will clients and service providers be onboarded?",
+      "What details do clients need to create an opportunity?",
+      "How do service providers receive the opportunity?",
+      "How does user management work?",
+      "Is the app global? If so, how does region/location impact the system?",
+    ],
+    insights: [
+      { id: 1, text: "Current frustrations & pain points" },
+      { id: 2, text: "Identify each personas" },
+      { id: 3, text: "Classify personas" },
+    ],
+    personaMappingSS: [
+      "assets/img/news/Group 1000001905.svg",
+      "assets/img/news/Group 1000001906.svg",
+      "assets/img/news/Group 1000001904.svg",
+      "assets/img/news/Group 1000001907.svg",
+    ],
+    personaIdentifyingSS: [
+      "assets/img/news/Group 10193.svg",
+      "assets/img/news/Group 10195.svg",
+      "assets/img/news/Group 10196.svg",
+    ],
+    keyTakeaways: [
+      {
+        id: 1,
+        text: `Client should be able to create 3 types of opportunities. And receive proposals will be able to accept/reject. Also send invitation
+as public, private or exclusive.`,
+      },
+      {
+        id: 2,
+        text: `Service Providers should be able to filter and look the opportunities. And also evaluate and submit candidate to the Proposal.`,
+      },
+      {
+        id: 3,
+        text: `SquadGurus users able to create opportunity on behalf of client, and send proposal on behalf of service providers.`,
+      },
+    ],
+    prototypeTxt: [
+      {
+        id: 1,
+        text: "I did the Design System & SquagGurus logo &  brand identity",
+      },
+      { id: 2, text: "Straight away jumped in to high-fidelity design" },
+      {
+        id: 3,
+        text: "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
+      },
+    ],
+    brandLogo: "assets/img/news/brandLogoSg.svg",
+    handOver: [
+      { id: 1, text: " Final MVP prototype design approval" },
+      {
+        id: 2,
+        text: "Hand over the MVP design to developers and QAs with references along with the design documents",
+      },
+      {
+        id: 3,
+        text: "Daily sync-up with the team to make sure everything on-track",
+      },
+    ],
+    finalDesign: "assets/img/news/finalDesign.svg",
+    finalDesignTxt: ` Finally, we successfully launched the MVP 3 months later, in
+    December 2021. We celebrated over a team call with 300+ clients and
+    service providers listed.`,
+  },
 ];
 
 const DetailView = () => {
@@ -178,7 +315,7 @@ const DetailView = () => {
             <div className="left w-1/2 pr-[50px]">
               <div className="tokyo_tm_info w-full h-auto clear-both float-left">
                 <ul className="m-0 list-none">
-                  <li className="m-0">
+                  <li className="m-0 flex">
                     <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                       Client:
                     </span>
@@ -188,7 +325,7 @@ const DetailView = () => {
                       </div>
                     </span>
                   </li>
-                  <li className="m-0">
+                  <li className="m-0 flex">
                     <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                       Timeline:
                     </span>
@@ -198,7 +335,7 @@ const DetailView = () => {
                       </div>
                     </span>
                   </li>
-                  <li className="m-0">
+                  <li className="m-0 flex">
                     <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                       Framework:
                     </span>
@@ -212,7 +349,7 @@ const DetailView = () => {
             <div className="right w-1/2 pl-[50px]">
               <div className="tokyo_tm_info">
                 <ul className="m-0 list-none">
-                  <li className="m-0">
+                  <li className="m-0 flex">
                     <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                       My Role:
                     </span>
@@ -220,7 +357,7 @@ const DetailView = () => {
                       {data[newsModal?.id - 1]?.myRole.toLocaleString()}
                     </span>
                   </li>
-                  <li className="m-0">
+                  <li className="m-0 flex">
                     <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
                       Tools:
                     </span>
@@ -337,7 +474,7 @@ const DetailView = () => {
       </div>
 
       <div className="container">
-        <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[100px] px-0 pb-[45px]">
+        <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[100px] px-0 ">
           <div className="list w-full h-auto clear-both float-left">
             <div
               className="text-black text-xl font-semibold leading-loose"
@@ -346,7 +483,7 @@ const DetailView = () => {
               Tackling the problem
             </div>
             <ul className="ml-[-40px] list-none flex flex-wrap">
-              {services.map((service) => (
+              {data[newsModal?.id - 1]?.tackling.map((service) => (
                 <li className="mb-[40px] w-1/4 pl-[40px]" key={service.id}>
                   <div className="list_inner w-full h-full clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border bg-white pt-[45px] pr-[20px] pb-[40px] pl-[20px] transition-all duration-300">
                     <span className="number inline-block mb-[25px] relative w-[60px] h-[60px] leading-[60px] text-center rounded-full bg-[rgba(0,0,0,.03)] font-bold text-black font-montserrat transition-all duration-300">
@@ -365,17 +502,11 @@ const DetailView = () => {
         </div>
       </div>
 
-      <div className="container">
-        <div
-          className="tokyo_tm_news w-full clear-both float-left h-auto pt-[100px] px-0 pb-[45px]"
-          style={{ paddingTop: "0px" }}
-        >
+      <div className="tokyo_tm_skillbox w-full h-auto clear-both float-left pt-[90px] px-0 ">
+        <div className="container">
           <hr style={{ marginBottom: "80px" }} />
           <div>
-            <img
-              src="assets/img/news/competitive-analysis.svg"
-              className="img-remake"
-            />
+            <img src={data[newsModal?.id - 1]?.step1} className="img-remake" />
             <div
               style={{
                 marginTop: "40px",
@@ -395,7 +526,7 @@ const DetailView = () => {
           </div>
           <hr style={{ marginTop: "80px" }} />
           <div style={{ marginTop: "80px" }}>
-            <img src="assets/img/news/interviews.svg" className="img-remake" />
+            <img src={data[newsModal?.id - 1]?.step2} className="img-remake" />
             <div
               style={{
                 marginTop: "40px",
@@ -407,8 +538,10 @@ const DetailView = () => {
             >
               Questions focused on what each user expects to achieve.
             </div>
-
-            <div className="in w-full h-auto clear-both float-left flex">
+            <div
+              className="tokyo_tm_skillbox in w-full h-auto clear-both float-left flex"
+              style={{ marginTop: "40px", marginBottom: "40px" }}
+            >
               <div className="left w-1/2 pr-[50px]">
                 <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
                   <ul className="m-0 list-none">
@@ -460,110 +593,429 @@ const DetailView = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div style={{ marginTop: "100px" }}>
-          <div
-            style={{
-              fontSize: "16px",
-              color: "black",
-              fontWeight: 600,
-              lineHeight: "32px",
-            }}
-          >
-            Some Research Questions
-          </div>
+
           <div>
-            {data[newsModal?.id - 1]?.researchQuestions.map((el, index) => (
-              <div style={{ marginTop: "16px" }} className="flex">
-                <span
+            <div
+              style={{
+                fontSize: "16px",
+                color: "black",
+                fontWeight: 600,
+                lineHeight: "32px",
+              }}
+            >
+              Some Research Questions
+            </div>
+            <div>
+              {data[newsModal?.id - 1]?.researchQuestions.map((el, index) => (
+                <div style={{ marginTop: "16px" }} className="flex">
+                  <span
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      background: "#DADADC",
+                      borderRadius: 100,
+                      padding: "2px 2px 2px 7px",
+                      marginRight: "16px",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    0{index + 1}
+                  </span>
+                  {el}
+                </div>
+              ))}
+            </div>
+          </div>
+          <hr style={{ marginTop: "80px" }} />
+
+          <div style={{ marginTop: "80px" }}>
+            <img src={data[newsModal?.id - 1]?.step3} className="img-remake" />
+            <div
+              style={{
+                marginTop: "40px",
+                marginBottom: "40px",
+                fontSize: "20px",
+                lineHeight: "30px",
+                fontWeight: 600,
+                color: "#000000",
+              }}
+            >
+              Overwhelmed with insights, so we needed to…
+            </div>
+
+            <div
+              className="in w-full h-auto clear-both float-left"
+              style={{ marginBottom: "80px" }}
+            >
+              <div className="left ">
+                <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                  <ul className="m-0 list-none">
+                    {data[newsModal?.id - 1]?.insights.map((item, index) => (
+                      <li className="m-0 pl-[25px] relative" key={item.id}>
+                        <span>
+                          <img
+                            className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                            src="assets/img/svg/rightarrow.svg"
+                            alt="image"
+                          />
+                          {item.text}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style={{}}>
+            <div
+              style={{
+                fontSize: "16px",
+                lineHeight: "32px",
+                fontWeight: 600,
+                color: "#000000",
+              }}
+            >
+              Persona Mapping (Screenshot from Miro)
+            </div>
+            <div
+              className="tokyo_tm_skillbox in w-full h-auto  float-left flex"
+              style={{ columnGap: "20px" }}
+            >
+              <div className="left w-1/2 " style={{ marginBottom: "0px" }}>
+                {data[newsModal?.id - 1]?.personaMappingSS
+                  ?.slice(
+                    0,
+                    data[newsModal?.id - 1]?.personaMappingSS?.length % 2 === 0
+                      ? data[newsModal?.id - 1]?.personaMappingSS?.length / 2
+                      : data[newsModal?.id - 1]?.personaMappingSS?.length / 2 +
+                          1
+                  )
+                  .map((el, index) => (
+                    <img
+                      src={el}
+                      className="w-full"
+                      style={{ paddingTop: "24px" }}
+                    />
+                  ))}
+              </div>
+              <div className="right w-1/2 ">
+                {data[newsModal?.id - 1]?.personaMappingSS
+                  ?.slice(
+                    data[newsModal?.id - 1]?.personaMappingSS?.length % 2 === 0
+                      ? data[newsModal?.id - 1]?.personaMappingSS?.length / 2
+                      : data[newsModal?.id - 1]?.personaMappingSS?.length / 2 +
+                          1
+                  )
+                  .map((el, index) => (
+                    <img
+                      src={el}
+                      className="w-full"
+                      style={{ paddingTop: "24px" }}
+                    />
+                  ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[90px] px-0 ">
+          <div className="list w-full h-auto clear-both float-left">
+            <div>
+              <div>Persona Identifying</div>
+              <div className="list w-full h-auto clear-both float-left">
+                <ul className="ml-[-40px] list-none flex flex-wrap">
+                  {data[newsModal?.id - 1]?.personaIdentifyingSS.map(
+                    (el, index) => (
+                      <li className="mb-[40px] w-1/3 pl-[40px]">
+                        <img src={el} className="w-full" />
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <div
+          className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
+          style={{ marginTop: "40px" }}
+        >
+          <div className="in w-full h-auto clear-both float-left" style={{}}>
+            <div className="left ">
+              <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                <div
                   style={{
-                    width: "32px",
-                    height: "32px",
-                    background: "#DADADC",
-                    borderRadius: 100,
-                    padding: "6px",
-                    marginRight: "16px",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    color: "black",
+                    fontSize: 16,
+                    fontFamily: "Poppins",
+                    fontWeight: 600,
+                    lineHeight: "32px",
                   }}
                 >
-                  0{index + 1}
-                </span>
-                {el}
+                  Key Takeaways
+                </div>
+                <ul className="m-0 list-none">
+                  {data[newsModal?.id - 1]?.keyTakeaways.map((item, index) => (
+                    <li
+                      className="m-0 pl-[25px] relative"
+                      key={item.id}
+                      style={{ marginTop: "24px" }}
+                    >
+                      <span>
+                        <img
+                          className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                          src="assets/img/svg/rightarrow.svg"
+                          alt="image"
+                          style={{ top: "13px" }}
+                        />
+                        {item.text}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
 
-      <hr />
+      <div className="container">
+        <div
+          className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
+          style={{ marginTop: "80px", marginBottom: "40px" }}
+        >
+          <div className="in w-full h-auto clear-both float-left" style={{}}>
+            <div className="left ">
+              <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                <hr style={{ marginBottom: "80px" }} />
+                <div>
+                  <img
+                    src={data[newsModal?.id - 1]?.step4}
+                    className="img-remake"
+                  />
+                  <div
+                    style={{
+                      marginTop: "40px",
+                      color: "black",
+                      fontSize: 20,
+                      fontFamily: "Poppins",
+                      fontWeight: "600",
+                      wordWrap: "break-word",
+                    }}
+                  >
+                    We were on tight deadline, to prototype to test
+                  </div>
 
-      <hr />
-      <div>
-        <img src="assets/img/news/personal-mapping.svg" />
-        <div>Overwhelmed with insights, so we needed to…</div>
-        <div>
-          {data[newsModal?.id - 1]?.insights.map((el, index) => (
-            <p>● {el}</p>
-          ))}
-        </div>
-        <div>Persona Mapping (Screenshot from Miro)</div>
-        <div>
-          {data[newsModal?.id - 1]?.personaMappingSS.map((el, index) => (
-            <img src={el} />
-          ))}
-        </div>
-        <div>Persona Identifying</div>
-        <div>
-          {data[newsModal?.id - 1]?.personaIdentifyingSS.map((el, index) => (
-            <img src={el} />
-          ))}
-        </div>
-        <div>Key Takeaways</div>
-        <div>
-          {data[newsModal?.id - 1]?.keyTakeaways.map((el, index) => (
-            <p>● {el}</p>
-          ))}
-        </div>
-      </div>
-      <hr />
-      <div>
-        <img src="assets/img/news/final-design.svg" />
-        <div>We were on tight deadline, to prototype to test</div>
-        <div>
-          {data[newsModal?.id - 1]?.prototypeTxt.map((el, index) => (
-            <p>● {el}</p>
-          ))}
-        </div>
-        <div>Brand Identify & Logo</div>
-        <img src={data[newsModal?.id - 1]?.brandLogo} />
-      </div>
-      <div>
-        <img src="assets/img/news/final-design.svg" />
-        <div>Stakeholder approval & developer handover</div>
-        <div>
-          {data[newsModal?.id - 1]?.handOver.map((el, index) => (
-            <p>● {el}</p>
-          ))}
-        </div>
-        <img src={data[newsModal?.id - 1]?.finalDesign} />
-        <div>
-          <div>{data[newsModal?.id - 1]?.finalDesignTxt}</div>
+                  <ul className="m-0 list-none" style={{ marginTop: "36px" }}>
+                    {data[newsModal?.id - 1]?.prototypeTxt.map(
+                      (item, index) => (
+                        <li
+                          className="m-0 pl-[25px] relative"
+                          key={item.id}
+                          style={{ marginTop: "4px" }}
+                        >
+                          <span>
+                            <img
+                              className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                              src="assets/img/svg/rightarrow.svg"
+                              alt="image"
+                              style={{ top: "13px" }}
+                            />
+                            {item.text}
+                          </span>
+                        </li>
+                      )
+                    )}
+                  </ul>
+                  <div style={{ marginTop: "80px" }}>
+                    <div
+                      style={{
+                        color: "black",
+                        fontSize: 16,
+                        fontFamily: "Poppins",
+                        fontWeight: 600,
+                        lineHeight: "px",
+                        wordWrap: "break-word",
+                      }}
+                    >
+                      Brand Identify & Logo
+                    </div>
+                    <img
+                      src={data[newsModal?.id - 1]?.brandLogo}
+                      style={{ marginTop: "24px" }}
+                      className="w-full img-remake"
+                    />
+                  </div>
+                  <hr style={{ marginTop: "80px", marginBottom: "80px" }} />
+                  <div>
+                    <div
+                      style={{
+                        color: "black",
+                        fontSize: 20,
+                        fontFamily: "Poppins",
+                        fontWeight: "600",
+                        wordWrap: "break-word",
+                      }}
+                    >
+                      Stakeholder approval & developer handover
+                    </div>
+                    <ul className="m-0 list-none" style={{ marginTop: "36px" }}>
+                      {data[newsModal?.id - 1]?.handOver.map((item, index) => (
+                        <li
+                          className="m-0 pl-[25px] relative"
+                          key={item.id}
+                          style={{ marginTop: "4px" }}
+                        >
+                          <span>
+                            <img
+                              className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                              src="assets/img/svg/rightarrow.svg"
+                              alt="image"
+                              style={{ top: "13px" }}
+                            />
+                            {item.text}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <hr />
-      <div>Take aways & Learning</div>
-      <div>What I would do better next time.</div>
-      <div>● Always focus on user feedback and do iterations</div>
-      <div>
-        It is important to focus on users’ qualitative research and how they are
-        interacting with the application.
-      </div>
-      <div>● Make sure your assumptions are actually usable</div>
-      <div>
-        During testing, I learned that some of my assumptions were different
-        from what the users wanted, which was a valuable learning experience.
+      <img
+        src={data[newsModal?.id - 1]?.finalDesign}
+        style={{ marginTop: "40px" }}
+        className="img-remake"
+      />
+
+      <div className="container">
+        <div
+          className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
+          style={{ marginTop: "40px" }}
+        >
+          <div className="in w-full h-auto clear-both float-left" style={{}}>
+            <div className="left ">
+              <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                <hr style={{ marginTop: "80px", marginBottom: "80px" }} />
+                <div>
+                  <div
+                    style={{
+                      color: "black",
+                      fontSize: 32,
+                      fontFamily: "Poppins",
+                      fontWeight: "600",
+                      wordWrap: "break-word",
+                      lineHeight: "46px",
+                    }}
+                  >
+                    {data[newsModal?.id - 1]?.finalDesignTxt}
+                  </div>
+                </div>
+                <hr style={{ marginTop: "80px", marginBottom: "80px" }} />
+                <div>
+                  <div
+                    style={{
+                      color: "#767676",
+                      fontSize: 13,
+                      fontFamily: "Poppins",
+                      fontWeight: "500",
+                      textTransform: "uppercase",
+                      lineHeight: "px",
+                      wordWrap: "break-word",
+                    }}
+                  >
+                    Take aways & Learning
+                  </div>
+                  <div
+                    style={{
+                      color: "black",
+                      fontSize: 20,
+                      fontFamily: "Poppins",
+                      fontWeight: "600",
+                      wordWrap: "break-word",
+                      marginTop: "24px",
+                    }}
+                  >
+                    What I would do better next time.
+                  </div>
+                  <ul className="m-0 list-none" style={{ marginTop: "36px" }}>
+                    <li
+                      className="m-0 pl-[25px] relative"
+                      style={{ marginTop: "4px" }}
+                    >
+                      <span>
+                        <img
+                          className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                          src="assets/img/svg/rightarrow.svg"
+                          alt="image"
+                          style={{ top: "13px" }}
+                        />
+                        <div
+                          style={{
+                            marginTop: "40px",
+                            fontSize: "14px",
+                            fontWeight: 600,
+                            lineHeight: "32px",
+                            color: "#000000",
+                          }}
+                        >
+                          More focus on user feedback and do iterations
+                        </div>
+                        <div>
+                          It is important to focus on users’ qualitative
+                          research and how they are interacting with the
+                          application.
+                        </div>
+                      </span>
+                    </li>
+
+                    <li
+                      className="m-0 pl-[25px] relative"
+                      style={{ marginTop: "4px" }}
+                    >
+                      <span>
+                        <img
+                          className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                          src="assets/img/svg/rightarrow.svg"
+                          alt="image"
+                          style={{ top: "13px" }}
+                        />
+                        <div
+                          style={{
+                            marginTop: "40px",
+                            fontSize: "14px",
+                            fontWeight: 600,
+                            lineHeight: "32px",
+                            color: "#000000",
+                          }}
+                        >
+                          Make sure your assumptions are actually usable
+                        </div>
+                        <div>
+                          During testing, I learned that some of my assumptions
+                          were different from what the users wanted, which was a
+                          valuable learning experience.
+                        </div>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </SectionContainer>
   );
