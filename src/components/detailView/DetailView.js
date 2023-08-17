@@ -1,5 +1,5 @@
 import { TokyoContext } from "@/src/Context";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import SectionContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
 
@@ -540,760 +540,413 @@ as public, private or exclusive.`,
 ];
 
 const DetailView = () => {
-  const { newsModal, setNewsModal, navChange } = useContext(TokyoContext);
+  const { newsModal, setNewsModal, navChange, nav } = useContext(TokyoContext);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, [nav]);
   return (
     <SectionContainer name={"detailview"}>
-      <div className="back-arrow">
-        <img
-          src="assets/img/news/back-arrow.svg"
-          onClick={() => navChange("portfolio")}
-        />
-      </div>
-      <div className="container">
-        <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[45px] px-0 ">
-          <img src={data[newsModal?.id - 1]?.headerImg} className="" />
-          <p
-            className="date font-montserrat text-[13px] text-[#767676]"
-            style={{ marginTop: "32px" }}
-          >
-            <a
-              className="text-[#767676] transition-all duration-300 hover:text-black uppercase"
-              href="#"
-            >
-              {newsModal?.author}
-            </a>
-          </p>
-          <div
-            className="title_flex w-full h-auto clear-both flex justify-between items-end"
-            style={{ marginTop: "32px" }}
-          >
-            <SectionTitle title={data[newsModal?.id - 1]?.headerTxt} />
+      {loading ? (
+        <>
+          <center>
+            <img
+              src="assets/img/news/loading.gif"
+              style={{ marginTop: "100px", width: "10%" }}
+            />
+          </center>
+        </>
+      ) : (
+        <>
+          <div className="back-arrow">
+            <img
+              src="assets/img/news/back-arrow.svg"
+              onClick={() => navChange("portfolio")}
+            />
           </div>
-
-          <img
-            src={data[newsModal?.id - 1]?.headerBodyImg}
-            className="img-remake  w-full"
-            style={{ marginTop: "40px" }}
-          />
-
-          <div
-            className="tokyo_tm_short_info w-full h-auto clear-both float-left flex  pb-[30px] mb-[40px]"
-            style={{ marginTop: "40px" }}
-          >
-            <div className="left w-1/2 pr-[50px]">
-              <div className="tokyo_tm_info w-full h-auto clear-both float-left">
-                <ul className="m-0 list-none">
-                  <li className="m-0 flex">
-                    <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                      Client:
-                    </span>
-                    <span>
-                      <div>
-                        {data[newsModal?.id - 1]?.timelineAndClient.client}
-                      </div>
-                    </span>
-                  </li>
-                  <li className="m-0 flex">
-                    <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                      Timeline:
-                    </span>
-                    <span>
-                      <div>
-                        {data[newsModal?.id - 1]?.timelineAndClient.time}
-                      </div>
-                    </span>
-                  </li>
-                  <li className="m-0 flex">
-                    <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                      Framework:
-                    </span>
-                    <span>
-                      {data[newsModal?.id - 1]?.frameworks.toLocaleString()}
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="right w-1/2 pl-[50px]">
-              <div className="tokyo_tm_info">
-                <ul className="m-0 list-none">
-                  <li className="m-0 flex">
-                    <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                      My Role:
-                    </span>
-                    <span>
-                      {data[newsModal?.id - 1]?.myRole.toLocaleString()}
-                    </span>
-                  </li>
-                  <li className="m-0 flex">
-                    <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                      Tools:
-                    </span>
-                    <span>{data[newsModal?.id - 1]?.tools.toString()}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="tokyo_tm_resumebox w-full h-auto clear-both float-left bg-white py-[93px] px-0">
-        <div className="container">
-          <div className="in w-full h-auto clear-both float-left">
-            <div>
-              <div
-                style={{
-                  fontWeight: 500,
-                  fontSize: "13px",
-                  lineHeight: "32px",
-                  color: "#767676",
-                }}
+          <div className="container">
+            <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[45px] px-0 ">
+              <img src={data[newsModal?.id - 1]?.headerImg} className="" />
+              <p
+                className="date font-montserrat text-[13px] text-[#767676]"
+                style={{ marginTop: "32px" }}
               >
-                THE CONTEXT
-              </div>
-              <div
-                style={{
-                  fontSize: "20px",
-                  lineHeight: "30px",
-                  fontWeight: "400",
-                  color: "#000000",
-                  marginTop: "32px",
-                }}
-              >
-                {data[newsModal?.id - 1]?.context}
-              </div>
-              <hr style={{ marginTop: "40px" }} />
-            </div>
-            <div style={{ marginTop: "40px" }}>
-              <div
-                style={{
-                  fontWeight: 500,
-                  fontSize: "13px",
-                  lineHeight: "32px",
-                  color: "#767676",
-                }}
-              >
-                THE PROBLEM
-              </div>
-              <div
-                style={{
-                  fontSize: "20px",
-                  lineHeight: "30px",
-                  fontWeight: "400",
-                  color: "#000000",
-                  marginTop: "32px",
-                }}
-              >
-                {data[newsModal?.id - 1]?.problem}
-              </div>
-              <hr style={{ marginTop: "40px" }} />
-            </div>
-            <div style={{ marginTop: "40px" }}>
-              <div
-                style={{
-                  fontWeight: 500,
-                  fontSize: "13px",
-                  lineHeight: "32px",
-                  color: "#767676",
-                }}
-              >
-                SOLUTION
-              </div>
-              <div
-                style={{
-                  fontSize: "20px",
-                  lineHeight: "30px",
-                  fontWeight: "400",
-                  color: "#000000",
-                  marginTop: "32px",
-                }}
-              >
-                {data[newsModal?.id - 1]?.solution}
-              </div>
-              <hr style={{ marginTop: "40px" }} />
-            </div>
-            <div style={{ marginTop: "40px" }}>
-              <div
-                style={{
-                  fontWeight: 500,
-                  fontSize: "13px",
-                  lineHeight: "32px",
-                  color: "#767676",
-                }}
-              >
-                THE OBJECTIVE
-              </div>
-              <div
-                style={{
-                  fontSize: "20px",
-                  lineHeight: "30px",
-                  fontWeight: "400",
-                  color: "#000000",
-                  marginTop: "32px",
-                }}
-              >
-                {data[newsModal?.id - 1]?.objective}
-              </div>
-              <hr style={{ marginTop: "40px" }} />
-            </div>
-            <hr />
-          </div>
-        </div>
-      </div>
-
-      <div className="container">
-        <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[100px] px-0 ">
-          <div className="list w-full h-auto clear-both float-left">
-            <div
-              className="text-black text-xl font-semibold leading-loose"
-              style={{ marginBottom: "32px" }}
-            >
-              Tackling the problem
-            </div>
-            <ul className="ml-[-40px] list-none flex flex-wrap">
-              {data[newsModal?.id - 1]?.tackling.map((service) => (
-                <li
-                  className={`mb-[40px] w-${
-                    newsModal?.id === 1 || newsModal?.id === 2
-                      ? "1/4"
-                      : newsModal?.id === 3
-                      ? "1/3"
-                      : "1/4"
-                  } pl-[40px]`}
-                  key={service.id}
+                <a
+                  className="text-[#767676] transition-all duration-300 hover:text-black uppercase"
+                  href="#"
                 >
-                  <div className="list_inner w-full h-full clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border bg-white pt-[45px] pr-[20px] pb-[40px] pl-[20px] transition-all duration-300">
-                    <span className="number inline-block mb-[25px] relative w-[60px] h-[60px] leading-[60px] text-center rounded-full bg-[rgba(0,0,0,.03)] font-bold text-black font-montserrat transition-all duration-300">
-                      {service.id <= 9 ? `0${service.id}` : service.id}
-                    </span>
-                    <h3 className="title font-bold text-black text-[18px] mb-[15px]">
-                      {service.name}
-                    </h3>
-                    <p className="text">{service.text}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <hr />
-        </div>
-      </div>
+                  {newsModal?.author}
+                </a>
+              </p>
+              <div
+                className="title_flex w-full h-auto clear-both flex justify-between items-end"
+                style={{ marginTop: "32px" }}
+              >
+                <SectionTitle title={data[newsModal?.id - 1]?.headerTxt} />
+              </div>
 
-      <div className="tokyo_tm_skillbox w-full h-auto clear-both float-left pt-[90px] px-0 ">
-        <div className="container">
-          <hr style={{ marginBottom: "80px" }} />
-          <div>
-            <img src={data[newsModal?.id - 1]?.step1} />
-            <div
-              style={{
-                marginTop: "40px",
-                fontSize: "20px",
-                fontWeight: 600,
-                lineHeight: "30px",
-                color: "#000000",
-              }}
-            >
-              {newsModal?.id === 1
-                ? "Research and analyze what the competitors are offering."
-                : newsModal?.id === 2
-                ? "Understanding user needs through user research."
-                : newsModal?.id === 3
-                ? "Gaining insight by conversing with the client to comprehend the issue."
-                : newsModal?.id === 4
-                ? "Understanding the hosts and cooks"
-                : ""}
-            </div>
-            {newsModal?.id === 1 ? (
               <img
-                src={data[newsModal?.id - 1]?.offeringImg}
+                src={data[newsModal?.id - 1]?.headerBodyImg}
+                className="img-remake  w-full"
                 style={{ marginTop: "40px" }}
-                className="img-remake"
               />
-            ) : (
-              <>
-                {" "}
-                <ul className="list-none" style={{ marginTop: "20px" }}>
-                  <li className="m-0 pl-[25px] relative">
-                    <span>
-                      <img
-                        className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                        src="assets/img/svg/rightarrow.svg"
-                        alt="image"
-                      />
-                      {newsModal?.id === 2
-                        ? `We investigated the target users from Singapore, Australia
+
+              <div
+                className="tokyo_tm_short_info w-full h-auto clear-both float-left flex  pb-[30px] mb-[40px]"
+                style={{ marginTop: "40px" }}
+              >
+                <div className="left w-1/2 pr-[50px]">
+                  <div className="tokyo_tm_info w-full h-auto clear-both float-left">
+                    <ul className="m-0 list-none">
+                      <li className="m-0 flex">
+                        <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                          Client:
+                        </span>
+                        <span>
+                          <div>
+                            {data[newsModal?.id - 1]?.timelineAndClient.client}
+                          </div>
+                        </span>
+                      </li>
+                      <li className="m-0 flex">
+                        <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                          Timeline:
+                        </span>
+                        <span>
+                          <div>
+                            {data[newsModal?.id - 1]?.timelineAndClient.time}
+                          </div>
+                        </span>
+                      </li>
+                      <li className="m-0 flex">
+                        <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                          Framework:
+                        </span>
+                        <span>
+                          {data[newsModal?.id - 1]?.frameworks.toLocaleString()}
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="right w-1/2 pl-[50px]">
+                  <div className="tokyo_tm_info">
+                    <ul className="m-0 list-none">
+                      <li className="m-0 flex">
+                        <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                          My Role:
+                        </span>
+                        <span>
+                          {data[newsModal?.id - 1]?.myRole.toLocaleString()}
+                        </span>
+                      </li>
+                      <li className="m-0 flex">
+                        <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                          Tools:
+                        </span>
+                        <span>{data[newsModal?.id - 1]?.tools.toString()}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="tokyo_tm_resumebox w-full h-auto clear-both float-left bg-white py-[93px] px-0">
+            <div className="container">
+              <div className="in w-full h-auto clear-both float-left">
+                <div>
+                  <div
+                    style={{
+                      fontWeight: 500,
+                      fontSize: "13px",
+                      lineHeight: "32px",
+                      color: "#767676",
+                    }}
+                  >
+                    THE CONTEXT
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "20px",
+                      lineHeight: "30px",
+                      fontWeight: "400",
+                      color: "#000000",
+                      marginTop: "32px",
+                    }}
+                  >
+                    {data[newsModal?.id - 1]?.context}
+                  </div>
+                  <hr style={{ marginTop: "40px" }} />
+                </div>
+                <div style={{ marginTop: "40px" }}>
+                  <div
+                    style={{
+                      fontWeight: 500,
+                      fontSize: "13px",
+                      lineHeight: "32px",
+                      color: "#767676",
+                    }}
+                  >
+                    THE PROBLEM
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "20px",
+                      lineHeight: "30px",
+                      fontWeight: "400",
+                      color: "#000000",
+                      marginTop: "32px",
+                    }}
+                  >
+                    {data[newsModal?.id - 1]?.problem}
+                  </div>
+                  <hr style={{ marginTop: "40px" }} />
+                </div>
+                <div style={{ marginTop: "40px" }}>
+                  <div
+                    style={{
+                      fontWeight: 500,
+                      fontSize: "13px",
+                      lineHeight: "32px",
+                      color: "#767676",
+                    }}
+                  >
+                    SOLUTION
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "20px",
+                      lineHeight: "30px",
+                      fontWeight: "400",
+                      color: "#000000",
+                      marginTop: "32px",
+                    }}
+                  >
+                    {data[newsModal?.id - 1]?.solution}
+                  </div>
+                  <hr style={{ marginTop: "40px" }} />
+                </div>
+                <div style={{ marginTop: "40px" }}>
+                  <div
+                    style={{
+                      fontWeight: 500,
+                      fontSize: "13px",
+                      lineHeight: "32px",
+                      color: "#767676",
+                    }}
+                  >
+                    THE OBJECTIVE
+                  </div>
+                  <div
+                    style={{
+                      fontSize: "20px",
+                      lineHeight: "30px",
+                      fontWeight: "400",
+                      color: "#000000",
+                      marginTop: "32px",
+                    }}
+                  >
+                    {data[newsModal?.id - 1]?.objective}
+                  </div>
+                  <hr style={{ marginTop: "40px" }} />
+                </div>
+                <hr />
+              </div>
+            </div>
+          </div>
+
+          <div className="container">
+            <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[100px] px-0 ">
+              <div className="list w-full h-auto clear-both float-left">
+                <div
+                  className="text-black text-xl font-semibold leading-loose"
+                  style={{ marginBottom: "32px" }}
+                >
+                  Tackling the problem
+                </div>
+                <ul className="ml-[-40px] list-none flex flex-wrap">
+                  {data[newsModal?.id - 1]?.tackling.map((service) => (
+                    <li
+                      className={`mb-[40px] w-${
+                        newsModal?.id === 1 || newsModal?.id === 2
+                          ? "1/4"
+                          : newsModal?.id === 3
+                          ? "1/3"
+                          : "1/4"
+                      } pl-[40px]`}
+                      key={service.id}
+                    >
+                      <div className="list_inner w-full h-full clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border bg-white pt-[45px] pr-[20px] pb-[40px] pl-[20px] transition-all duration-300">
+                        <span className="number inline-block mb-[25px] relative w-[60px] h-[60px] leading-[60px] text-center rounded-full bg-[rgba(0,0,0,.03)] font-bold text-black font-montserrat transition-all duration-300">
+                          {service.id <= 9 ? `0${service.id}` : service.id}
+                        </span>
+                        <h3 className="title font-bold text-black text-[18px] mb-[15px]">
+                          {service.name}
+                        </h3>
+                        <p className="text">{service.text}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <hr />
+            </div>
+          </div>
+
+          <div className="tokyo_tm_skillbox w-full h-auto clear-both float-left pt-[90px] px-0 ">
+            <div className="container">
+              <hr style={{ marginBottom: "80px" }} />
+              <div>
+                <img src={data[newsModal?.id - 1]?.step1} />
+                <div
+                  style={{
+                    marginTop: "40px",
+                    fontSize: "20px",
+                    fontWeight: 600,
+                    lineHeight: "30px",
+                    color: "#000000",
+                  }}
+                >
+                  {newsModal?.id === 1
+                    ? "Research and analyze what the competitors are offering."
+                    : newsModal?.id === 2
+                    ? "Understanding user needs through user research."
+                    : newsModal?.id === 3
+                    ? "Gaining insight by conversing with the client to comprehend the issue."
+                    : newsModal?.id === 4
+                    ? "Understanding the hosts and cooks"
+                    : ""}
+                </div>
+                {newsModal?.id === 1 ? (
+                  <img
+                    src={data[newsModal?.id - 1]?.offeringImg}
+                    style={{ marginTop: "40px" }}
+                    className="img-remake"
+                  />
+                ) : (
+                  <>
+                    {" "}
+                    <ul className="list-none" style={{ marginTop: "20px" }}>
+                      <li className="m-0 pl-[25px] relative">
+                        <span>
+                          <img
+                            className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                            src="assets/img/svg/rightarrow.svg"
+                            alt="image"
+                          />
+                          {newsModal?.id === 2
+                            ? `We investigated the target users from Singapore, Australia
                       and Sri Lanka to gather insights that would help us design
                       the process. The objective of the research was to
                       understand their needs, behaviour, attitude, and pain
                       points.`
-                        : newsModal?.id === 3
-                        ? "The client presently employs a system where numerous intricate workflows occur manually. Consequently, they intimately know the pains of this manual effort and possess a comprehensive process understanding."
-                        : newsModal?.id === 4
-                        ? "To build this platform, understanding each persona is an important factor. Empathizing with hosts and cooks, and understanding their pain points and motives, helps to provide a better experience."
-                        : ""}
-                    </span>
-                  </li>
-                </ul>
-                <div
-                  style={{
-                    fontSize: "16px",
-                    color: "black",
-                    fontWeight: 600,
-                    lineHeight: "32px",
-                    marginTop: "40px",
-                  }}
-                >
-                  Some Research Questions
-                </div>
-                <div>
-                  {data[newsModal?.id - 1]?.researchQuestions.map(
-                    (el, index) => (
-                      <div style={{ marginTop: "16px" }} className="flex">
-                        <span
-                          style={{
-                            width: "32px",
-                            height: "32px",
-                            background: "#DADADC",
-                            borderRadius: 100,
-                            padding: "2px 2px 2px 7px",
-                            marginRight: "16px",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          0{index + 1}
+                            : newsModal?.id === 3
+                            ? "The client presently employs a system where numerous intricate workflows occur manually. Consequently, they intimately know the pains of this manual effort and possess a comprehensive process understanding."
+                            : newsModal?.id === 4
+                            ? "To build this platform, understanding each persona is an important factor. Empathizing with hosts and cooks, and understanding their pain points and motives, helps to provide a better experience."
+                            : ""}
                         </span>
-                        {el}
-                      </div>
-                    )
-                  )}
-                </div>
-                {newsModal?.id === 2 ? (
-                  <img
-                    src="assets/img/news/ms-pie.svg"
-                    className="img-remake  w-full"
-                    style={{ marginTop: "40px" }}
-                  />
-                ) : (
-                  <></>
-                )}
-              </>
-            )}
-          </div>
-          <hr style={{ marginTop: "80px" }} />
-          <div style={{ marginTop: "80px" }}>
-            <img src={data[newsModal?.id - 1]?.step2} />
-            <div
-              style={{
-                marginTop: "40px",
-                fontSize: "20px",
-                lineHeight: "30px",
-                fontWeight: 600,
-                color: "#000000",
-              }}
-            >
-              {newsModal?.id === 1
-                ? "Questions focused on what each user expects to achieve."
-                : newsModal?.id === 2
-                ? "Understanding user needs through user research."
-                : newsModal?.id === 3
-                ? "Creating requirement and user story in a simplified manner."
-                : newsModal?.id === 4
-                ? "Defining problems through empathy with cooks and hosts."
-                : ""}
-            </div>
-            <div
-              className={`tokyo_tm_skillbox in w-full h-auto clear-both ${
-                newsModal?.id === 3 || newsModal?.id === 4
-                  ? ""
-                  : "float-left flex"
-              }`}
-              style={{ marginTop: "40px", marginBottom: "40px" }}
-            >
-              {newsModal?.id === 1 ? (
-                <>
-                  <div className="left w-1/2 pr-[50px]">
-                    <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
-                      <ul className="m-0 list-none">
-                        {data[newsModal?.id - 1]?.achivements
-                          ?.slice(
-                            0,
-                            data[newsModal?.id - 1]?.achivements?.length % 2 ===
-                              0
-                              ? data[newsModal?.id - 1]?.achivements?.length / 2
-                              : data[newsModal?.id - 1]?.achivements?.length /
-                                  2 +
-                                  1
-                          )
-                          .map((item) => (
-                            <li
-                              className="m-0 pl-[25px] relative"
-                              key={item.id}
-                            >
-                              <span>
-                                <img
-                                  className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                  src="assets/img/svg/rightarrow.svg"
-                                  alt="image"
-                                />
-                                {item.text}
-                              </span>
-                            </li>
-                          ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="right w-1/2 pl-[50px]">
-                    <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
-                      <ul className="m-0 list-none">
-                        {data[newsModal?.id - 1]?.achivements
-                          ?.slice(
-                            data[newsModal?.id - 1]?.achivements?.length % 2 ===
-                              0
-                              ? data[newsModal?.id - 1]?.achivements?.length / 2
-                              : data[newsModal?.id - 1]?.achivements?.length /
-                                  2 +
-                                  1
-                          )
-                          .map((item) => (
-                            <li
-                              className="m-0 pl-[25px] relative"
-                              key={item.id}
-                            >
-                              <span>
-                                <img
-                                  className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                  src="assets/img/svg/rightarrow.svg"
-                                  alt="image"
-                                />
-                                {item.text}
-                              </span>
-                            </li>
-                          ))}
-                      </ul>
-                    </div>
-                  </div>
-                </>
-              ) : newsModal?.id === 2 ? (
-                <>
-                  <div className="list w-full h-auto clear-both float-left">
-                    <ul className="ml-[-40px] list-none flex flex-wrap">
-                      {[
-                        "assets/img/news/ms-needs.svg",
-                        "assets/img/news/ms-frus.svg",
-                      ].map((el, index) => (
-                        <li className="mb-[40px] w-1/2 pl-[40px]">
-                          <img src={el} className="w-full img-remake" />
-                        </li>
-                      ))}
-                      <div className="container">
-                        <hr />
-                        <div
-                          style={{
-                            fontSize: "16px",
-                            lineHeight: "32px",
-                            fontWeight: 600,
-                            color: "#000000",
-                            marginTop: "40px",
-                          }}
-                        >
-                          Persona Identifying
-                        </div>
-                        <div className="list w-full h-auto clear-both float-left">
-                          <ul className="ml-[-40px] list-none flex flex-wrap">
-                            {data[newsModal?.id - 1]?.personaIdentifyingSS.map(
-                              (el, index) => (
-                                <li className="mb-[40px] w-1/3 pl-[40px]">
-                                  <img src={el} className="w-full img-remake" />
-                                </li>
-                              )
-                            )}
-                          </ul>
-                        </div>
-                      </div>
+                      </li>
                     </ul>
-                  </div>
-                </>
-              ) : newsModal?.id === 3 ? (
-                <>
-                  <ul className="list-none">
-                    <li className="m-0 pl-[25px] relative">
-                      <span>
-                        <img
-                          className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                          src="assets/img/svg/rightarrow.svg"
-                          alt="image"
-                        />
-                        I managed to extract the requirement and user story
-                        definitions from the client using an effective,
-                        straightforward approach. I've compiled a task list that
-                        includes the associated users, necessary input types,
-                        character limits, and more.
-                      </span>
-                    </li>
-                  </ul>
-                  <img
-                    src={"assets/img/news/lg-test.svg"}
-                    className="img-remake"
-                    style={{ marginTop: "20px" }}
-                  />
-                </>
-              ) : newsModal?.id === 4 ? (
-                <>
-                  <ul className="list-none">
-                    <li className="m-0 pl-[25px] relative">
-                      <span>
-                        <img
-                          className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                          src="assets/img/svg/rightarrow.svg"
-                          alt="image"
-                        />
-                        I managed to extract the requirement and user story
-                        definitions from the client using an effective,
-                        straightforward approach. I've compiled a task list that
-                        includes the associated users, necessary input types,
-                        character limits, and more.Based on the questions we
-                        clarified with the client, we developed insights and
-                        persona mapping to define their goals, needs, and
-                        challenges.
-                      </span>
-                    </li>
-                  </ul>
-                  <div
-                    style={{ display: "flex", justifyContent: "space-around" }}
-                  >
-                    <div className="left w-1/2 pr-[50px]">
-                      <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
-                        <div
-                          style={{
-                            color: "black",
-                            fontSize: 16,
-                            fontFamily: "Poppins",
-                            fontWeight: 600,
-                            lineHeight: "px",
-                            wordWrap: "break-word",
-                            marginTop: "40px",
-                          }}
-                        >
-                          Major insights from Cooks
-                        </div>
-                        <ul className="m-0 list-none">
-                          {data[newsModal?.id - 1]?.achivements
-                            ?.slice(
-                              0,
-                              data[newsModal?.id - 1]?.achivements?.length %
-                                2 ===
-                                0
-                                ? data[newsModal?.id - 1]?.achivements?.length /
-                                    2
-                                : data[newsModal?.id - 1]?.achivements?.length /
-                                    2 +
-                                    1
-                            )
-                            .map((item) => (
-                              <li
-                                className="m-0 pl-[25px] relative"
-                                key={item.id}
-                              >
-                                <span>
-                                  <img
-                                    className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                    src="assets/img/svg/rightarrow.svg"
-                                    alt="image"
-                                  />
-                                  {item.text}
-                                </span>
-                              </li>
-                            ))}
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="right w-1/2 pl-[50px]">
-                      <div className="tokyo_tm_skill_list w-full h-auto clear-both">
-                        <div
-                          style={{
-                            color: "black",
-                            fontSize: 16,
-                            fontFamily: "Poppins",
-                            fontWeight: 600,
-                            lineHeight: "px",
-                            wordWrap: "break-word",
-                            marginTop: "40px",
-                          }}
-                        >
-                          Major insights from Hosts
-                        </div>
-                        <ul className="m-0 list-none">
-                          {data[newsModal?.id - 1]?.achivements
-                            ?.slice(
-                              data[newsModal?.id - 1]?.achivements?.length %
-                                2 ===
-                                0
-                                ? data[newsModal?.id - 1]?.achivements?.length /
-                                    2
-                                : data[newsModal?.id - 1]?.achivements?.length /
-                                    2 +
-                                    1
-                            )
-                            .map((item) => (
-                              <li
-                                className="m-0 pl-[25px] relative"
-                                key={item.id}
-                              >
-                                <span>
-                                  <img
-                                    className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                    src="assets/img/svg/rightarrow.svg"
-                                    alt="image"
-                                  />
-                                  {item.text}
-                                </span>
-                              </li>
-                            ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="container" style={{ marginTop: "40px" }}>
-                    <div className="tokyo_tm_news w-full clear-both float-left h-auto  px-0 ">
-                      <div className="list w-full h-auto clear-both float-left">
-                        <div>
-                          <div
-                            style={{
-                              fontSize: "16px",
-                              lineHeight: "32px",
-                              fontWeight: 600,
-                              color: "#000000",
-                            }}
-                          >
-                            Persona Identifying
-                          </div>
-                          <div className="list w-full h-auto clear-both float-left">
-                            <ul className="ml-[-40px] list-none flex flex-wrap">
-                              {data[
-                                newsModal?.id - 1
-                              ]?.personaIdentifyingSS.map((el, index) => (
-                                <li className="mb-[40px] w-1/3 pl-[40px]">
-                                  <img src={el} className="w-full img-remake" />
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <hr style={{ marginTop: "300px" }} />
-                </>
-              ) : (
-                <></>
-              )}
-            </div>
-          </div>
-          {newsModal?.id === 1 ? (
-            <div>
-              <div
-                style={{
-                  fontSize: "16px",
-                  color: "black",
-                  fontWeight: 600,
-                  lineHeight: "32px",
-                }}
-              >
-                Some Research Questions
-              </div>
-              <div>
-                {data[newsModal?.id - 1]?.researchQuestions.map((el, index) => (
-                  <div style={{ marginTop: "16px" }} className="flex">
-                    <span
+                    <div
                       style={{
-                        width: "32px",
-                        height: "32px",
-                        background: "#DADADC",
-                        borderRadius: 100,
-                        padding: "2px 2px 2px 7px",
-                        marginRight: "16px",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        fontSize: "16px",
+                        color: "black",
+                        fontWeight: 600,
+                        lineHeight: "32px",
+                        marginTop: "40px",
                       }}
                     >
-                      0{index + 1}
-                    </span>
-                    {el}
-                  </div>
-                ))}
+                      Some Research Questions
+                    </div>
+                    <div>
+                      {data[newsModal?.id - 1]?.researchQuestions.map(
+                        (el, index) => (
+                          <div style={{ marginTop: "16px" }} className="flex">
+                            <span
+                              style={{
+                                width: "32px",
+                                height: "32px",
+                                background: "#DADADC",
+                                borderRadius: 100,
+                                padding: "2px 2px 2px 7px",
+                                marginRight: "16px",
+                                alignItems: "center",
+                                justifyContent: "center",
+                              }}
+                            >
+                              0{index + 1}
+                            </span>
+                            {el}
+                          </div>
+                        )
+                      )}
+                    </div>
+                    {newsModal?.id === 2 ? (
+                      <img
+                        src="assets/img/news/ms-pie.svg"
+                        className="img-remake  w-full"
+                        style={{ marginTop: "40px" }}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                )}
               </div>
-            </div>
-          ) : newsModal?.id === 2 ? (
-            <>&nbsp;</>
-          ) : (
-            ""
-          )}
-          <hr style={{ marginTop: "80px" }} />{" "}
-          <div style={{ marginTop: "80px" }}>
-            <img src={data[newsModal?.id - 1]?.step3} />
-            <div
-              style={{
-                marginTop: "40px",
-                marginBottom: "40px",
-                fontSize: "20px",
-                lineHeight: "30px",
-                fontWeight: 600,
-                color: "#000000",
-              }}
-            >
-              {newsModal?.id === 1
-                ? " Overwhelmed with insights, so we needed to…"
-                : newsModal?.id === 2
-                ? "Ideate solutions based on the knowledge gathered."
-                : newsModal?.id === 3
-                ? "Creating the design using the information provided on the sheet."
-                : newsModal?.id === 4
-                ? "Generate solutions based on the gathered knowledge."
-                : ""}
-            </div>
-
-            {newsModal?.id === 3 ? (
-              <>
-                <img
-                  src={"assets/img/news/lg-test0.svg"}
-                  className="img-remake"
-                  style={{ marginTop: "20px" }}
-                />
-                <hr style={{ marginTop: "40px" }} />
+              <hr style={{ marginTop: "80px" }} />
+              <div style={{ marginTop: "80px" }}>
+                <img src={data[newsModal?.id - 1]?.step2} />
                 <div
                   style={{
-                    color: "black",
-                    fontSize: 16,
-                    fontFamily: "Poppins",
-                    fontWeight: 600,
-                    lineHeight: "px",
-                    wordWrap: "break-word",
                     marginTop: "40px",
+                    fontSize: "20px",
+                    lineHeight: "30px",
+                    fontWeight: 600,
+                    color: "#000000",
                   }}
                 >
-                  The client provided the branding and style guide.
+                  {newsModal?.id === 1
+                    ? "Questions focused on what each user expects to achieve."
+                    : newsModal?.id === 2
+                    ? "Understanding user needs through user research."
+                    : newsModal?.id === 3
+                    ? "Creating requirement and user story in a simplified manner."
+                    : newsModal?.id === 4
+                    ? "Defining problems through empathy with cooks and hosts."
+                    : ""}
                 </div>
-                <img
-                  src={"assets/img/news/lg-guide.svg"}
-                  className="img-remake"
-                  style={{ marginTop: "20px" }}
-                />
-              </>
-            ) : (
-              <>
                 <div
-                  className="in w-full h-auto clear-both float-left"
-                  style={{ marginBottom: "80px" }}
+                  className={`tokyo_tm_skillbox in w-full h-auto clear-both ${
+                    newsModal?.id === 3 || newsModal?.id === 4
+                      ? ""
+                      : "float-left flex"
+                  }`}
+                  style={{ marginTop: "40px", marginBottom: "40px" }}
                 >
-                  <>
-                    <div className="left ">
-                      <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
-                        <ul className="m-0 list-none">
-                          {data[newsModal?.id - 1]?.insights.map(
-                            (item, index) => (
-                              <>
-                                {" "}
+                  {newsModal?.id === 1 ? (
+                    <>
+                      <div className="left w-1/2 pr-[50px]">
+                        <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                          <ul className="m-0 list-none">
+                            {data[newsModal?.id - 1]?.achivements
+                              ?.slice(
+                                0,
+                                data[newsModal?.id - 1]?.achivements?.length %
+                                  2 ===
+                                  0
+                                  ? data[newsModal?.id - 1]?.achivements
+                                      ?.length / 2
+                                  : data[newsModal?.id - 1]?.achivements
+                                      ?.length /
+                                      2 +
+                                      1
+                              )
+                              .map((item) => (
                                 <li
                                   className="m-0 pl-[25px] relative"
                                   key={item.id}
@@ -1307,142 +960,586 @@ const DetailView = () => {
                                     {item.text}
                                   </span>
                                 </li>
-                                <br />
-                              </>
+                              ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="right w-1/2 pl-[50px]">
+                        <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                          <ul className="m-0 list-none">
+                            {data[newsModal?.id - 1]?.achivements
+                              ?.slice(
+                                data[newsModal?.id - 1]?.achivements?.length %
+                                  2 ===
+                                  0
+                                  ? data[newsModal?.id - 1]?.achivements
+                                      ?.length / 2
+                                  : data[newsModal?.id - 1]?.achivements
+                                      ?.length /
+                                      2 +
+                                      1
+                              )
+                              .map((item) => (
+                                <li
+                                  className="m-0 pl-[25px] relative"
+                                  key={item.id}
+                                >
+                                  <span>
+                                    <img
+                                      className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                      src="assets/img/svg/rightarrow.svg"
+                                      alt="image"
+                                    />
+                                    {item.text}
+                                  </span>
+                                </li>
+                              ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </>
+                  ) : newsModal?.id === 2 ? (
+                    <>
+                      <div className="list w-full h-auto clear-both float-left">
+                        <ul className="ml-[-40px] list-none flex flex-wrap">
+                          {[
+                            "assets/img/news/ms-needs.svg",
+                            "assets/img/news/ms-frus.svg",
+                          ].map((el, index) => (
+                            <li className="mb-[40px] w-1/2 pl-[40px]">
+                              <img src={el} className="w-full img-remake" />
+                            </li>
+                          ))}
+                          <div className="container">
+                            <hr />
+                            <div
+                              style={{
+                                fontSize: "16px",
+                                lineHeight: "32px",
+                                fontWeight: 600,
+                                color: "#000000",
+                                marginTop: "40px",
+                              }}
+                            >
+                              Persona Identifying
+                            </div>
+                            <div className="list w-full h-auto clear-both float-left">
+                              <ul className="ml-[-40px] list-none flex flex-wrap">
+                                {data[
+                                  newsModal?.id - 1
+                                ]?.personaIdentifyingSS.map((el, index) => (
+                                  <li className="mb-[40px] w-1/3 pl-[40px]">
+                                    <img
+                                      src={el}
+                                      className="w-full img-remake"
+                                    />
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </ul>
+                      </div>
+                    </>
+                  ) : newsModal?.id === 3 ? (
+                    <>
+                      <ul className="list-none">
+                        <li className="m-0 pl-[25px] relative">
+                          <span>
+                            <img
+                              className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                              src="assets/img/svg/rightarrow.svg"
+                              alt="image"
+                            />
+                            I managed to extract the requirement and user story
+                            definitions from the client using an effective,
+                            straightforward approach. I've compiled a task list
+                            that includes the associated users, necessary input
+                            types, character limits, and more.
+                          </span>
+                        </li>
+                      </ul>
+                      <img
+                        src={"assets/img/news/lg-test.svg"}
+                        className="img-remake"
+                        style={{ marginTop: "20px" }}
+                      />
+                    </>
+                  ) : newsModal?.id === 4 ? (
+                    <>
+                      <ul className="list-none">
+                        <li className="m-0 pl-[25px] relative">
+                          <span>
+                            <img
+                              className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                              src="assets/img/svg/rightarrow.svg"
+                              alt="image"
+                            />
+                            I managed to extract the requirement and user story
+                            definitions from the client using an effective,
+                            straightforward approach. I've compiled a task list
+                            that includes the associated users, necessary input
+                            types, character limits, and more.Based on the
+                            questions we clarified with the client, we developed
+                            insights and persona mapping to define their goals,
+                            needs, and challenges.
+                          </span>
+                        </li>
+                      </ul>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-around",
+                        }}
+                      >
+                        <div className="left w-1/2 pr-[50px]">
+                          <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
+                            <div
+                              style={{
+                                color: "black",
+                                fontSize: 16,
+                                fontFamily: "Poppins",
+                                fontWeight: 600,
+                                lineHeight: "px",
+                                wordWrap: "break-word",
+                                marginTop: "40px",
+                              }}
+                            >
+                              Major insights from Cooks
+                            </div>
+                            <ul className="m-0 list-none">
+                              {data[newsModal?.id - 1]?.achivements
+                                ?.slice(
+                                  0,
+                                  data[newsModal?.id - 1]?.achivements?.length %
+                                    2 ===
+                                    0
+                                    ? data[newsModal?.id - 1]?.achivements
+                                        ?.length / 2
+                                    : data[newsModal?.id - 1]?.achivements
+                                        ?.length /
+                                        2 +
+                                        1
+                                )
+                                .map((item) => (
+                                  <li
+                                    className="m-0 pl-[25px] relative"
+                                    key={item.id}
+                                  >
+                                    <span>
+                                      <img
+                                        className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                        src="assets/img/svg/rightarrow.svg"
+                                        alt="image"
+                                      />
+                                      {item.text}
+                                    </span>
+                                  </li>
+                                ))}
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="right w-1/2 pl-[50px]">
+                          <div className="tokyo_tm_skill_list w-full h-auto clear-both">
+                            <div
+                              style={{
+                                color: "black",
+                                fontSize: 16,
+                                fontFamily: "Poppins",
+                                fontWeight: 600,
+                                lineHeight: "px",
+                                wordWrap: "break-word",
+                                marginTop: "40px",
+                              }}
+                            >
+                              Major insights from Hosts
+                            </div>
+                            <ul className="m-0 list-none">
+                              {data[newsModal?.id - 1]?.achivements
+                                ?.slice(
+                                  data[newsModal?.id - 1]?.achivements?.length %
+                                    2 ===
+                                    0
+                                    ? data[newsModal?.id - 1]?.achivements
+                                        ?.length / 2
+                                    : data[newsModal?.id - 1]?.achivements
+                                        ?.length /
+                                        2 +
+                                        1
+                                )
+                                .map((item) => (
+                                  <li
+                                    className="m-0 pl-[25px] relative"
+                                    key={item.id}
+                                  >
+                                    <span>
+                                      <img
+                                        className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                        src="assets/img/svg/rightarrow.svg"
+                                        alt="image"
+                                      />
+                                      {item.text}
+                                    </span>
+                                  </li>
+                                ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="container" style={{ marginTop: "40px" }}>
+                        <div className="tokyo_tm_news w-full clear-both float-left h-auto  px-0 ">
+                          <div className="list w-full h-auto clear-both float-left">
+                            <div>
+                              <div
+                                style={{
+                                  fontSize: "16px",
+                                  lineHeight: "32px",
+                                  fontWeight: 600,
+                                  color: "#000000",
+                                }}
+                              >
+                                Persona Identifying
+                              </div>
+                              <div className="list w-full h-auto clear-both float-left">
+                                <ul className="ml-[-40px] list-none flex flex-wrap">
+                                  {data[
+                                    newsModal?.id - 1
+                                  ]?.personaIdentifyingSS.map((el, index) => (
+                                    <li className="mb-[40px] w-1/3 pl-[40px]">
+                                      <img
+                                        src={el}
+                                        className="w-full img-remake"
+                                      />
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr style={{ marginTop: "300px" }} />
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              </div>
+              {newsModal?.id === 1 ? (
+                <div>
+                  <div
+                    style={{
+                      fontSize: "16px",
+                      color: "black",
+                      fontWeight: 600,
+                      lineHeight: "32px",
+                    }}
+                  >
+                    Some Research Questions
+                  </div>
+                  <div>
+                    {data[newsModal?.id - 1]?.researchQuestions.map(
+                      (el, index) => (
+                        <div style={{ marginTop: "16px" }} className="flex">
+                          <span
+                            style={{
+                              width: "32px",
+                              height: "32px",
+                              background: "#DADADC",
+                              borderRadius: 100,
+                              padding: "2px 2px 2px 7px",
+                              marginRight: "16px",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
+                            0{index + 1}
+                          </span>
+                          {el}
+                        </div>
+                      )
+                    )}
+                  </div>
+                </div>
+              ) : newsModal?.id === 2 ? (
+                <>&nbsp;</>
+              ) : (
+                ""
+              )}
+              <hr style={{ marginTop: "80px" }} />{" "}
+              <div style={{ marginTop: "80px" }}>
+                <img src={data[newsModal?.id - 1]?.step3} />
+                <div
+                  style={{
+                    marginTop: "40px",
+                    marginBottom: "40px",
+                    fontSize: "20px",
+                    lineHeight: "30px",
+                    fontWeight: 600,
+                    color: "#000000",
+                  }}
+                >
+                  {newsModal?.id === 1
+                    ? " Overwhelmed with insights, so we needed to…"
+                    : newsModal?.id === 2
+                    ? "Ideate solutions based on the knowledge gathered."
+                    : newsModal?.id === 3
+                    ? "Creating the design using the information provided on the sheet."
+                    : newsModal?.id === 4
+                    ? "Generate solutions based on the gathered knowledge."
+                    : ""}
+                </div>
+
+                {newsModal?.id === 3 ? (
+                  <>
+                    <img
+                      src={"assets/img/news/lg-test0.svg"}
+                      className="img-remake"
+                      style={{ marginTop: "20px" }}
+                    />
+                    <hr style={{ marginTop: "40px" }} />
+                    <div
+                      style={{
+                        color: "black",
+                        fontSize: 16,
+                        fontFamily: "Poppins",
+                        fontWeight: 600,
+                        lineHeight: "px",
+                        wordWrap: "break-word",
+                        marginTop: "40px",
+                      }}
+                    >
+                      The client provided the branding and style guide.
+                    </div>
+                    <img
+                      src={"assets/img/news/lg-guide.svg"}
+                      className="img-remake"
+                      style={{ marginTop: "20px" }}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <div
+                      className="in w-full h-auto clear-both float-left"
+                      style={{ marginBottom: "80px" }}
+                    >
+                      <>
+                        <div className="left ">
+                          <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                            <ul className="m-0 list-none">
+                              {data[newsModal?.id - 1]?.insights.map(
+                                (item, index) => (
+                                  <>
+                                    {" "}
+                                    <li
+                                      className="m-0 pl-[25px] relative"
+                                      key={item.id}
+                                    >
+                                      <span>
+                                        <img
+                                          className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                          src="assets/img/svg/rightarrow.svg"
+                                          alt="image"
+                                        />
+                                        {item.text}
+                                      </span>
+                                    </li>
+                                    <br />
+                                  </>
+                                )
+                              )}
+                            </ul>
+                          </div>
+                        </div>
+                        {newsModal?.id === 4 ? (
+                          <>
+                            <img
+                              src="assets/img/news/lg-mock.svg"
+                              className="img-remake"
+                            />
+                          </>
+                        ) : (
+                          <></>
+                        )}
+                      </>
+                    </div>
+                  </>
+                )}
+              </div>
+              <div style={{}}>
+                <div
+                  style={{
+                    fontSize: "16px",
+                    lineHeight: "32px",
+                    fontWeight: 600,
+                    color: "#000000",
+                  }}
+                >
+                  {newsModal?.id === 1
+                    ? "Persona Mapping (Screenshot from Miro)"
+                    : newsModal?.id === 2
+                    ? "White board session"
+                    : ""}
+                </div>
+                <div
+                  className="tokyo_tm_skillbox in w-full h-auto  float-left flex"
+                  style={{ columnGap: "20px" }}
+                >
+                  {newsModal?.id === 1 ? (
+                    <>
+                      <div
+                        className="left w-1/2 "
+                        style={{ marginBottom: "0px" }}
+                      >
+                        {data[newsModal?.id - 1]?.personaMappingSS
+                          ?.slice(
+                            0,
+                            data[newsModal?.id - 1]?.personaMappingSS?.length %
+                              2 ===
+                              0
+                              ? data[newsModal?.id - 1]?.personaMappingSS
+                                  ?.length / 2
+                              : data[newsModal?.id - 1]?.personaMappingSS
+                                  ?.length /
+                                  2 +
+                                  1
+                          )
+                          .map((el, index) => (
+                            <img
+                              src={el}
+                              className="w-full img-remake"
+                              style={{ paddingTop: "24px" }}
+                            />
+                          ))}
+                      </div>
+                      <div className="right w-1/2 ">
+                        {data[newsModal?.id - 1]?.personaMappingSS
+                          ?.slice(
+                            data[newsModal?.id - 1]?.personaMappingSS?.length %
+                              2 ===
+                              0
+                              ? data[newsModal?.id - 1]?.personaMappingSS
+                                  ?.length / 2
+                              : data[newsModal?.id - 1]?.personaMappingSS
+                                  ?.length /
+                                  2 +
+                                  1
+                          )
+                          .map((el, index) => (
+                            <img
+                              src={el}
+                              className="w-full img-remake"
+                              style={{ paddingTop: "24px" }}
+                            />
+                          ))}
+                      </div>
+                    </>
+                  ) : newsModal?.id === 2 ? (
+                    <>
+                      <img
+                        src="assets/img/news/ms-board.svg"
+                        className="w-full img-remake"
+                      />
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {newsModal?.id === 1 ? (
+            <>
+              {" "}
+              <div className="container">
+                <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[90px] px-0 ">
+                  <div className="list w-full h-auto clear-both float-left">
+                    <div>
+                      <div
+                        style={{
+                          fontSize: "16px",
+                          lineHeight: "32px",
+                          fontWeight: 600,
+                          color: "#000000",
+                        }}
+                      >
+                        Persona Identifying
+                      </div>
+                      <div className="list w-full h-auto clear-both float-left">
+                        <ul className="ml-[-40px] list-none flex flex-wrap">
+                          {data[newsModal?.id - 1]?.personaIdentifyingSS.map(
+                            (el, index) => (
+                              <li className="mb-[40px] w-1/3 pl-[40px]">
+                                <img src={el} className="w-full img-remake" />
+                              </li>
                             )
                           )}
                         </ul>
                       </div>
                     </div>
-                    {newsModal?.id === 4 ? (
-                      <>
-                        <img
-                          src="assets/img/news/lg-mock.svg"
-                          className="img-remake"
-                        />
-                      </>
-                    ) : (
-                      <></>
-                    )}
-                  </>
-                </div>
-              </>
-            )}
-          </div>
-          <div style={{}}>
-            <div
-              style={{
-                fontSize: "16px",
-                lineHeight: "32px",
-                fontWeight: 600,
-                color: "#000000",
-              }}
-            >
-              {newsModal?.id === 1
-                ? "Persona Mapping (Screenshot from Miro)"
-                : newsModal?.id === 2
-                ? "White board session"
-                : ""}
-            </div>
-            <div
-              className="tokyo_tm_skillbox in w-full h-auto  float-left flex"
-              style={{ columnGap: "20px" }}
-            >
-              {newsModal?.id === 1 ? (
-                <>
-                  <div className="left w-1/2 " style={{ marginBottom: "0px" }}>
-                    {data[newsModal?.id - 1]?.personaMappingSS
-                      ?.slice(
-                        0,
-                        data[newsModal?.id - 1]?.personaMappingSS?.length %
-                          2 ===
-                          0
-                          ? data[newsModal?.id - 1]?.personaMappingSS?.length /
-                              2
-                          : data[newsModal?.id - 1]?.personaMappingSS?.length /
-                              2 +
-                              1
-                      )
-                      .map((el, index) => (
-                        <img
-                          src={el}
-                          className="w-full img-remake"
-                          style={{ paddingTop: "24px" }}
-                        />
-                      ))}
-                  </div>
-                  <div className="right w-1/2 ">
-                    {data[newsModal?.id - 1]?.personaMappingSS
-                      ?.slice(
-                        data[newsModal?.id - 1]?.personaMappingSS?.length %
-                          2 ===
-                          0
-                          ? data[newsModal?.id - 1]?.personaMappingSS?.length /
-                              2
-                          : data[newsModal?.id - 1]?.personaMappingSS?.length /
-                              2 +
-                              1
-                      )
-                      .map((el, index) => (
-                        <img
-                          src={el}
-                          className="w-full img-remake"
-                          style={{ paddingTop: "24px" }}
-                        />
-                      ))}
-                  </div>
-                </>
-              ) : newsModal?.id === 2 ? (
-                <>
-                  <img
-                    src="assets/img/news/ms-board.svg"
-                    className="w-full img-remake"
-                  />
-                </>
-              ) : (
-                ""
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {newsModal?.id === 1 ? (
-        <>
-          {" "}
-          <div className="container">
-            <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[90px] px-0 ">
-              <div className="list w-full h-auto clear-both float-left">
-                <div>
-                  <div
-                    style={{
-                      fontSize: "16px",
-                      lineHeight: "32px",
-                      fontWeight: 600,
-                      color: "#000000",
-                    }}
-                  >
-                    Persona Identifying
-                  </div>
-                  <div className="list w-full h-auto clear-both float-left">
-                    <ul className="ml-[-40px] list-none flex flex-wrap">
-                      {data[newsModal?.id - 1]?.personaIdentifyingSS.map(
-                        (el, index) => (
-                          <li className="mb-[40px] w-1/3 pl-[40px]">
-                            <img src={el} className="w-full img-remake" />
-                          </li>
-                        )
-                      )}
-                    </ul>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+              <div className="container">
+                <div
+                  className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
+                  style={{ marginTop: "40px" }}
+                >
+                  <div
+                    className="in w-full h-auto clear-both float-left"
+                    style={{}}
+                  >
+                    <div className="left ">
+                      <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                        <div
+                          style={{
+                            color: "black",
+                            fontSize: 16,
+                            fontFamily: "Poppins",
+                            fontWeight: 600,
+                            lineHeight: "32px",
+                          }}
+                        >
+                          Key Takeaways
+                        </div>
+                        <ul className="m-0 list-none">
+                          {data[newsModal?.id - 1]?.keyTakeaways.map(
+                            (item, index) => (
+                              <li
+                                className="m-0 pl-[25px] relative"
+                                key={item.id}
+                                style={{ marginTop: "24px" }}
+                              >
+                                <span>
+                                  <img
+                                    className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                    src="assets/img/svg/rightarrow.svg"
+                                    alt="image"
+                                    style={{ top: "13px" }}
+                                  />
+                                  {item.text}
+                                </span>
+                              </li>
+                            )
+                          )}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : newsModal?.id === 2 ? (
+            <> </>
+          ) : (
+            <></>
+          )}
+
           <div className="container">
             <div
               className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
-              style={{ marginTop: "40px" }}
+              style={{ marginTop: "80px", marginBottom: "40px" }}
             >
               <div
                 className="in w-full h-auto clear-both float-left"
@@ -1450,221 +1547,34 @@ const DetailView = () => {
               >
                 <div className="left ">
                   <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
-                    <div
-                      style={{
-                        color: "black",
-                        fontSize: 16,
-                        fontFamily: "Poppins",
-                        fontWeight: 600,
-                        lineHeight: "32px",
-                      }}
-                    >
-                      Key Takeaways
-                    </div>
-                    <ul className="m-0 list-none">
-                      {data[newsModal?.id - 1]?.keyTakeaways.map(
-                        (item, index) => (
-                          <li
-                            className="m-0 pl-[25px] relative"
-                            key={item.id}
-                            style={{ marginTop: "24px" }}
-                          >
-                            <span>
-                              <img
-                                className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                src="assets/img/svg/rightarrow.svg"
-                                alt="image"
-                                style={{ top: "13px" }}
-                              />
-                              {item.text}
-                            </span>
-                          </li>
-                        )
-                      )}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
-      ) : newsModal?.id === 2 ? (
-        <> </>
-      ) : (
-        <></>
-      )}
-
-      <div className="container">
-        <div
-          className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
-          style={{ marginTop: "80px", marginBottom: "40px" }}
-        >
-          <div className="in w-full h-auto clear-both float-left" style={{}}>
-            <div className="left ">
-              <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
-                <hr style={{ marginBottom: "80px" }} />
-                <div>
-                  <img src={data[newsModal?.id - 1]?.step4} />
-                  <div
-                    style={{
-                      marginTop: "40px",
-                      color: "black",
-                      fontSize: 20,
-                      fontFamily: "Poppins",
-                      fontWeight: "600",
-                      wordWrap: "break-word",
-                    }}
-                  >
-                    {newsModal?.id === 1
-                      ? "were on tight deadline, to prototype to test"
-                      : newsModal?.id === 2
-                      ? "Combining all the previous details to create a feasible, desirable, and viable prototype."
-                      : newsModal?.id === 4
-                      ? "Creating the design based on the information and details gathered in the earlier stage."
-                      : ""}
-                  </div>
-
-                  {newsModal?.id === 1 ? (
-                    <ul className="m-0 list-none" style={{ marginTop: "36px" }}>
-                      {data[newsModal?.id - 1]?.prototypeTxt.map(
-                        (item, index) => (
-                          <li
-                            className="m-0 pl-[25px] relative"
-                            key={item.id}
-                            style={{ marginTop: "4px" }}
-                          >
-                            <span>
-                              <img
-                                className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                src="assets/img/svg/rightarrow.svg"
-                                alt="image"
-                                style={{ top: "13px" }}
-                              />
-                              {item.text}
-                            </span>
-                          </li>
-                        )
-                      )}
-                    </ul>
-                  ) : newsModal?.id === 2 ? (
-                    <></>
-                  ) : newsModal?.id === 4 ? (
-                    <>
-                      <img
-                        src="assets/img/news/lg-wiretest.svg"
-                        alt="image"
-                        className="img-remake"
-                        style={{ marginTop: "40px" }}
-                      />
-                      <img
-                        src="assets/img/news/kora-colour.svg"
-                        alt="image"
-                        className="img-remake"
-                        style={{ marginTop: "40px" }}
-                      />
-                      <hr style={{ marginTop: "40px" }} />
-                    </>
-                  ) : (
-                    <></>
-                  )}
-                  {newsModal?.id === 1 ? (
-                    <div style={{ marginTop: "80px" }}>
+                    <hr style={{ marginBottom: "80px" }} />
+                    <div>
+                      <img src={data[newsModal?.id - 1]?.step4} />
                       <div
                         style={{
-                          color: "black",
-                          fontSize: 16,
-                          fontFamily: "Poppins",
-                          fontWeight: 600,
-                          lineHeight: "px",
-                          wordWrap: "break-word",
-                        }}
-                      >
-                        Brand Identify & Logo
-                      </div>
-                      <img
-                        src={data[newsModal?.id - 1]?.brandLogo}
-                        style={{ marginTop: "24px" }}
-                        className="w-full img-remake"
-                      />
-                    </div>
-                  ) : newsModal?.id === 2 ? (
-                    <>
-                      <div
-                        style={{
-                          color: "black",
-                          fontSize: 16,
-                          fontFamily: "Poppins",
-                          fontWeight: 600,
-                          lineHeight: "px",
-                          wordWrap: "break-word",
                           marginTop: "40px",
-                        }}
-                      >
-                        A/B Testing
-                      </div>
-                      <ul className="m-0 list-none">
-                        {[
-                          "As soon as the high-fidelity screens were completed, we conducted live user testing on people who use co-working spaces to get their feedback and suggestions. For example, we provided three options for each main set of screens, such as the home screen and booking screen. Users liked certain sections of each option, so we finally came up with the final design by mixing and matching the options.",
-                        ].map((item, index) => (
-                          <li
-                            className="m-0 pl-[25px] relative"
-                            key={item.id}
-                            style={{ marginTop: "4px" }}
-                          >
-                            <span>
-                              <img
-                                className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                src="assets/img/svg/rightarrow.svg"
-                                alt="image"
-                                style={{ top: "13px" }}
-                              />
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                      <img
-                        src="assets/img/news/ms-final0.svg"
-                        className="img-remake"
-                        style={{ marginTop: "20px" }}
-                      />
-                      <div
-                        style={{
                           color: "black",
-                          fontSize: 16,
+                          fontSize: 20,
                           fontFamily: "Poppins",
-                          fontWeight: 600,
-                          lineHeight: "px",
+                          fontWeight: "600",
                           wordWrap: "break-word",
-                          marginTop: "40px",
                         }}
                       >
-                        Final Design
+                        {newsModal?.id === 1
+                          ? "were on tight deadline, to prototype to test"
+                          : newsModal?.id === 2
+                          ? "Combining all the previous details to create a feasible, desirable, and viable prototype."
+                          : newsModal?.id === 4
+                          ? "Creating the design based on the information and details gathered in the earlier stage."
+                          : ""}
                       </div>
-                    </>
-                  ) : (
-                    <></>
-                  )}
-                  {newsModal?.id === 1 ? (
-                    <>
-                      <hr style={{ marginTop: "80px", marginBottom: "80px" }} />{" "}
-                      <div>
-                        <div
-                          style={{
-                            color: "black",
-                            fontSize: 20,
-                            fontFamily: "Poppins",
-                            fontWeight: "600",
-                            wordWrap: "break-word",
-                          }}
-                        >
-                          Stakeholder approval & developer handover
-                        </div>
+
+                      {newsModal?.id === 1 ? (
                         <ul
                           className="m-0 list-none"
                           style={{ marginTop: "36px" }}
                         >
-                          {data[newsModal?.id - 1]?.handOver.map(
+                          {data[newsModal?.id - 1]?.prototypeTxt.map(
                             (item, index) => (
                               <li
                                 className="m-0 pl-[25px] relative"
@@ -1684,282 +1594,430 @@ const DetailView = () => {
                             )
                           )}
                         </ul>
-                      </div>
-                    </>
-                  ) : newsModal?.id === 2 ? (
-                    <></>
-                  ) : (
-                    <></>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {newsModal?.id === 3 || newsModal?.id === 4 ? (
-        <></>
-      ) : (
-        <img
-          src={data[newsModal?.id - 1]?.finalDesign}
-          style={{ marginTop: "40px" }}
-          className="img-remake"
-        />
-      )}
-
-      {newsModal?.id === 1 ? (
-        <></>
-      ) : newsModal?.id === 2 || newsModal?.id === 4 ? (
-        <>
-          <div className="container">
-            <div
-              style={{
-                color: "black",
-                fontSize: 20,
-                fontFamily: "Poppins",
-                fontWeight: "600",
-                wordWrap: "break-word",
-                marginTop: "24px",
-              }}
-            >
-              Test & Feedback
-            </div>
-            <div
-              style={{
-                color: "black",
-                fontSize: 16,
-                fontFamily: "Poppins",
-                fontWeight: 600,
-                lineHeight: "px",
-                wordWrap: "break-word",
-                marginTop: "40px",
-              }}
-            >
-              {newsModal?.id === 2
-                ? `The high-fidelity wireframe screens and flows were shown to many
-              users. During this time, the following questions were encountered.`
-                : ""}
-            </div>
-            <ul className="m-0 list-none" style={{ marginTop: "10px" }}>
-              {[
-                "We created the high-fidelity design, and the client conducted a test run with both cooks and hosts. We received valuable feedback. After a couple of design iterations, we developed the product and deployed it to the production environment. As it's an iterative process, we continued to receive feedback over time and updated it sprint by sprint.",
-              ].map((item, index) => (
-                <li
-                  className="m-0 pl-[25px] relative"
-                  key={item.id}
-                  style={{ marginTop: "4px" }}
-                >
-                  <span>
-                    <img
-                      className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                      src="assets/img/svg/rightarrow.svg"
-                      alt="image"
-                      style={{ top: "13px" }}
-                    />
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </>
-      ) : newsModal?.id === 3 ? (
-        <>
-          <div className="container">
-            <div
-              style={{
-                color: "black",
-                fontSize: 20,
-                fontFamily: "Poppins",
-                fontWeight: "600",
-                wordWrap: "break-word",
-              }}
-            >
-              Test & Feedback
-            </div>
-            <ul className="list-none" style={{ marginTop: "20px" }}>
-              <li className="m-0 pl-[25px] relative">
-                <span>
-                  <img
-                    className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                    src="assets/img/svg/rightarrow.svg"
-                    alt="image"
-                  />
-                  We presented the high-fidelity wireframe screens and flows to
-                  multiple users, and during this phase, we encountered the
-                  following questions.
-                </span>
-              </li>
-            </ul>
-            {[
-              "As expected, we received plenty of user feedback and suggestions during the initial round of user testing. ",
-              "The feedback led to optimization of most workflow steps.",
-              "Additional workflow steps were introduced later to accommodate necessary data capture.",
-              "What difficulties do you experience when performing this process manually?The platform's language should be British English, and we received assistance from the client in this regard.",
-              "Despite its suboptimal usability, the client wanted the product sooner to escape manual work. As a result, we're implementing both minor and major changes on a sprint basis.",
-            ].map((el, index) => (
-              <div style={{ marginTop: "16px" }} className="flex">
-                <span
-                  style={{
-                    width: "32px",
-                    height: "32px",
-                    background: "#DADADC",
-                    borderRadius: 100,
-                    padding: "2px 2px 2px 7px",
-                    marginRight: "16px",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  0{index + 1}
-                </span>
-                {el}
-              </div>
-            ))}
-          </div>
-        </>
-      ) : (
-        <></>
-      )}
-      <div className="container">
-        <div
-          className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
-          style={{ marginTop: "40px" }}
-        >
-          <div className="in w-full h-auto clear-both float-left" style={{}}>
-            <div className="left ">
-              <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
-                <hr style={{ marginTop: "80px", marginBottom: "80px" }} />
-                <div>
-                  <div
-                    style={{
-                      color: "black",
-                      fontSize: 32,
-                      fontFamily: "Poppins",
-                      fontWeight: "600",
-                      wordWrap: "break-word",
-                      lineHeight: "46px",
-                    }}
-                  >
-                    {data[newsModal?.id - 1]?.finalDesignTxt}
+                      ) : newsModal?.id === 2 ? (
+                        <></>
+                      ) : newsModal?.id === 4 ? (
+                        <>
+                          <img
+                            src="assets/img/news/lg-wiretest.svg"
+                            alt="image"
+                            className="img-remake"
+                            style={{ marginTop: "40px" }}
+                          />
+                          <img
+                            src="assets/img/news/kora-colour.svg"
+                            alt="image"
+                            className="img-remake"
+                            style={{ marginTop: "40px" }}
+                          />
+                          <hr style={{ marginTop: "40px" }} />
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                      {newsModal?.id === 1 ? (
+                        <div style={{ marginTop: "80px" }}>
+                          <div
+                            style={{
+                              color: "black",
+                              fontSize: 16,
+                              fontFamily: "Poppins",
+                              fontWeight: 600,
+                              lineHeight: "px",
+                              wordWrap: "break-word",
+                            }}
+                          >
+                            Brand Identify & Logo
+                          </div>
+                          <img
+                            src={data[newsModal?.id - 1]?.brandLogo}
+                            style={{ marginTop: "24px" }}
+                            className="w-full img-remake"
+                          />
+                        </div>
+                      ) : newsModal?.id === 2 ? (
+                        <>
+                          <div
+                            style={{
+                              color: "black",
+                              fontSize: 16,
+                              fontFamily: "Poppins",
+                              fontWeight: 600,
+                              lineHeight: "px",
+                              wordWrap: "break-word",
+                              marginTop: "40px",
+                            }}
+                          >
+                            A/B Testing
+                          </div>
+                          <ul className="m-0 list-none">
+                            {[
+                              "As soon as the high-fidelity screens were completed, we conducted live user testing on people who use co-working spaces to get their feedback and suggestions. For example, we provided three options for each main set of screens, such as the home screen and booking screen. Users liked certain sections of each option, so we finally came up with the final design by mixing and matching the options.",
+                            ].map((item, index) => (
+                              <li
+                                className="m-0 pl-[25px] relative"
+                                key={item.id}
+                                style={{ marginTop: "4px" }}
+                              >
+                                <span>
+                                  <img
+                                    className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                    src="assets/img/svg/rightarrow.svg"
+                                    alt="image"
+                                    style={{ top: "13px" }}
+                                  />
+                                  {item}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                          <img
+                            src="assets/img/news/ms-final0.svg"
+                            className="img-remake"
+                            style={{ marginTop: "20px" }}
+                          />
+                          <div
+                            style={{
+                              color: "black",
+                              fontSize: 16,
+                              fontFamily: "Poppins",
+                              fontWeight: 600,
+                              lineHeight: "px",
+                              wordWrap: "break-word",
+                              marginTop: "40px",
+                            }}
+                          >
+                            Final Design
+                          </div>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                      {newsModal?.id === 1 ? (
+                        <>
+                          <hr
+                            style={{ marginTop: "80px", marginBottom: "80px" }}
+                          />{" "}
+                          <div>
+                            <div
+                              style={{
+                                color: "black",
+                                fontSize: 20,
+                                fontFamily: "Poppins",
+                                fontWeight: "600",
+                                wordWrap: "break-word",
+                              }}
+                            >
+                              Stakeholder approval & developer handover
+                            </div>
+                            <ul
+                              className="m-0 list-none"
+                              style={{ marginTop: "36px" }}
+                            >
+                              {data[newsModal?.id - 1]?.handOver.map(
+                                (item, index) => (
+                                  <li
+                                    className="m-0 pl-[25px] relative"
+                                    key={item.id}
+                                    style={{ marginTop: "4px" }}
+                                  >
+                                    <span>
+                                      <img
+                                        className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                        src="assets/img/svg/rightarrow.svg"
+                                        alt="image"
+                                        style={{ top: "13px" }}
+                                      />
+                                      {item.text}
+                                    </span>
+                                  </li>
+                                )
+                              )}
+                            </ul>
+                          </div>
+                        </>
+                      ) : newsModal?.id === 2 ? (
+                        <></>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                {newsModal?.id === 1 ? (
-                  <>
+          {newsModal?.id === 3 || newsModal?.id === 4 ? (
+            <></>
+          ) : (
+            <img
+              src={data[newsModal?.id - 1]?.finalDesign}
+              style={{ marginTop: "40px" }}
+              className="img-remake"
+            />
+          )}
+
+          {newsModal?.id === 1 ? (
+            <></>
+          ) : newsModal?.id === 2 || newsModal?.id === 4 ? (
+            <>
+              <div className="container">
+                <div
+                  style={{
+                    color: "black",
+                    fontSize: 20,
+                    fontFamily: "Poppins",
+                    fontWeight: "600",
+                    wordWrap: "break-word",
+                    marginTop: "24px",
+                  }}
+                >
+                  Test & Feedback
+                </div>
+                <div
+                  style={{
+                    color: "black",
+                    fontSize: 16,
+                    fontFamily: "Poppins",
+                    fontWeight: 600,
+                    lineHeight: "px",
+                    wordWrap: "break-word",
+                    marginTop: "40px",
+                  }}
+                >
+                  {newsModal?.id === 2
+                    ? `The high-fidelity wireframe screens and flows were shown to many
+              users. During this time, the following questions were encountered.`
+                    : ""}
+                </div>
+                <ul className="m-0 list-none" style={{ marginTop: "10px" }}>
+                  {[
+                    "We created the high-fidelity design, and the client conducted a test run with both cooks and hosts. We received valuable feedback. After a couple of design iterations, we developed the product and deployed it to the production environment. As it's an iterative process, we continued to receive feedback over time and updated it sprint by sprint.",
+                  ].map((item, index) => (
+                    <li
+                      className="m-0 pl-[25px] relative"
+                      key={item.id}
+                      style={{ marginTop: "4px" }}
+                    >
+                      <span>
+                        <img
+                          className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                          src="assets/img/svg/rightarrow.svg"
+                          alt="image"
+                          style={{ top: "13px" }}
+                        />
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          ) : newsModal?.id === 3 ? (
+            <>
+              <div className="container">
+                <div
+                  style={{
+                    color: "black",
+                    fontSize: 20,
+                    fontFamily: "Poppins",
+                    fontWeight: "600",
+                    wordWrap: "break-word",
+                  }}
+                >
+                  Test & Feedback
+                </div>
+                <ul className="list-none" style={{ marginTop: "20px" }}>
+                  <li className="m-0 pl-[25px] relative">
+                    <span>
+                      <img
+                        className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                        src="assets/img/svg/rightarrow.svg"
+                        alt="image"
+                      />
+                      We presented the high-fidelity wireframe screens and flows
+                      to multiple users, and during this phase, we encountered
+                      the following questions.
+                    </span>
+                  </li>
+                </ul>
+                {[
+                  "As expected, we received plenty of user feedback and suggestions during the initial round of user testing. ",
+                  "The feedback led to optimization of most workflow steps.",
+                  "Additional workflow steps were introduced later to accommodate necessary data capture.",
+                  "What difficulties do you experience when performing this process manually?The platform's language should be British English, and we received assistance from the client in this regard.",
+                  "Despite its suboptimal usability, the client wanted the product sooner to escape manual work. As a result, we're implementing both minor and major changes on a sprint basis.",
+                ].map((el, index) => (
+                  <div style={{ marginTop: "16px" }} className="flex">
+                    <span
+                      style={{
+                        width: "32px",
+                        height: "32px",
+                        background: "#DADADC",
+                        borderRadius: 100,
+                        padding: "2px 2px 2px 7px",
+                        marginRight: "16px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      0{index + 1}
+                    </span>
+                    {el}
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+          <div className="container">
+            <div
+              className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
+              style={{ marginTop: "40px" }}
+            >
+              <div
+                className="in w-full h-auto clear-both float-left"
+                style={{}}
+              >
+                <div className="left ">
+                  <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
                     <hr style={{ marginTop: "80px", marginBottom: "80px" }} />
                     <div>
                       <div
                         style={{
-                          color: "#767676",
-                          fontSize: 13,
-                          fontFamily: "Poppins",
-                          fontWeight: "500",
-                          textTransform: "uppercase",
-                          lineHeight: "px",
-                          wordWrap: "break-word",
-                        }}
-                      >
-                        Take aways & Learning
-                      </div>
-                      <div
-                        style={{
                           color: "black",
-                          fontSize: 20,
+                          fontSize: 32,
                           fontFamily: "Poppins",
                           fontWeight: "600",
                           wordWrap: "break-word",
-                          marginTop: "24px",
+                          lineHeight: "46px",
                         }}
                       >
-                        What I would do better next time.
+                        {data[newsModal?.id - 1]?.finalDesignTxt}
                       </div>
-                      <ul
-                        className="m-0 list-none"
-                        style={{ marginTop: "36px" }}
-                      >
-                        <li
-                          className="m-0 pl-[25px] relative"
-                          style={{ marginTop: "4px" }}
-                        >
-                          <span>
-                            <img
-                              className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                              src="assets/img/svg/rightarrow.svg"
-                              alt="image"
-                              style={{ top: "13px" }}
-                            />
-                            <div
-                              style={{
-                                marginTop: "40px",
-                                fontSize: "14px",
-                                fontWeight: 600,
-                                lineHeight: "32px",
-                                color: "#000000",
-                              }}
-                            >
-                              More focus on user feedback and do iterations
-                            </div>
-                            <div>
-                              It is important to focus on users’ qualitative
-                              research and how they are interacting with the
-                              application.
-                            </div>
-                          </span>
-                        </li>
-
-                        <li
-                          className="m-0 pl-[25px] relative"
-                          style={{ marginTop: "4px" }}
-                        >
-                          <span>
-                            <img
-                              className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                              src="assets/img/svg/rightarrow.svg"
-                              alt="image"
-                              style={{ top: "13px" }}
-                            />
-                            <div
-                              style={{
-                                marginTop: "40px",
-                                fontSize: "14px",
-                                fontWeight: 600,
-                                lineHeight: "32px",
-                                color: "#000000",
-                              }}
-                            >
-                              Make sure your assumptions are actually usable
-                            </div>
-                            <div>
-                              During testing, I learned that some of my
-                              assumptions were different from what the users
-                              wanted, which was a valuable learning experience.
-                            </div>
-                          </span>
-                        </li>
-                      </ul>
                     </div>
-                  </>
-                ) : newsModal?.id === 2 ? (
-                  <></>
-                ) : (
-                  <></>
-                )}
+
+                    {newsModal?.id === 1 ? (
+                      <>
+                        <hr
+                          style={{ marginTop: "80px", marginBottom: "80px" }}
+                        />
+                        <div>
+                          <div
+                            style={{
+                              color: "#767676",
+                              fontSize: 13,
+                              fontFamily: "Poppins",
+                              fontWeight: "500",
+                              textTransform: "uppercase",
+                              lineHeight: "px",
+                              wordWrap: "break-word",
+                            }}
+                          >
+                            Take aways & Learning
+                          </div>
+                          <div
+                            style={{
+                              color: "black",
+                              fontSize: 20,
+                              fontFamily: "Poppins",
+                              fontWeight: "600",
+                              wordWrap: "break-word",
+                              marginTop: "24px",
+                            }}
+                          >
+                            What I would do better next time.
+                          </div>
+                          <ul
+                            className="m-0 list-none"
+                            style={{ marginTop: "36px" }}
+                          >
+                            <li
+                              className="m-0 pl-[25px] relative"
+                              style={{ marginTop: "4px" }}
+                            >
+                              <span>
+                                <img
+                                  className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                  src="assets/img/svg/rightarrow.svg"
+                                  alt="image"
+                                  style={{ top: "13px" }}
+                                />
+                                <div
+                                  style={{
+                                    marginTop: "40px",
+                                    fontSize: "14px",
+                                    fontWeight: 600,
+                                    lineHeight: "32px",
+                                    color: "#000000",
+                                  }}
+                                >
+                                  More focus on user feedback and do iterations
+                                </div>
+                                <div>
+                                  It is important to focus on users’ qualitative
+                                  research and how they are interacting with the
+                                  application.
+                                </div>
+                              </span>
+                            </li>
+
+                            <li
+                              className="m-0 pl-[25px] relative"
+                              style={{ marginTop: "4px" }}
+                            >
+                              <span>
+                                <img
+                                  className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                  src="assets/img/svg/rightarrow.svg"
+                                  alt="image"
+                                  style={{ top: "13px" }}
+                                />
+                                <div
+                                  style={{
+                                    marginTop: "40px",
+                                    fontSize: "14px",
+                                    fontWeight: 600,
+                                    lineHeight: "32px",
+                                    color: "#000000",
+                                  }}
+                                >
+                                  Make sure your assumptions are actually usable
+                                </div>
+                                <div>
+                                  During testing, I learned that some of my
+                                  assumptions were different from what the users
+                                  wanted, which was a valuable learning
+                                  experience.
+                                </div>
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                      </>
+                    ) : newsModal?.id === 2 ? (
+                      <></>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
+            {newsModal?.id === 1 ? (
+              <></>
+            ) : newsModal?.id === 2 ? (
+              <>
+                <hr />
+              </>
+            ) : (
+              <></>
+            )}
           </div>
-        </div>
-        {newsModal?.id === 1 ? (
-          <></>
-        ) : newsModal?.id === 2 ? (
-          <>
-            <hr />
-          </>
-        ) : (
-          <></>
-        )}
-      </div>
+        </>
+      )}
     </SectionContainer>
   );
 };
