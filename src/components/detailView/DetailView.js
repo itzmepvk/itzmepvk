@@ -2,6 +2,8 @@ import { TokyoContext } from "@/src/Context";
 import { useContext, useEffect, useState } from "react";
 import SectionContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
+import { useLocation } from "react-router";
+import { useRouter } from "next/router";
 
 const data = [
   {
@@ -544,10 +546,13 @@ const DetailView = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    if (newsModal?.id) {
       setLoading(false);
-    }, 10000);
-  }, []);
+    }
+  }, [newsModal?.id]);
+
+  console.log("loading", loading);
+
   return (
     <SectionContainer name={"detailview"}>
       {loading ? (
@@ -564,7 +569,10 @@ const DetailView = () => {
           <div className="back-arrow">
             <img
               src="assets/img/news/back-arrow.svg"
-              onClick={() => navChange("portfolio")}
+              onClick={() => {
+                navChange("portfolio");
+                setLoading(true);
+              }}
             />
           </div>
           <div className="container">
