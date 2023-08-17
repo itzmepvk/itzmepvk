@@ -2,8 +2,6 @@ import { TokyoContext } from "@/src/Context";
 import { useContext, useEffect, useState } from "react";
 import SectionContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
-import { useLocation } from "react-router";
-import { useRouter } from "next/router";
 
 const data = [
   {
@@ -550,8 +548,6 @@ const DetailView = () => {
       setLoading(false);
     }
   }, [newsModal?.id]);
-
-  console.log("loading", loading);
 
   return (
     <SectionContainer name={"detailview"}>
