@@ -573,7 +573,17 @@ const DetailView = () => {
           </div>
           <div className="container">
             <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[45px] px-0 ">
-              <img src={data[newsModal?.id - 1]?.headerImg} className="" />
+              {data[newsModal?.id - 1]?.headerImg ? (
+                <img src={data[newsModal?.id - 1]?.headerImg} className="" />
+              ) : (
+                <center>
+                  <img
+                    src="assets/img/news/loading.gif"
+                    style={{ marginTop: "100px", width: "10%" }}
+                  />
+                </center>
+              )}
+
               <p
                 className="date font-montserrat text-[13px] text-[#767676]"
                 style={{ marginTop: "32px" }}
