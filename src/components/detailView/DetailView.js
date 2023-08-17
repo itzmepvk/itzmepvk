@@ -540,14 +540,14 @@ as public, private or exclusive.`,
 ];
 
 const DetailView = () => {
-  const { newsModal, setNewsModal, navChange, nav } = useContext(TokyoContext);
+  const { newsModal, setNewsModal, navChange } = useContext(TokyoContext);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
-  }, [nav]);
+    }, 10000);
+  }, []);
   return (
     <SectionContainer name={"detailview"}>
       {loading ? (
