@@ -537,6 +537,137 @@ as public, private or exclusive.`,
     finalDesign: "assets/img/news/ms-finalD.svg",
     finalDesignTxt: ` In February 2020, after 4 months, we successfully launched the product MVP—a small yet captivating concept to work on. This experience provided insights into the workings of new product concepts through design thinking and brainstorming.`,
   },
+  {
+    id: 5,
+    headerImg: "assets/img/news/odoc.svg",
+    headerTxt: `oDoc allows you to connect with doctors, receive medical advice, and obtain a prescription if needed.`,
+    headerBodyImg: "assets/img/news/odoc-bg.svg",
+    timelineAndClient: {
+      time: "Mar 2015 - Nov 2016",
+      client: "Singapore, India, Sri Lanka",
+    },
+    myRole: ["User Research", "UX Design", "Dev Hand-off"],
+    tools: ["Balsamiq", "Adobe XD & Adobe Illustrator"],
+    frameworks: ["React Native"],
+    context: ` In 2015, as a startup, oDoc launched its product. With just three of us, we designed and developed it in-house, which ultimately helped us secure $1 million in funding.`,
+    problem: `Accessing timely medical advice and prescriptions is challenging, particularly when facing health concerns.`,
+    solution: `oDoc offers convenient online connections with doctors for medical advice and prescriptions.`,
+    objective: `A user-friendly mobile application enhancing medical access through oDoc's platform for prompt advice and prescriptions.`,
+    tackling: [
+      {
+        id: 1,
+        name: "Domain Understand",
+        text: [
+          "Client interaction: Understanding users, effective communication for successful outcomes.",
+        ],
+        image: "assets/img/news/1.jpg",
+      },
+      {
+        id: 2,
+        name: "Define the Problem",
+        text: [
+          "User persona, empathy map - Understand needs and frustrations deeply.",
+        ],
+        image: "assets/img/news/2.jpg",
+      },
+      {
+        id: 3,
+        name: "Design Ideation",
+        text: [
+          "Idea brainstorming, whiteboard sessions fuel creativity, innovative solutions.",
+        ],
+        image: "assets/img/news/2.jpg",
+      },
+      {
+        id: 4,
+        name: "Wireframe & Test",
+        text: [
+          "Create wireframes, turn into hi-fi prototypes, test with users, gather feedback, and iterate.",
+        ],
+        image: "assets/img/news/3.jpg",
+      },
+    ],
+
+    step1: "assets/img/news/domain-understand.svg",
+    step2: "assets/img/news/define-information.svg",
+    step3: "assets/img/news/design-ideation.svg",
+    step4: "assets/img/news/wireframe-test.svg",
+
+    offeringImg: "assets/img/news/offering.svg",
+    achivements: [
+      { id: 1, text: "Current frustrations & pain points" },
+      { id: 2, text: "What did they really want?" },
+      { id: 3, text: "What did they really need?" },
+      { id: 4, text: "Interviewed with Clients" },
+      { id: 5, text: "Service Providers & Admin" },
+      { id: 6, text: "20+ user interviews" },
+      { id: 7, text: "Gathered the insights" },
+    ],
+    researchQuestions: [
+      "How does one become a cook? Is certification necessary for the background check? ",
+      "What's the expected chef duration at the host's place? How is payment handled, including any overtime compensation?",
+      "How far in advance can a host make a booking? What's the protocol for cancellations?",
+      "What if the host isn't present when the cook arrives? What's the process for both in-house and out-of-house scenarios?",
+      "Can hosts provide specific location, contact details, or notes?",
+      "Who is responsible for groceries, equipment, etc.?",
+    ],
+    insights: [
+      {
+        id: 1,
+        text: "We brought together all relevant stakeholders, including the client, development team, business analyst, and others, to brainstorm ideas. We dedicated one week to a whiteboard session for ideation and reaching a consensus on the user journey.",
+      },
+    ],
+    personaMappingSS: [
+      "assets/img/news/Group 1000001905.svg",
+      "assets/img/news/Group 1000001906.svg",
+      "assets/img/news/Group 1000001904.svg",
+      "assets/img/news/Group 1000001907.svg",
+    ],
+    personaIdentifyingSS: [
+      "assets/img/news/kora-cook.svg",
+      "assets/img/news/kora-host.svg",
+    ],
+    keyTakeaways: [
+      {
+        id: 1,
+        text: `Client should be able to create 3 types of opportunities. And receive proposals will be able to accept/reject. Also send invitation
+as public, private or exclusive.`,
+      },
+      {
+        id: 2,
+        text: `Service Providers should be able to filter and look the opportunities. And also evaluate and submit candidate to the Proposal.`,
+      },
+      {
+        id: 3,
+        text: `SquadGurus users able to create opportunity on behalf of client, and send proposal on behalf of service providers.`,
+      },
+    ],
+    prototypeTxt: [
+      {
+        id: 1,
+        text: "I did the Design System & SquagGurus logo &  brand identity",
+      },
+      { id: 2, text: "Straight away jumped in to high-fidelity design" },
+      {
+        id: 3,
+        text: "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
+      },
+    ],
+    brandLogo: "assets/img/news/brandLogoSg.svg",
+    handOver: [
+      { id: 1, text: " Final MVP prototype design approval" },
+      {
+        id: 2,
+        text: "Hand over the MVP design to developers and QAs with references along with the design documents",
+      },
+      {
+        id: 3,
+        text: "Daily sync-up with the team to make sure everything on-track",
+      },
+    ],
+    finalDesign: "assets/img/news/ms-finalD.svg",
+    finalDesignTxt: ` In February 2020, after 4 months, we successfully launched the product MVP—a small yet captivating concept to work on. This experience provided insights into the workings of new product concepts through design thinking and brainstorming.`,
+  },
 ];
 
 const DetailView = () => {
@@ -881,22 +1012,26 @@ const DetailView = () => {
                     <div>
                       {data[newsModal?.id - 1]?.researchQuestions.map(
                         (el, index) => (
-                          <div style={{ marginTop: "16px" }} className="flex">
+                          <div
+                            style={{ marginTop: "16px" }}
+                            className="flex relative"
+                          >
                             <span
                               style={{
                                 width: "32px",
                                 height: "32px",
                                 background: "#DADADC",
-                                borderRadius: 100,
+                                borderRadius: 500,
                                 padding: "2px 2px 2px 7px",
                                 marginRight: "16px",
                                 alignItems: "center",
                                 justifyContent: "center",
                               }}
+                              className="text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                             >
                               0{index + 1}
                             </span>
-                            {el}
+                            <span style={{ marginLeft: "50px" }}> {el}</span>
                           </div>
                         )
                       )}
@@ -1255,22 +1390,26 @@ const DetailView = () => {
                   <div>
                     {data[newsModal?.id - 1]?.researchQuestions.map(
                       (el, index) => (
-                        <div style={{ marginTop: "16px" }} className="flex">
+                        <div
+                          style={{ marginTop: "16px" }}
+                          className="flex relative"
+                        >
                           <span
                             style={{
                               width: "32px",
                               height: "32px",
                               background: "#DADADC",
-                              borderRadius: 100,
+                              borderRadius: 500,
                               padding: "2px 2px 2px 7px",
                               marginRight: "16px",
                               alignItems: "center",
                               justifyContent: "center",
                             }}
+                            className="text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                           >
                             0{index + 1}
                           </span>
-                          {el}
+                          <span style={{ marginLeft: "50px" }}> {el}</span>
                         </div>
                       )
                     )}
@@ -1792,13 +1931,14 @@ const DetailView = () => {
                 </div>
                 <div
                   style={{
-                    color: "black",
-                    fontSize: 16,
-                    fontFamily: "Poppins",
-                    fontWeight: 600,
-                    lineHeight: "px",
-                    wordWrap: "break-word",
-                    marginTop: "40px",
+                    width: "32px",
+                    height: "32px",
+                    background: "#DADADC",
+                    borderRadius: 100,
+                    padding: "2px 2px 2px 7px",
+                    marginRight: "16px",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
                   {newsModal?.id === 2
@@ -1861,26 +2001,32 @@ const DetailView = () => {
                   "As expected, we received plenty of user feedback and suggestions during the initial round of user testing. ",
                   "The feedback led to optimization of most workflow steps.",
                   "Additional workflow steps were introduced later to accommodate necessary data capture.",
-                  "What difficulties do you experience when performing this process manually?The platform's language should be British English, and we received assistance from the client in this regard.",
+                  "What difficulties do you experience when performing this process manually? The platform's language should be British English, and we received assistance from the client in this regard.",
                   "Despite its suboptimal usability, the client wanted the product sooner to escape manual work. As a result, we're implementing both minor and major changes on a sprint basis.",
                 ].map((el, index) => (
-                  <div style={{ marginTop: "16px" }} className="flex">
-                    <span
-                      style={{
-                        width: "32px",
-                        height: "32px",
-                        background: "#DADADC",
-                        borderRadius: 100,
-                        padding: "2px 2px 2px 7px",
-                        marginRight: "16px",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
+                  <>
+                    <div
+                      style={{ marginTop: "16px" }}
+                      className="flex relative"
                     >
-                      0{index + 1}
-                    </span>
-                    {el}
-                  </div>
+                      <div
+                        style={{
+                          width: "32px",
+                          height: "32px",
+                          background: "#DADADC",
+                          borderRadius: 500,
+                          padding: "2px 2px 2px 7px",
+                          marginRight: "16px",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                        className="text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                      >
+                        0{index + 1}
+                      </div>
+                      <div style={{ marginLeft: "50px" }}>{el}</div>
+                    </div>
+                  </>
                 ))}
               </div>
             </>

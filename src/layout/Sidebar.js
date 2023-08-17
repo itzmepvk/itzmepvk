@@ -24,7 +24,11 @@ const Sidebar = () => {
               .map((menu) => (
                 <li
                   className={`m-0 w-full float-left ${
-                    menu.href == nav ? "active" : ""
+                    menu.href == nav
+                      ? "active"
+                      : nav === "detailview" && menu.name === "portfolio"
+                      ? "active"
+                      : ""
                   }`}
                   key={menu.id}
                 >

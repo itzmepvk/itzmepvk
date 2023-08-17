@@ -45,7 +45,11 @@ const Mobile = () => {
               .map((menu) => (
                 <li
                   className={`active mb-[7px] ${
-                    menu.href == nav ? "active" : ""
+                    menu.href == nav
+                      ? "active"
+                      : nav === "detailview" && menu.name === "portfolio"
+                      ? "active"
+                      : ""
                   }`}
                   key={menu.id}
                 >
