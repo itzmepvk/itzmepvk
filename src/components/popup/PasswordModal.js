@@ -34,10 +34,20 @@ const PasswordModal = () => {
   };
   return (
     <ModalContainer nullValue={setPasswordModal} type={"password"}>
-      <div>Enter Password</div>
-      <br />
-      <br />
+      <div
+        style={{
+          color: "black",
+          fontSize: 20,
+          fontFamily: "Poppins",
+          fontWeight: "600",
+          lineHeight: "32px",
+          wordWrap: "break-word",
+        }}
+      >
+        Enter Password
+      </div>
       <input
+        style={{ marginBottom: "56px", marginTop: "56px" }}
         type="password"
         className="w-full"
         onChange={(e) => {
@@ -54,13 +64,22 @@ const PasswordModal = () => {
       <br />
       {empty && <span className="span-warning">Please Enter Password</span>}
       {exception && <span className="span-warning">Wrong Password</span>}
-      <br />
-      <br />
-      <br />
       <button
         type="button"
         className="button-submit bg-black "
         onClick={() => onSubmit()}
+        style={{
+          position: "relative",
+          background: "#000000",
+          width: "181px",
+          height: "56px",
+          color: "white",
+          fontSize: 16,
+          fontFamily: "Poppins",
+          fontWeight: 500,
+          lineHeight: "40px",
+          wordWrap: "break-word",
+        }}
       >
         SUBMIT
       </button>
