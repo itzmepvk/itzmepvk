@@ -569,6 +569,7 @@ const DetailView = () => {
                 navChange("portfolio");
                 setLoading(true);
               }}
+              style={{ cursor: "pointer" }}
             />
           </div>
           <div className="container">
