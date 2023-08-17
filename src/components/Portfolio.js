@@ -32,7 +32,7 @@ const data = [
     id: 4,
     title: "The platform brings skilled cooks to the homes",
     image: "assets/img/news/4.svg",
-    author: "prototype • UX Design • branding",
+    author: "prototype • UX research • UX Design",
     date: "25 Sep 2022",
     colorCode: "#E6F7F4",
   },
