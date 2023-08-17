@@ -24,7 +24,7 @@ const data = [
     id: 3,
     title: "Europe’s largest asset management system",
     image: "assets/img/news/3.svg",
-    author: "prototype • UX Design • branding",
+    author: "prototype • UX research • UX Design",
     date: "07 Oct 2022",
     colorCode: "#E5F1FA",
   },

@@ -279,6 +279,132 @@ as public, private or exclusive.`,
     celebration at a hotel, where over 35+ co-working
     hosts had been onboarded onto the platform.`,
   },
+  {
+    id: 3,
+    headerImg: "assets/img/news/lg.svg",
+    headerTxt: `LGIM is one of Europe’s largest asset managers, offering investment solutions to a broad range of clients globally.`,
+    headerBodyImg: "assets/img/news/lg-body.svg",
+    timelineAndClient: {
+      time: "Jan 2019 - Current",
+      client: "UK & Global",
+    },
+    myRole: ["User Research", "UX Design", "Dev Hand-off"],
+    tools: ["Miro", " Figma", " Adobe XD & Adobe Illustrator"],
+    frameworks: ["React Native", "Ant Design"],
+    context: ` In Mar 2019, LGIM wanted to create a Cloud-based Pension Investment Platform that enables institutional fund managers and advisors to digitize their services.`,
+    problem: `Until 2019, this intricate process was handled manually. However, as time passed, the process grew increasingly challenging.`,
+    solution: `Developing a platform that enables trustees, advisors, sponsors, and other users to enhance their processes and actions.`,
+    objective: `Conduct research, develop strategies, and design an end-to-end experience to increase the conversion rate of the platform.`,
+    tackling: [
+      {
+        id: 1,
+        name: "Domain Understand",
+        text: [
+          "Client interaction: Understanding users, effective communication for successful outcomes.",
+        ],
+        image: "assets/img/news/1.jpg",
+      },
+      {
+        id: 2,
+        name: "Define the Problem",
+        text: [
+          "Task enumeration: Organizing information architecture for improved user experience.",
+        ],
+        image: "assets/img/news/2.jpg",
+      },
+      {
+        id: 3,
+        name: "Wireframe & Test",
+        text: [
+          "Idea brainstorming, whiteboard sessions fuel creativity, innovative solutions.",
+        ],
+        image: "assets/img/news/3.jpg",
+      },
+    ],
+
+    step1: "assets/img/news/domain-understand.svg",
+    step2: "assets/img/news/define-problem.svg",
+    step3: "assets/img/news/wireframe-test.svg",
+
+    offeringImg: "assets/img/news/offering.svg",
+    achivements: [
+      { id: 1, text: "Current frustrations & pain points" },
+      { id: 2, text: "What did they really want?" },
+      { id: 3, text: "What did they really need?" },
+      { id: 4, text: "Interviewed with Clients" },
+      { id: 5, text: "Service Providers & Admin" },
+      { id: 6, text: "20+ user interviews" },
+      { id: 7, text: "Gathered the insights" },
+    ],
+    researchQuestions: [
+      "As expected, we received plenty of user feedback and suggestions during the initial round of user testing. ",
+      "The feedback led to optimization of most workflow steps.",
+      "Additional workflow steps were introduced later to accommodate necessary data capture.",
+      "What difficulties do you experience when performing this process manually?The platform's language should be British English, and we received assistance from the client in this regard.",
+      "Despite its suboptimal usability, the client wanted the product sooner to escape manual work. As a result, we're implementing both minor and major changes on a sprint basis.",
+    ],
+    insights: [
+      {
+        id: 1,
+        text: "We gathered all the possible stakeholders, including the marketing team, product team, development team, and CEO (basically everyone), to brainstorm ideas.",
+      },
+      {
+        id: 2,
+        text: "Regarding primary needs, users prioritized location, available space types or space categories, and the image of the space. As for secondary needs, users prioritized the type of spaces, ratings of common areas and lounges, pricing, current space availability, offers/discounts, and amenities.",
+      },
+    ],
+    personaMappingSS: [
+      "assets/img/news/Group 1000001905.svg",
+      "assets/img/news/Group 1000001906.svg",
+      "assets/img/news/Group 1000001904.svg",
+      "assets/img/news/Group 1000001907.svg",
+    ],
+    personaIdentifyingSS: [
+      "assets/img/news/ms-sahan.svg",
+      "assets/img/news/ms-nimesha.svg",
+      "assets/img/news/ms-vishnu.svg",
+    ],
+    keyTakeaways: [
+      {
+        id: 1,
+        text: `Client should be able to create 3 types of opportunities. And receive proposals will be able to accept/reject. Also send invitation
+as public, private or exclusive.`,
+      },
+      {
+        id: 2,
+        text: `Service Providers should be able to filter and look the opportunities. And also evaluate and submit candidate to the Proposal.`,
+      },
+      {
+        id: 3,
+        text: `SquadGurus users able to create opportunity on behalf of client, and send proposal on behalf of service providers.`,
+      },
+    ],
+    prototypeTxt: [
+      {
+        id: 1,
+        text: "I did the Design System & SquagGurus logo &  brand identity",
+      },
+      { id: 2, text: "Straight away jumped in to high-fidelity design" },
+      {
+        id: 3,
+        text: "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
+      },
+    ],
+    brandLogo: "assets/img/news/brandLogoSg.svg",
+    handOver: [
+      { id: 1, text: " Final MVP prototype design approval" },
+      {
+        id: 2,
+        text: "Hand over the MVP design to developers and QAs with references along with the design documents",
+      },
+      {
+        id: 3,
+        text: "Daily sync-up with the team to make sure everything on-track",
+      },
+    ],
+    finalDesign: "assets/img/news/ms-finalD.svg",
+    finalDesignTxt: ` In April 2019, after 4 months, we achieved a successful product MVP launch. Working on a complex fintech platform expanded my understanding of international pension investments.`,
+  },
 ];
 
 const DetailView = () => {
@@ -494,7 +620,16 @@ const DetailView = () => {
             </div>
             <ul className="ml-[-40px] list-none flex flex-wrap">
               {data[newsModal?.id - 1]?.tackling.map((service) => (
-                <li className="mb-[40px] w-1/4 pl-[40px]" key={service.id}>
+                <li
+                  className={`mb-[40px] w-${
+                    newsModal?.id === 1 || newsModal?.id === 2
+                      ? "1/4"
+                      : newsModal?.id === 3
+                      ? "1/3"
+                      : "1/4"
+                  } pl-[40px]`}
+                  key={service.id}
+                >
                   <div className="list_inner w-full h-full clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border bg-white pt-[45px] pr-[20px] pb-[40px] pl-[20px] transition-all duration-300">
                     <span className="number inline-block mb-[25px] relative w-[60px] h-[60px] leading-[60px] text-center rounded-full bg-[rgba(0,0,0,.03)] font-bold text-black font-montserrat transition-all duration-300">
                       {service.id <= 9 ? `0${service.id}` : service.id}
@@ -530,6 +665,8 @@ const DetailView = () => {
                 ? "Research and analyze what the competitors are offering."
                 : newsModal?.id === 2
                 ? "Understanding user needs through user research."
+                : newsModal?.id === 3
+                ? "Gaining insight by conversing with the client to comprehend the issue."
                 : ""}
             </div>
             {newsModal?.id === 1 ? (
@@ -549,11 +686,15 @@ const DetailView = () => {
                         src="assets/img/svg/rightarrow.svg"
                         alt="image"
                       />
-                      We investigated the target users from Singapore, Australia
+                      {newsModal?.id === 2
+                        ? `We investigated the target users from Singapore, Australia
                       and Sri Lanka to gather insights that would help us design
                       the process. The objective of the research was to
                       understand their needs, behaviour, attitude, and pain
-                      points.
+                      points.`
+                        : newsModal?.id === 3
+                        ? "The client presently employs a system where numerous intricate workflows occur manually. Consequently, they intimately know the pains of this manual effort and possess a comprehensive process understanding."
+                        : ""}
                     </span>
                   </li>
                 </ul>
@@ -591,11 +732,15 @@ const DetailView = () => {
                     )
                   )}
                 </div>
-                <img
-                  src="assets/img/news/ms-pie.svg"
-                  className="img-remake  w-full"
-                  style={{ marginTop: "40px" }}
-                />
+                {newsModal?.id === 2 ? (
+                  <img
+                    src="assets/img/news/ms-pie.svg"
+                    className="img-remake  w-full"
+                    style={{ marginTop: "40px" }}
+                  />
+                ) : (
+                  <></>
+                )}
               </>
             )}
           </div>
@@ -615,10 +760,14 @@ const DetailView = () => {
                 ? "Questions focused on what each user expects to achieve."
                 : newsModal?.id === 2
                 ? "Understanding user needs through user research."
+                : newsModal?.id === 3
+                ? "Creating requirement and user story in a simplified manner."
                 : ""}
             </div>
             <div
-              className="tokyo_tm_skillbox in w-full h-auto clear-both float-left flex"
+              className={`tokyo_tm_skillbox in w-full h-auto clear-both ${
+                newsModal?.id === 3 ? "" : "float-left flex"
+              }`}
               style={{ marginTop: "40px", marginBottom: "40px" }}
             >
               {newsModal?.id === 1 ? (
@@ -725,6 +874,30 @@ const DetailView = () => {
                     </ul>
                   </div>
                 </>
+              ) : newsModal?.id === 3 ? (
+                <>
+                  <ul className="list-none">
+                    <li className="m-0 pl-[25px] relative">
+                      <span>
+                        <img
+                          className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                          src="assets/img/svg/rightarrow.svg"
+                          alt="image"
+                        />
+                        I managed to extract the requirement and user story
+                        definitions from the client using an effective,
+                        straightforward approach. I've compiled a task list that
+                        includes the associated users, necessary input types,
+                        character limits, and more.
+                      </span>
+                    </li>
+                  </ul>
+                  <img
+                    src={"assets/img/news/lg-test.svg"}
+                    className="img-remake"
+                    style={{ marginTop: "20px" }}
+                  />
+                </>
               ) : (
                 <></>
               )}
@@ -786,36 +959,74 @@ const DetailView = () => {
                 ? " Overwhelmed with insights, so we needed to…"
                 : newsModal?.id === 2
                 ? "Ideate solutions based on the knowledge gathered."
+                : newsModal?.id === 3
+                ? "Creating the design using the information provided on the sheet."
                 : ""}
             </div>
 
-            <div
-              className="in w-full h-auto clear-both float-left"
-              style={{ marginBottom: "80px" }}
-            >
-              <div className="left ">
-                <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
-                  <ul className="m-0 list-none">
-                    {data[newsModal?.id - 1]?.insights.map((item, index) => (
-                      <>
-                        {" "}
-                        <li className="m-0 pl-[25px] relative" key={item.id}>
-                          <span>
-                            <img
-                              className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                              src="assets/img/svg/rightarrow.svg"
-                              alt="image"
-                            />
-                            {item.text}
-                          </span>
-                        </li>
-                        <br />
-                      </>
-                    ))}
-                  </ul>
+            {newsModal?.id === 3 ? (
+              <>
+                <img
+                  src={"assets/img/news/lg-test0.svg"}
+                  className="img-remake"
+                  style={{ marginTop: "20px" }}
+                />
+                <hr style={{ marginTop: "40px" }} />
+                <div
+                  style={{
+                    color: "black",
+                    fontSize: 16,
+                    fontFamily: "Poppins",
+                    fontWeight: 600,
+                    lineHeight: "px",
+                    wordWrap: "break-word",
+                    marginTop: "40px",
+                  }}
+                >
+                  The client provided the branding and style guide.
                 </div>
-              </div>
-            </div>
+                <img
+                  src={"assets/img/news/lg-guide.svg"}
+                  className="img-remake"
+                  style={{ marginTop: "20px" }}
+                />
+              </>
+            ) : (
+              <>
+                <div
+                  className="in w-full h-auto clear-both float-left"
+                  style={{ marginBottom: "80px" }}
+                >
+                  <div className="left ">
+                    <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                      <ul className="m-0 list-none">
+                        {data[newsModal?.id - 1]?.insights.map(
+                          (item, index) => (
+                            <>
+                              {" "}
+                              <li
+                                className="m-0 pl-[25px] relative"
+                                key={item.id}
+                              >
+                                <span>
+                                  <img
+                                    className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                    src="assets/img/svg/rightarrow.svg"
+                                    alt="image"
+                                  />
+                                  {item.text}
+                                </span>
+                              </li>
+                              <br />
+                            </>
+                          )
+                        )}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
           <div style={{}}>
             <div
@@ -1168,11 +1379,15 @@ const DetailView = () => {
         </div>
       </div>
 
-      <img
-        src={data[newsModal?.id - 1]?.finalDesign}
-        style={{ marginTop: "40px" }}
-        className="img-remake"
-      />
+      {newsModal?.id === 3 ? (
+        <></>
+      ) : (
+        <img
+          src={data[newsModal?.id - 1]?.finalDesign}
+          style={{ marginTop: "40px" }}
+          className="img-remake"
+        />
+      )}
 
       {newsModal?.id === 1 ? (
         <></>
@@ -1230,6 +1445,55 @@ const DetailView = () => {
                 </li>
               ))}
             </ul>
+          </div>
+        </>
+      ) : newsModal?.id === 3 ? (
+        <>
+          <div className="container">
+            <div
+              style={{
+                color: "black",
+                fontSize: 20,
+                fontFamily: "Poppins",
+                fontWeight: "600",
+                wordWrap: "break-word",
+              }}
+            >
+              Test & Feedback
+            </div>
+            <ul className="list-none" style={{ marginTop: "20px" }}>
+              <li className="m-0 pl-[25px] relative">
+                <span>
+                  <img
+                    className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                    src="assets/img/svg/rightarrow.svg"
+                    alt="image"
+                  />
+                  We presented the high-fidelity wireframe screens and flows to
+                  multiple users, and during this phase, we encountered the
+                  following questions.
+                </span>
+              </li>
+            </ul>
+            {data[newsModal?.id - 1]?.researchQuestions.map((el, index) => (
+              <div style={{ marginTop: "16px" }} className="flex">
+                <span
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    background: "#DADADC",
+                    borderRadius: 100,
+                    padding: "2px 2px 2px 7px",
+                    marginRight: "16px",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  0{index + 1}
+                </span>
+                {el}
+              </div>
+            ))}
           </div>
         </>
       ) : (
@@ -1366,7 +1630,7 @@ const DetailView = () => {
         {newsModal?.id === 1 ? (
           <></>
         ) : newsModal?.id === 2 ? (
-          <> 
+          <>
             <hr />
           </>
         ) : (
