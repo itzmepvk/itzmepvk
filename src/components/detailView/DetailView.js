@@ -322,7 +322,7 @@ as public, private or exclusive.`,
       },
     ],
 
-    step1: "assets/img/news/domain-understand.svg",
+    step1: "assets/img/news/domain-understand3.svg",
     step2: "assets/img/news/define-problem.svg",
     step3: "assets/img/news/wireframe-test3.svg",
 
