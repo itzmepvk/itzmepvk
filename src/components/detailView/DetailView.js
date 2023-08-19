@@ -1218,7 +1218,6 @@ const DetailView = () => {
                       <ul className="list-none">
                         <li
                           className="m-0 pl-[25px] relative"
-                          key={item.id}
                           style={{ marginTop: "4px" }}
                         >
                           <span>
