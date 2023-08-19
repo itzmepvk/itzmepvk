@@ -566,50 +566,58 @@ as public, private or exclusive.`,
         id: 2,
         name: "Define the Problem",
         text: [
-          "User persona, empathy map - Understand needs and frustrations deeply.",
+          "Task enumeration: Organizing information architecture for improved user experience.",
         ],
         image: "assets/img/news/2.jpg",
       },
       {
         id: 3,
-        name: "Design Ideation",
-        text: [
-          "Idea brainstorming, whiteboard sessions fuel creativity, innovative solutions.",
-        ],
-        image: "assets/img/news/2.jpg",
-      },
-      {
-        id: 4,
         name: "Wireframe & Test",
         text: [
-          "Create wireframes, turn into hi-fi prototypes, test with users, gather feedback, and iterate.",
+          "Idea brainstorming, whiteboard sessions fuel creativity, innovative solutions.",
         ],
         image: "assets/img/news/3.jpg",
       },
     ],
 
-    step1: "assets/img/news/domain-understand.svg",
-    step2: "assets/img/news/define-information.svg",
-    step3: "assets/img/news/design-ideation.svg",
-    step4: "assets/img/news/wireframe-test.svg",
+    step1: "assets/img/news/domain-understand3.svg",
+    step2: "assets/img/news/define-problem.svg",
+    step3: "assets/img/news/wireframe-test3.svg",
 
     offeringImg: "assets/img/news/offering.svg",
     achivements: [
-      { id: 1, text: "Current frustrations & pain points" },
-      { id: 2, text: "What did they really want?" },
-      { id: 3, text: "What did they really need?" },
-      { id: 4, text: "Interviewed with Clients" },
-      { id: 5, text: "Service Providers & Admin" },
-      { id: 6, text: "20+ user interviews" },
-      { id: 7, text: "Gathered the insights" },
+      {
+        id: 1,
+        text: "Users expressed frustration with limited access to medical consultations and prescriptions, especially in remote areas.",
+      },
+      {
+        id: 2,
+        text: "Busy professionals highlighted the challenge of finding time for in-person consultations, emphasizing the need for convenient alternatives.",
+      },
+      {
+        id: 3,
+        text: "Users showed keen interest in the security of their medical information when using digital platforms, underscoring the importance of data protection.",
+      },
+      {
+        id: 4,
+        text: "Respondents indicated a strong desire for personalized medical advice based on their health history and preferences.",
+      },
+      {
+        id: 5,
+        text: "Users expected an intuitive platform that would allow them to seamlessly book appointments and navigate the consultation process.",
+      },
+      {
+        id: 6,
+        text: "Users expressed frustrations with existing healthcare apps due to usability, video quality, and prescription management issues.",
+      },
     ],
     researchQuestions: [
-      "How does one become a cook? Is certification necessary for the background check? ",
-      "What's the expected chef duration at the host's place? How is payment handled, including any overtime compensation?",
-      "How far in advance can a host make a booking? What's the protocol for cancellations?",
-      "What if the host isn't present when the cook arrives? What's the process for both in-house and out-of-house scenarios?",
-      "Can hosts provide specific location, contact details, or notes?",
-      "Who is responsible for groceries, equipment, etc.?",
+      "What are the main challenges you face when seeking medical advice and prescriptions remotely?",
+      "How frequently do you use healthcare apps for medical consultations and prescription management?",
+      "What features do you find most valuable in existing healthcare apps?",
+      "What aspects of remote medical consultations do you think could be improved?",
+      "How do you ensure the security and confidentiality of your medical information when using digital platforms?",
+      "What are your expectations regarding the convenience and accessibility of digital healthcare solutions?",
     ],
     insights: [
       {
@@ -624,8 +632,9 @@ as public, private or exclusive.`,
       "assets/img/news/Group 1000001907.svg",
     ],
     personaIdentifyingSS: [
-      "assets/img/news/kora-cook.svg",
-      "assets/img/news/kora-host.svg",
+      "assets/img/news/odocSS1.svg",
+      "assets/img/news/odocSS2.svg",
+      "assets/img/news/odocSS3.svg",
     ],
     keyTakeaways: [
       {
@@ -665,8 +674,8 @@ as public, private or exclusive.`,
         text: "Daily sync-up with the team to make sure everything on-track",
       },
     ],
-    finalDesign: "assets/img/news/ms-finalD.svg",
-    finalDesignTxt: ` In February 2020, after 4 months, we successfully launched the product MVP—a small yet captivating concept to work on. This experience provided insights into the workings of new product concepts through design thinking and brainstorming.`,
+    finalDesign: "assets/img/news/odocFinal.svg",
+    finalDesignTxt: ` In March 2015, after six months, we completed a fully functional mobile application to present to an investor, ultimately leading to the securing of $1 million in funding.`,
   },
 ];
 
@@ -920,7 +929,7 @@ const DetailView = () => {
                       className={`mb-[40px] w-${
                         newsModal?.id === 1 || newsModal?.id === 2
                           ? "1/4"
-                          : newsModal?.id === 3
+                          : newsModal?.id === 3 || newsModal?.id === 5
                           ? "1/3"
                           : "1/4"
                       } pl-[40px]`}
@@ -965,6 +974,8 @@ const DetailView = () => {
                     ? "Gaining insight by conversing with the client to comprehend the issue."
                     : newsModal?.id === 4
                     ? "Understanding the hosts and cooks"
+                    : newsModal?.id === 5
+                    ? "Understanding the domain by conduct user interviews competitive analysis"
                     : ""}
                 </div>
                 {newsModal?.id === 1 ? (
@@ -983,6 +994,7 @@ const DetailView = () => {
                             className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                             src="assets/img/svg/rightarrow.svg"
                             alt="image"
+                            style={{ top: "13px" }}
                           />
                           {newsModal?.id === 2
                             ? `We investigated the target users from Singapore, Australia
@@ -994,6 +1006,8 @@ const DetailView = () => {
                             ? "The client presently employs a system where numerous intricate workflows occur manually. Consequently, they intimately know the pains of this manual effort and possess a comprehensive process understanding."
                             : newsModal?.id === 4
                             ? "To build this platform, understanding each persona is an important factor. Empathizing with hosts and cooks, and understanding their pain points and motives, helps to provide a better experience."
+                            : newsModal?.id === 5
+                            ? "We gathered user insights on remote medical access challenges and preferences. Analyzed competitor apps for insights on strengths, weaknesses, and differentiation opportunities."
                             : ""}
                         </span>
                       </li>
@@ -1068,11 +1082,15 @@ const DetailView = () => {
                     ? "Creating requirement and user story in a simplified manner."
                     : newsModal?.id === 4
                     ? "Defining problems through empathy with cooks and hosts."
+                    : newsModal?.id === 5
+                    ? "Defining problems through empathy with users"
                     : ""}
                 </div>
                 <div
                   className={`tokyo_tm_skillbox in w-full h-auto clear-both ${
-                    newsModal?.id === 3 || newsModal?.id === 4
+                    newsModal?.id === 3 ||
+                    newsModal?.id === 4 ||
+                    newsModal?.id === 5
                       ? ""
                       : "float-left flex"
                   }`}
@@ -1100,12 +1118,14 @@ const DetailView = () => {
                                 <li
                                   className="m-0 pl-[25px] relative"
                                   key={item.id}
+                                  style={{ marginTop: "4px" }}
                                 >
                                   <span>
                                     <img
                                       className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                                       src="assets/img/svg/rightarrow.svg"
                                       alt="image"
+                                      style={{ top: "13px" }}
                                     />
                                     {item.text}
                                   </span>
@@ -1133,12 +1153,14 @@ const DetailView = () => {
                                 <li
                                   className="m-0 pl-[25px] relative"
                                   key={item.id}
+                                  style={{ marginTop: "4px" }}
                                 >
                                   <span>
                                     <img
                                       className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                                       src="assets/img/svg/rightarrow.svg"
                                       alt="image"
+                                      style={{ top: "13px" }}
                                     />
                                     {item.text}
                                   </span>
@@ -1194,12 +1216,17 @@ const DetailView = () => {
                   ) : newsModal?.id === 3 ? (
                     <>
                       <ul className="list-none">
-                        <li className="m-0 pl-[25px] relative">
+                        <li
+                          className="m-0 pl-[25px] relative"
+                          key={item.id}
+                          style={{ marginTop: "4px" }}
+                        >
                           <span>
                             <img
                               className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                               src="assets/img/svg/rightarrow.svg"
                               alt="image"
+                              style={{ top: "13px" }}
                             />
                             I managed to extract the requirement and user story
                             definitions from the client using an effective,
@@ -1224,6 +1251,7 @@ const DetailView = () => {
                               className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                               src="assets/img/svg/rightarrow.svg"
                               alt="image"
+                              style={{ top: "13px" }}
                             />
                             I managed to extract the requirement and user story
                             definitions from the client using an effective,
@@ -1281,6 +1309,7 @@ const DetailView = () => {
                                         className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                                         src="assets/img/svg/rightarrow.svg"
                                         alt="image"
+                                        style={{ top: "13px" }}
                                       />
                                       {item.text}
                                     </span>
@@ -1327,6 +1356,158 @@ const DetailView = () => {
                                         className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                                         src="assets/img/svg/rightarrow.svg"
                                         alt="image"
+                                        style={{ top: "13px" }}
+                                      />
+                                      {item.text}
+                                    </span>
+                                  </li>
+                                ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="container" style={{ marginTop: "40px" }}>
+                        <div className="tokyo_tm_news w-full clear-both float-left h-auto  px-0 ">
+                          <div className="list w-full h-auto clear-both float-left">
+                            <div>
+                              <div
+                                style={{
+                                  fontSize: "16px",
+                                  lineHeight: "32px",
+                                  fontWeight: 600,
+                                  color: "#000000",
+                                }}
+                              >
+                                Persona Identifying
+                              </div>
+                              <div className="list w-full h-auto clear-both float-left">
+                                <ul className="ml-[-40px] list-none flex flex-wrap">
+                                  {data[
+                                    newsModal?.id - 1
+                                  ]?.personaIdentifyingSS.map((el, index) => (
+                                    <li className="mb-[40px] w-1/3 pl-[40px]">
+                                      <img
+                                        src={el}
+                                        className="w-full img-remake"
+                                      />
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr style={{ marginTop: "300px" }} />
+                    </>
+                  ) : newsModal?.id === 5 ? (
+                    <>
+                      <ul className="list-none">
+                        <li className="m-0 pl-[25px] relative">
+                          <span>
+                            <img
+                              className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                              src="assets/img/svg/rightarrow.svg"
+                              alt="image"
+                              style={{ top: "13px" }}
+                            />
+                            Based on the questions we clarified with the client,
+                            we developed insights and persona mapping to define
+                            their goals, needs, and challenges.
+                          </span>
+                        </li>
+                      </ul>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-around",
+                        }}
+                      >
+                        <div className="left w-1/2 pr-[50px]">
+                          <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
+                            <div
+                              style={{
+                                color: "black",
+                                fontSize: 16,
+                                fontFamily: "Poppins",
+                                fontWeight: 600,
+                                lineHeight: "px",
+                                wordWrap: "break-word",
+                                marginTop: "40px",
+                              }}
+                            >
+                              Major insights from users
+                            </div>
+                            <ul className="m-0 list-none">
+                              {data[newsModal?.id - 1]?.achivements
+                                ?.slice(
+                                  0,
+                                  data[newsModal?.id - 1]?.achivements?.length %
+                                    2 ===
+                                    0
+                                    ? data[newsModal?.id - 1]?.achivements
+                                        ?.length / 2
+                                    : data[newsModal?.id - 1]?.achivements
+                                        ?.length /
+                                        2 +
+                                        1
+                                )
+                                .map((item) => (
+                                  <li
+                                    className="m-0 pl-[25px] relative"
+                                    key={item.id}
+                                  >
+                                    <span>
+                                      <img
+                                        className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                        src="assets/img/svg/rightarrow.svg"
+                                        alt="image"
+                                        style={{ top: "13px" }}
+                                      />
+                                      {item.text}
+                                    </span>
+                                  </li>
+                                ))}
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="right w-1/2 pl-[50px]">
+                          <div className="tokyo_tm_skill_list w-full h-auto clear-both">
+                            <div
+                              style={{
+                                color: "black",
+                                fontSize: 16,
+                                fontFamily: "Poppins",
+                                fontWeight: 600,
+                                lineHeight: "px",
+                                wordWrap: "break-word",
+                                marginTop: "70px",
+                              }}
+                            ></div>
+                            <ul className="m-0 list-none">
+                              {data[newsModal?.id - 1]?.achivements
+                                ?.slice(
+                                  data[newsModal?.id - 1]?.achivements?.length %
+                                    2 ===
+                                    0
+                                    ? data[newsModal?.id - 1]?.achivements
+                                        ?.length / 2
+                                    : data[newsModal?.id - 1]?.achivements
+                                        ?.length /
+                                        2 +
+                                        1
+                                )
+                                .map((item) => (
+                                  <li
+                                    className="m-0 pl-[25px] relative"
+                                    key={item.id}
+                                  >
+                                    <span>
+                                      <img
+                                        className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                        src="assets/img/svg/rightarrow.svg"
+                                        alt="image"
+                                        style={{ top: "13px" }}
                                       />
                                       {item.text}
                                     </span>
@@ -1441,7 +1622,7 @@ const DetailView = () => {
                     ? "Creating the design using the information provided on the sheet."
                     : newsModal?.id === 4
                     ? "Generate solutions based on the gathered knowledge."
-                    : ""}
+                    : newsModal?.id === 5 ? "Creating the design based on the information and details gathered in the earlier stage." : ""}
                 </div>
 
                 {newsModal?.id === 3 ? (
@@ -1471,7 +1652,7 @@ const DetailView = () => {
                       style={{ marginTop: "20px" }}
                     />
                   </>
-                ) : (
+                ) : newsModal?.id === 5 ? <></> : (
                   <>
                     <div
                       className="in w-full h-auto clear-both float-left"
@@ -1488,12 +1669,14 @@ const DetailView = () => {
                                     <li
                                       className="m-0 pl-[25px] relative"
                                       key={item.id}
+                                      style={{ marginTop: "4px" }}
                                     >
                                       <span>
                                         <img
                                           className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                                           src="assets/img/svg/rightarrow.svg"
                                           alt="image"
+                                          style={{ top: "13px" }}
                                         />
                                         {item.text}
                                       </span>
@@ -1693,7 +1876,7 @@ const DetailView = () => {
           <div className="container">
             <div
               className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
-              style={{ marginTop: "80px", marginBottom: "40px" }}
+              style={{ marginTop: newsModal?.id === 5 ? "0px" : "80px", marginBottom: "40px" }}
             >
               <div
                 className="in w-full h-auto clear-both float-left"
@@ -1701,7 +1884,7 @@ const DetailView = () => {
               >
                 <div className="left ">
                   <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
-                    <hr style={{ marginBottom: "80px" }} />
+                    {newsModal?.id === 5 ?  <></> : <hr style={{ marginBottom: "80px" }} />}
                     <div>
                       <img src={data[newsModal?.id - 1]?.step4} />
                       <div
@@ -1907,14 +2090,14 @@ const DetailView = () => {
           ) : (
             <img
               src={data[newsModal?.id - 1]?.finalDesign}
-              style={{ marginTop: "40px" }}
+              style={{ marginTop: newsModal?.id === 5 ? "0px" : "40px" }}
               className="img-remake"
             />
           )}
 
           {newsModal?.id === 1 ? (
             <></>
-          ) : newsModal?.id === 2 || newsModal?.id === 4 ? (
+          ) : newsModal?.id === 2 ? (
             <>
               <div className="container">
                 <div
@@ -1931,24 +2114,26 @@ const DetailView = () => {
                 </div>
                 <div
                   style={{
-                    width: "32px",
-                    height: "32px",
-                    background: "#DADADC",
-                    borderRadius: 100,
-                    padding: "2px 2px 2px 7px",
-                    marginRight: "16px",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    color: "#000",
+                    fontFamily: "Poppins",
+                    fontSize: "16px",
+                    fontStyle: "normal",
+                    fontWeight: 600,
+                    lineHeight: "32px" /* 200% */,
+                    marginTop: "20px",
                   }}
                 >
-                  {newsModal?.id === 2
-                    ? `The high-fidelity wireframe screens and flows were shown to many
-              users. During this time, the following questions were encountered.`
-                    : ""}
+                  The high-fidelity wireframe screens and flows were shown to
+                  many users. During this time, the following questions were
+                  encountered.
                 </div>
                 <ul className="m-0 list-none" style={{ marginTop: "10px" }}>
                   {[
-                    "We created the high-fidelity design, and the client conducted a test run with both cooks and hosts. We received valuable feedback. After a couple of design iterations, we developed the product and deployed it to the production environment. As it's an iterative process, we continued to receive feedback over time and updated it sprint by sprint.",
+                    "The high-fidelity wireframe screens and flows were shown to many users. During this time, the following questions were encountered.",
+                    "Users had a question about whether they could get in touch with the host if they ran out of available hot desks on a booked day. We addressed this concern by providing the 'Help' option in the hamburger menu.",
+                    "Users inquired about the possibility of making multiple bookings simultaneously. However, the current system only supports individual bookings to maintain a straightforward process for both users and hosts.",
+                    "Users inquired about the functioning of promo codes and offers, prompting us to elucidate the process by utilizing a screen.",
+                    "In addition, we implemented numerous minor enhancements, including smoother transitions, refined icons, optimized images, and engaging animations, all aimed at enhancing the overall user experience.",
                   ].map((item, index) => (
                     <li
                       className="m-0 pl-[25px] relative"
@@ -1990,6 +2175,7 @@ const DetailView = () => {
                         className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                         src="assets/img/svg/rightarrow.svg"
                         alt="image"
+                        style={{ top: "13px" }}
                       />
                       We presented the high-fidelity wireframe screens and flows
                       to multiple users, and during this phase, we encountered
@@ -2030,6 +2216,44 @@ const DetailView = () => {
                 ))}
               </div>
             </>
+          ) : newsModal?.id === 4 ? (
+            <>
+              <div className="container">
+                <div
+                  style={{
+                    color: "black",
+                    fontSize: 20,
+                    fontFamily: "Poppins",
+                    fontWeight: "600",
+                    wordWrap: "break-word",
+                    marginTop: "24px",
+                  }}
+                >
+                  Test & Feedback
+                </div>
+                <ul className="m-0 list-none" style={{ marginTop: "10px" }}>
+                  {[
+                    "We created the high-fidelity design, and the client conducted a test run with both cooks and hosts. We received valuable feedback. After a couple of design iterations, we developed the product and deployed it to the production environment. As it's an iterative process, we continued to receive feedback over time and updated it sprint by sprint.",
+                  ].map((item, index) => (
+                    <li
+                      className="m-0 pl-[25px] relative"
+                      key={item.id}
+                      style={{ marginTop: "4px" }}
+                    >
+                      <span>
+                        <img
+                          className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                          src="assets/img/svg/rightarrow.svg"
+                          alt="image"
+                          style={{ top: "13px" }}
+                        />
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
           ) : (
             <></>
           )}
@@ -2054,6 +2278,7 @@ const DetailView = () => {
                           fontWeight: "600",
                           wordWrap: "break-word",
                           lineHeight: "46px",
+                          marginBottom:"20px"
                         }}
                       >
                         {data[newsModal?.id - 1]?.finalDesignTxt}
@@ -2065,7 +2290,7 @@ const DetailView = () => {
                         <hr
                           style={{ marginTop: "80px", marginBottom: "80px" }}
                         />
-                        <div>
+                        <div >
                           <div
                             style={{
                               color: "#767676",

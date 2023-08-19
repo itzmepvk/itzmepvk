@@ -79,9 +79,10 @@ const PasswordModal = () => {
           fontWeight: 500,
           lineHeight: "40px",
           wordWrap: "break-word",
+          float:"right"
         }}
       >
-        SUBMIT
+        Submit
       </button>
     </ModalContainer>
   );
