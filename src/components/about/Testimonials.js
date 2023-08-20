@@ -48,7 +48,7 @@ const testimonialData = [
     text: "Vinoth's passion fuels his exceptional and creative work, going the extra mile for every task. He's a dedicated, deadline-driven professional who remains undeterred even in the face of challenges.",
     authorImage: "assets/img/testimonials/6.svg",
     authorName: "Shabina Mahuroof",
-    authorDesignation: "Director of Customer Experience • IdeaPoint • Canada",
+    authorDesignation: "Entrepreneur • The Butlers & Mei&Co • Sri Lanka",
   },
 ];
 const Testimonials = () => {
