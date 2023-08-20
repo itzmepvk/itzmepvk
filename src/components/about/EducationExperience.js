@@ -28,13 +28,13 @@ const educationData = [
   {
     id: 2,
     date: "2021",
-    degree: "Interaction Design Foundation member & certification",
+    degree: "Interaction Design Foundation",
     institute: "IxDF Certification",
   },
   {
     id: 3,
     date: "2017 - 2018",
-    degree: "BSc (Hons) Business Information Systems & Management",
+    degree: "Middlesex University - London",
     institute: "BSc (Hons) BISM",
   },
 ];
@@ -75,7 +75,7 @@ const EducationExperience = () => {
               </ul>
             </div>
           </div>
-          <div className="right w-1/2 pl-[50px]">
+          <div className="right w-1/2 ">
             <div className="tokyo_section_title w-full h-auto clear-both float-left mb-[40px]">
               <h3 className="text-[20px] font-bold">Education</h3>
             </div>

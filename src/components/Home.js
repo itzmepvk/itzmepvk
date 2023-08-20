@@ -75,6 +75,7 @@ const Home = () => {
                       ],
                       autoStart: true,
                       loop: true,
+                      delay:0
                     }}
                   />
                 </span>

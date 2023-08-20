@@ -6,7 +6,7 @@ const knowledge = [
   { id: 5, text: "High Fidelity Design (Web, Mobile & SaaS)" },
 ];
 const interests = [
-  { id: 1, text: "Brand Identity & Logo Desining" },
+  { id: 1, text: "Brand Identity & Logo Designing" },
   { id: 2, text: "Explainer Video (Adobe Suite)" },
   { id: 3, text: "Website Designing (Webflow & Tailwind)" },
   { id: 4, text: "Search Engine Optimization (SEO)" },
