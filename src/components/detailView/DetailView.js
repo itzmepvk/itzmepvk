@@ -69,7 +69,7 @@ const data = [
       { id: 4, text: "Interviewed with Clients" },
       { id: 5, text: "Service Providers & Admin" },
       { id: 6, text: "20+ user interviews" },
-      { id: 7, text: "Gathered the insights" },
+      { id: 7, text: "I gathered some other insights as well" },
     ],
     researchQuestions: [
       "What do SquadGurus admins expect to do in the platform and what are their permissions?",
@@ -91,9 +91,7 @@ const data = [
       "assets/img/news/Group 1000001907.svg",
     ],
     personaIdentifyingSS: [
-      "assets/img/news/Group 10193.svg",
-      "assets/img/news/Group 10195.svg",
-      "assets/img/news/Group 10196.svg",
+      "assets/img/news/sgPersona.png",
     ],
     keyTakeaways: [
       {
@@ -121,7 +119,7 @@ as public, private or exclusive.`,
         text: "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
       },
     ],
-    brandLogo: "assets/img/news/brandLogoSg.svg",
+    brandLogo: "assets/img/news/sgBrandLogo.png",
     handOver: [
       { id: 1, text: " Final MVP prototype design approval" },
       {
@@ -230,9 +228,7 @@ as public, private or exclusive.`,
       "assets/img/news/Group 1000001907.svg",
     ],
     personaIdentifyingSS: [
-      "assets/img/news/ms-sahan.svg",
-      "assets/img/news/ms-nimesha.svg",
-      "assets/img/news/ms-vishnu.svg",
+      "assets/img/news/millionPersona.png",
     ],
     keyTakeaways: [
       {
@@ -702,7 +698,10 @@ const DetailView = () => {
         </>
       ) : (
         <>
-          <div className="back-arrow" style={{position:"sticky", top:0, zIndex:1}}>
+          <div
+            className="back-arrow"
+            style={{ position: "sticky", top: 0, zIndex: 1 }}
+          >
             <img
               src="assets/img/news/back-arrow.svg"
               onClick={() => {
@@ -827,7 +826,7 @@ const DetailView = () => {
                   </div>
                   <div
                     style={{
-                      fontSize: "20px",
+                      fontSize: "21.083px",
                       lineHeight: "30px",
                       fontWeight: "400",
                       color: "#000000",
@@ -851,7 +850,7 @@ const DetailView = () => {
                   </div>
                   <div
                     style={{
-                      fontSize: "20px",
+                      fontSize: "21.083px",
                       lineHeight: "30px",
                       fontWeight: "400",
                       color: "#000000",
@@ -875,7 +874,7 @@ const DetailView = () => {
                   </div>
                   <div
                     style={{
-                      fontSize: "20px",
+                      fontSize: "21.083px",
                       lineHeight: "30px",
                       fontWeight: "400",
                       color: "#000000",
@@ -899,7 +898,7 @@ const DetailView = () => {
                   </div>
                   <div
                     style={{
-                      fontSize: "20px",
+                      fontSize: "21.083px",
                       lineHeight: "30px",
                       fontWeight: "400",
                       color: "#000000",
@@ -908,9 +907,7 @@ const DetailView = () => {
                   >
                     {data[newsModal?.id - 1]?.objective}
                   </div>
-                  <hr style={{ marginTop: "40px" }} />
                 </div>
-                <hr />
               </div>
             </div>
           </div>
@@ -1046,7 +1043,18 @@ const DetailView = () => {
                             >
                               0{index + 1}
                             </span>
-                            <span style={{ marginLeft: "50px" }}> {el}</span>
+                            <span
+                              style={{
+                                marginLeft: "50px",
+                                fontSize: "14.758px",
+                                fontStyle: "normal",
+                                fontWeight: 400,
+                                lineHeight: "33.732px",
+                              }}
+                            >
+                              {" "}
+                              {el}
+                            </span>
                           </div>
                         )
                       )}
@@ -1174,13 +1182,13 @@ const DetailView = () => {
                   ) : newsModal?.id === 2 ? (
                     <>
                       <div className="list w-full h-auto clear-both float-left">
-                        <ul className="ml-[-40px] list-none flex flex-wrap">
+                        <ul className=" list-none flex flex-wrap img-remake" >
                           {[
                             "assets/img/news/ms-needs.svg",
                             "assets/img/news/ms-frus.svg",
                           ].map((el, index) => (
                             <li className="mb-[40px] w-1/2 pl-[40px]">
-                              <img src={el} className="w-full img-remake" />
+                              <img src={el} className="w-full " />
                             </li>
                           ))}
                           <div className="container">
@@ -1191,17 +1199,18 @@ const DetailView = () => {
                                 lineHeight: "32px",
                                 fontWeight: 600,
                                 color: "#000000",
-                                marginTop: "40px",
+                                marginTop:"20.03px"
                               }}
                             >
                               Persona Identifying
                             </div>
+                            <br/>
                             <div className="list w-full h-auto clear-both float-left">
                               <ul className="ml-[-40px] list-none flex flex-wrap">
                                 {data[
                                   newsModal?.id - 1
                                 ]?.personaIdentifyingSS.map((el, index) => (
-                                  <li className="mb-[40px] w-1/3 pl-[40px]">
+                                  <li className=" w-full  pl-[40px]">
                                     <img
                                       src={el}
                                       className="w-full img-remake"
@@ -1376,10 +1385,12 @@ const DetailView = () => {
                                   lineHeight: "32px",
                                   fontWeight: 600,
                                   color: "#000000",
+                                  marginTop:"20.03px"
                                 }}
                               >
                                 Persona Identifying
                               </div>
+                              <br/>
                               <div className="list w-full h-auto clear-both float-left">
                                 <ul className="ml-[-40px] list-none flex flex-wrap">
                                   {data[
@@ -1527,10 +1538,12 @@ const DetailView = () => {
                                   lineHeight: "32px",
                                   fontWeight: 600,
                                   color: "#000000",
+                                  marginTop:"20.03px"
                                 }}
                               >
                                 Persona Identifying
                               </div>
+                              <br/>
                               <div className="list w-full h-auto clear-both float-left">
                                 <ul className="ml-[-40px] list-none flex flex-wrap">
                                   {data[
@@ -1590,7 +1603,18 @@ const DetailView = () => {
                           >
                             0{index + 1}
                           </span>
-                          <span style={{ marginLeft: "50px" }}> {el}</span>
+                          <span
+                            style={{
+                              marginLeft: "50px",
+                              fontSize: "14.758px",
+                              fontStyle: "normal",
+                              fontWeight: 400,
+                              lineHeight: "33.732px",
+                            }}
+                          >
+                            {" "}
+                            {el}
+                          </span>
                         </div>
                       )
                     )}
@@ -1639,7 +1663,6 @@ const DetailView = () => {
                       style={{
                         color: "black",
                         fontSize: 16,
-                        fontFamily: "Poppins",
                         fontWeight: 600,
                         lineHeight: "px",
                         wordWrap: "break-word",
@@ -1659,33 +1682,36 @@ const DetailView = () => {
                 ) : (
                   <>
                     <div
-                      className="in w-full h-auto clear-both float-left"
+                      className="in w-full  clear-both float-left"
                       style={{ marginBottom: "80px" }}
                     >
                       <>
                         <div className="left ">
-                          <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                          <div className="tokyo_tm_skill_list w-full  clear-both float-left">
                             <ul className="m-0 list-none">
                               {data[newsModal?.id - 1]?.insights.map(
                                 (item, index) => (
                                   <>
-                                    {" "}
+                               
                                     <li
-                                      className="m-0 pl-[25px] relative"
+                                       className="m-0 pl-[25px] relative"
                                       key={item.id}
-                                      style={{ marginTop: "4px" }}
+                                      style={{ marginTop: "4px", fontSize:" 14.758px",
+                                      fontStyle: "normal",
+                                      fontWeight: 400,
+                                      lineHeight: "33.732px" }}
                                     >
                                       <span>
                                         <img
                                           className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                                           src="assets/img/svg/rightarrow.svg"
                                           alt="image"
-                                          style={{ top: "13px" }}
+                                          style={{ top: "16px" }}
                                         />
                                         {item.text}
                                       </span>
                                     </li>
-                                    <br />
+                                   
                                   </>
                                 )
                               )}
@@ -1722,14 +1748,15 @@ const DetailView = () => {
                     ? "White board session"
                     : ""}
                 </div>
+                <br/>
                 <div
-                  className="tokyo_tm_skillbox in w-full h-auto  float-left flex"
+                  className="tokyo_tm_skillbox in w-full h-auto  float-left flex img-remake"
                   style={{ columnGap: "20px" }}
                 >
                   {newsModal?.id === 1 ? (
                     <>
                       <div
-                        className="left w-1/2 "
+                        className="left w-1/2"
                         style={{ marginBottom: "0px" }}
                       >
                         {data[newsModal?.id - 1]?.personaMappingSS
@@ -1748,12 +1775,12 @@ const DetailView = () => {
                           .map((el, index) => (
                             <img
                               src={el}
-                              className="w-full img-remake"
+                              className="w-full"
                               style={{ paddingTop: "24px" }}
                             />
                           ))}
                       </div>
-                      <div className="right w-1/2 ">
+                      <div className="right w-1/2">
                         {data[newsModal?.id - 1]?.personaMappingSS
                           ?.slice(
                             data[newsModal?.id - 1]?.personaMappingSS?.length %
@@ -1769,7 +1796,7 @@ const DetailView = () => {
                           .map((el, index) => (
                             <img
                               src={el}
-                              className="w-full img-remake"
+                              className="w-full "
                               style={{ paddingTop: "24px" }}
                             />
                           ))}
@@ -1803,15 +1830,17 @@ const DetailView = () => {
                           lineHeight: "32px",
                           fontWeight: 600,
                           color: "#000000",
+                          marginTop:"20.03px"
                         }}
                       >
                         Persona Identifying
                       </div>
+                      <br/>
                       <div className="list w-full h-auto clear-both float-left">
                         <ul className="ml-[-40px] list-none flex flex-wrap">
                           {data[newsModal?.id - 1]?.personaIdentifyingSS.map(
                             (el, index) => (
-                              <li className="mb-[40px] w-1/3 pl-[40px]">
+                              <li className="mb-[40px]  pl-[40px]">
                                 <img src={el} className="w-full img-remake" />
                               </li>
                             )
@@ -1844,13 +1873,13 @@ const DetailView = () => {
                         >
                           Key Takeaways
                         </div>
-                        <ul className="m-0 list-none">
+                        <ul className="m-0 list-none"   style={{ marginTop: "24px" }}>
                           {data[newsModal?.id - 1]?.keyTakeaways.map(
                             (item, index) => (
                               <li
                                 className="m-0 pl-[25px] relative"
                                 key={item.id}
-                                style={{ marginTop: "24px" }}
+                              
                               >
                                 <span>
                                   <img
@@ -1882,7 +1911,7 @@ const DetailView = () => {
               className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
               style={{
                 marginTop: newsModal?.id === 5 ? "0px" : "80px",
-                marginBottom: "40px",
+        
               }}
             >
               <div
@@ -1909,7 +1938,7 @@ const DetailView = () => {
                         }}
                       >
                         {newsModal?.id === 1
-                          ? "were on tight deadline, to prototype to test"
+                          ? "We were on tight deadline, to prototype to test"
                           : newsModal?.id === 2
                           ? "Combining all the previous details to create a feasible, desirable, and viable prototype."
                           : newsModal?.id === 4
@@ -1994,11 +2023,12 @@ const DetailView = () => {
                               lineHeight: "px",
                               wordWrap: "break-word",
                               marginTop: "40px",
+                              marginBottom:"24px"
                             }}
                           >
                             A/B Testing
                           </div>
-                          <ul className="m-0 list-none">
+                          <ul className="m-0 list-none" style={{marginBottom:"40px"}}>
                             {[
                               "As soon as the high-fidelity screens were completed, we conducted live user testing on people who use co-working spaces to get their feedback and suggestions. For example, we provided three options for each main set of screens, such as the home screen and booking screen. Users liked certain sections of each option, so we finally came up with the final design by mixing and matching the options.",
                             ].map((item, index) => (
@@ -2033,6 +2063,7 @@ const DetailView = () => {
                               lineHeight: "px",
                               wordWrap: "break-word",
                               marginTop: "40px",
+                              marginBottom:"40px"
                             }}
                           >
                             Final Design
@@ -2056,7 +2087,7 @@ const DetailView = () => {
                                 wordWrap: "break-word",
                               }}
                             >
-                              Stakeholder approval & developer handover
+                              We were on tight deadline, to prototype to test
                             </div>
                             <ul
                               className="m-0 list-none"
@@ -2101,7 +2132,10 @@ const DetailView = () => {
           ) : (
             <img
               src={data[newsModal?.id - 1]?.finalDesign}
-              style={{ marginTop: newsModal?.id === 5 ? "0px" : "40px", position:"relative" }}
+              style={{
+                marginTop: newsModal?.id === 5 ? "0px" : "40px",
+                position: "relative",
+              }}
               className="img-remake"
             />
           )}
@@ -2111,6 +2145,7 @@ const DetailView = () => {
           ) : newsModal?.id === 2 ? (
             <>
               <div className="container">
+                <hr style={{marginTop:"100px", marginBottom:"50px"}}/>
                 <div
                   style={{
                     color: "black",
@@ -2289,14 +2324,15 @@ const DetailView = () => {
                           fontWeight: "600",
                           wordWrap: "break-word",
                           lineHeight: "46px",
-                          marginBottom: "20px",
+                          marginBottom: "160px",
                         }}
                       >
                         {data[newsModal?.id - 1]?.finalDesignTxt}
+                        
                       </div>
+                    <hr /> 
                     </div>
-
-                    {newsModal?.id === 1 ? (
+                    {/* {newsModal?.id === 1 ? (
                       <>
                         <hr
                           style={{ marginTop: "80px", marginBottom: "80px" }}
@@ -2398,7 +2434,7 @@ const DetailView = () => {
                       <></>
                     ) : (
                       <></>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </div>
