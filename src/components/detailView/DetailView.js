@@ -702,7 +702,7 @@ const DetailView = () => {
         </>
       ) : (
         <>
-          <div className="back-arrow">
+          <div className="back-arrow" style={{position:"sticky", top:0, zIndex:1}}>
             <img
               src="assets/img/news/back-arrow.svg"
               onClick={() => {
@@ -2101,7 +2101,7 @@ const DetailView = () => {
           ) : (
             <img
               src={data[newsModal?.id - 1]?.finalDesign}
-              style={{ marginTop: newsModal?.id === 5 ? "0px" : "40px" }}
+              style={{ marginTop: newsModal?.id === 5 ? "0px" : "40px", position:"relative" }}
               className="img-remake"
             />
           )}

@@ -61,7 +61,7 @@ const PasswordModal = () => {
       </div>
       <input
         id="myInput"
-        style={{ marginBottom: "56px", marginTop: "56px" }}
+        style={{  marginTop: "56px" }}
         type="password"
         className="w-full"
         onChange={(e) => {
@@ -76,8 +76,8 @@ const PasswordModal = () => {
         }}
       />{" "}
       <br />
-      {empty && <span className="span-warning">Please Enter Password</span>}
-      {exception && <span className="span-warning">Wrong Password</span>}
+      {empty && <span style={{color:"red", fontSize:"10px"}}>Please Enter Password</span>}
+      {exception && <span style={{color:"red", fontSize:"10px"}}>Wrong Password</span>}
       <button
         type="submit"
         className="button-submit bg-black "
@@ -95,6 +95,7 @@ const PasswordModal = () => {
           lineHeight: "40px",
           wordWrap: "break-word",
           float: "right",
+          marginTop:"56px"
         }}
       >
         Submit
