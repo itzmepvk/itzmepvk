@@ -708,6 +708,7 @@ const DetailView = () => {
               onClick={() => {
                 navChange("portfolio");
                 setLoading(true);
+                setNewsModal({});
               }}
               style={{ cursor: "pointer" }}
             />
@@ -1621,7 +1622,9 @@ const DetailView = () => {
                     ? "Creating the design using the information provided on the sheet."
                     : newsModal?.id === 4
                     ? "Generate solutions based on the gathered knowledge."
-                    : newsModal?.id === 5 ? "Creating the design based on the information and details gathered in the earlier stage." : ""}
+                    : newsModal?.id === 5
+                    ? "Creating the design based on the information and details gathered in the earlier stage."
+                    : ""}
                 </div>
 
                 {newsModal?.id === 3 ? (
@@ -1651,7 +1654,9 @@ const DetailView = () => {
                       style={{ marginTop: "20px" }}
                     />
                   </>
-                ) : newsModal?.id === 5 ? <></> : (
+                ) : newsModal?.id === 5 ? (
+                  <></>
+                ) : (
                   <>
                     <div
                       className="in w-full h-auto clear-both float-left"
@@ -1875,7 +1880,10 @@ const DetailView = () => {
           <div className="container">
             <div
               className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
-              style={{ marginTop: newsModal?.id === 5 ? "0px" : "80px", marginBottom: "40px" }}
+              style={{
+                marginTop: newsModal?.id === 5 ? "0px" : "80px",
+                marginBottom: "40px",
+              }}
             >
               <div
                 className="in w-full h-auto clear-both float-left"
@@ -1883,7 +1891,11 @@ const DetailView = () => {
               >
                 <div className="left ">
                   <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
-                    {newsModal?.id === 5 ?  <></> : <hr style={{ marginBottom: "80px" }} />}
+                    {newsModal?.id === 5 ? (
+                      <></>
+                    ) : (
+                      <hr style={{ marginBottom: "80px" }} />
+                    )}
                     <div>
                       <img src={data[newsModal?.id - 1]?.step4} />
                       <div
@@ -2277,7 +2289,7 @@ const DetailView = () => {
                           fontWeight: "600",
                           wordWrap: "break-word",
                           lineHeight: "46px",
-                          marginBottom:"20px"
+                          marginBottom: "20px",
                         }}
                       >
                         {data[newsModal?.id - 1]?.finalDesignTxt}
@@ -2289,7 +2301,7 @@ const DetailView = () => {
                         <hr
                           style={{ marginTop: "80px", marginBottom: "80px" }}
                         />
-                        <div >
+                        <div>
                           <div
                             style={{
                               color: "#767676",

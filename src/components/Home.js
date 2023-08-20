@@ -7,22 +7,22 @@ const socialIcon = [
   {
     id: 1,
     iconName: "assets/img/svg/social/linkdin.svg",
-    link: "https://www.facebook.com/",
+    link: "https://www.linkedin.com/in/itzmepvk/",
   },
   {
     id: 2,
     iconName: "assets/img/svg/social/youtube.svg",
-    link: "https://twitter.com/",
+    link: "https://www.youtube.com/@itzmepvk",
   },
   {
     id: 3,
     iconName: "assets/img/svg/social/mail.svg",
-    link: "https://www.behance.net/",
+    link: "mailto:me@itzmepvk.com",
   },
   {
     id: 4,
     iconName: "assets/img/svg/social/contact.svg",
-    link: "https://www.linkedin.com/",
+    link: "mailto:+94715124609",
   },
 ];
 const Home = () => {
@@ -47,13 +47,6 @@ const Home = () => {
             <div className="details ">
               <h3
                 className="name text-[55px] font-extrabold mb-8"
-                style={{
-                  color: "#000",
-                  fontSize: "50px",
-                  fontStyle: "normal",
-                  fontWeight: 600,
-                  lineHeight: "normal",
-                }}
               >
                 Vinoth K
                 <span
@@ -96,7 +89,7 @@ const Home = () => {
                       <a
                         className="text-black text-[25px] transition-all duration-300 hover:text-black rounded-md"
                         href={item.link}
-                        target="_blank"
+                        // target="_blank"
                       >
                         <img src={item.iconName} />
                       </a>
