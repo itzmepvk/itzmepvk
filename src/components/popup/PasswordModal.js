@@ -32,6 +32,19 @@ const PasswordModal = () => {
       }
     });
   };
+  // Get the input field
+  let input = document.getElementById("myInput");
+
+  // Execute a function when the user presses a key on the keyboard
+  input?.addEventListener("keypress", function (event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      document.getElementById("myBtn").click();
+    }
+  });
   return (
     <ModalContainer nullValue={setPasswordModal} type={"password"}>
       <div
@@ -47,6 +60,7 @@ const PasswordModal = () => {
         Enter Password
       </div>
       <input
+        id="myInput"
         style={{ marginBottom: "56px", marginTop: "56px" }}
         type="password"
         className="w-full"
@@ -65,9 +79,10 @@ const PasswordModal = () => {
       {empty && <span className="span-warning">Please Enter Password</span>}
       {exception && <span className="span-warning">Wrong Password</span>}
       <button
-        type="button"
+        type="submit"
         className="button-submit bg-black "
         onClick={() => onSubmit()}
+        id="myBtn"
         style={{
           position: "relative",
           background: "#000000",
@@ -79,7 +94,7 @@ const PasswordModal = () => {
           fontWeight: 500,
           lineHeight: "40px",
           wordWrap: "break-word",
-          float:"right"
+          float: "right",
         }}
       >
         Submit
