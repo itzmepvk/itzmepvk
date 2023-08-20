@@ -22,6 +22,34 @@ const testimonialData = [
     authorName: "Baraka Clinton",
     authorDesignation: "English Teacher",
   },
+  {
+    id: 4,
+    text: "Vinoth, a well-versed designer, excels in both groundwork and crafting stunning designs for their purpose. His ability to take ownership and see projects through makes him truly exceptional.",
+    authorImage: "assets/img/testimonials/4.svg",
+    authorName: "Azmina Rasheed",
+    authorDesignation: "Client Success • Director • Australia",
+  },
+  {
+    id: 5,
+    text: "Vinoth's 'can do' attitude fuels innovative solutions. He dedicates time to understand end users, crafting unique materials for guaranteed satisfaction. Working with him is a pleasure and a productivity boost!",
+    authorImage: "assets/img/testimonials/5.svg",
+    authorName: "Sharya Unamboowe",
+    authorDesignation: "Corporate Development • WSO2 • Sri Lanka",
+  },
+  {
+    id: 6,
+    text: "Vinoth is an exceptional talent. He redefined UI/UX from scratch, propelling our designs forward and infusing each product with his remarkable attention to detail and creativity. Undoubtedly a valuable asset.",
+    authorImage: "assets/img/testimonials/7.svg",
+    authorName: "Shazni Fazal",
+    authorDesignation: "Director of Customer Experience • IdeaPoint • Canada",
+  },
+  {
+    id: 7,
+    text: "Vinoth's passion fuels his exceptional and creative work, going the extra mile for every task. He's a dedicated, deadline-driven professional who remains undeterred even in the face of challenges.",
+    authorImage: "assets/img/testimonials/6.svg",
+    authorName: "Shabina Mahuroof",
+    authorDesignation: "Director of Customer Experience • IdeaPoint • Canada",
+  },
 ];
 const Testimonials = () => {
   return (
@@ -39,7 +67,7 @@ const Testimonials = () => {
               <SwiperSlide key={item.id}>
                 <div className="list_inner w-full h-auto clear-both float-left relative">
                   <div className="text w-full h-auto clear-both float-left border-solid border-[#E5EDF4] border-2 p-[40px] mb-[30px] relative">
-                    <p>{item.text}</p>
+                    <p>{item.id === 4 ? <>{item.text}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</> :item.text}</p>
                   </div>
                   <div className="details w-full h-auto clear-both float-left flex items-center pl-[20px]">
                     <div className="image relative w-[60px] h-[60px]">
