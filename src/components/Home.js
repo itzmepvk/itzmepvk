@@ -1,8 +1,10 @@
+import { useContext, useEffect } from "react";
 import SectionContainer from "./SectionContainer";
 import EducationExperience from "./about/EducationExperience";
 import KnowledgeInterests from "./about/KnowledgeInterests";
 import Testimonials from "./about/Testimonials";
 import Typewriter from "typewriter-effect";
+import { TokyoContext } from "../Context";
 const socialIcon = [
   {
     id: 1,
@@ -45,9 +47,7 @@ const Home = () => {
               <hr />
             </div>
             <div className="details ">
-              <h3
-                className="name text-[55px] font-extrabold mb-8"
-              >
+              <h3 className="name text-[55px] font-extrabold mb-8">
                 Vinoth K
                 <span
                   style={{
@@ -68,7 +68,7 @@ const Home = () => {
                       ],
                       autoStart: true,
                       loop: true,
-                      delay:0
+                      delay: 0,
                     }}
                   />
                 </span>
@@ -84,18 +84,34 @@ const Home = () => {
               </p>
               <div className="social w-full float-left">
                 <ul className="m-0 list-none ">
-                  {socialIcon.map((item) => (
-                    <li className="mr-[8px] inline-block " key={item.id}>
-                      <a
-                        className="text-black text-[25px] transition-all duration-300 hover:text-black rounded-md"
-                        href={item.link}
-                        // target="_blank"
-                      >
-                        <img src={item.iconName} />
-                      </a>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </li>
-                  ))}
+                  {socialIcon.map((item) => {
+                    if (item.link.includes("youtube"))
+                      return (
+                        <li
+                          className="mr-[8px] inline-block "
+                          key={item.id}
+                          onClick={() => window.open(item.link)}
+                          style={{ cursor: "pointer" }}
+                        >
+                          <a className="text-black text-[25px] transition-all duration-300 hover:text-black rounded-md">
+                            <img src={item.iconName} />
+                          </a>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </li>
+                      );
+                    return (
+                      <li className="mr-[8px] inline-block " key={item.id}>
+                        <a
+                          className="text-black text-[25px] transition-all duration-300 hover:text-black rounded-md"
+                          href={item.link}
+                          target="_blank"
+                        >
+                          <img src={item.iconName} />
+                        </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
