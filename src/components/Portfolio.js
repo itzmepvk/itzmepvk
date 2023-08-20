@@ -52,7 +52,9 @@ const Portfolio = () => {
     useContext(TokyoContext);
   const [news, setNews] = useState(data);
   const [loader, setLoader] = useState(false);
+  const [key, setKey] = useState("*");
   const handleFilterKeyChange = (key) => () => {
+    setKey(key);
     setLoader(true);
     setTimeout(() => {
       setLoader(false);
@@ -91,7 +93,9 @@ const Portfolio = () => {
                   <li className="mr-[25px] inline-block">
                     <a
                       href="#"
-                      className="current text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black"
+                      className={`current text-${
+                        key === "*" ? "black" : "[#767676]"
+                      } inline-block font-medium font-montserrat transition-all duration-300 hover:text-black`}
                       onClick={handleFilterKeyChange("*")}
                     >
                       All
@@ -99,7 +103,9 @@ const Portfolio = () => {
                   </li>
                   <li className="mr-[25px] inline-block">
                     <a
-                      className="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black"
+                      className={`text-${
+                        key === "UX Design" ? "black" : "[#767676]"
+                      } inline-block font-medium font-montserrat transition-all duration-300 hover:text-black`}
                       href="#"
                       onClick={handleFilterKeyChange("UX Design")}
                     >
@@ -108,7 +114,9 @@ const Portfolio = () => {
                   </li>
                   <li className="mr-[25px] inline-block">
                     <a
-                      className="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black"
+                      className={`text-${
+                        key === "Branding" ? "black" : "[#767676]"
+                      } inline-block font-medium font-montserrat transition-all duration-300 hover:text-black`}
                       href="#"
                       onClick={handleFilterKeyChange("Branding")}
                     >
