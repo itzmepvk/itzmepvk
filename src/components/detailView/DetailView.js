@@ -754,7 +754,7 @@ const DetailView = () => {
                 className="tokyo_tm_short_info w-full h-auto clear-both float-left flex  pb-[30px] mb-[40px]"
                 style={{ marginTop: "40px" }}
               >
-                <div className="left w-1/2 pr-[50px]">
+                <div className="left w-1/2">
                   <div className="tokyo_tm_info w-full h-auto clear-both float-left">
                     <ul className="m-0 list-none">
                       <li className="m-0 flex">
@@ -788,7 +788,7 @@ const DetailView = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="right w-1/2 pl-[50px]">
+                <div className="right w-1/2">
                   <div className="tokyo_tm_info">
                     <ul className="m-0 list-none">
                       <li className="m-0 flex">
