@@ -22,19 +22,19 @@ const educationData = [
   {
     id: 1,
     date: "2023",
-    degree: "UX design for AR, VR, MR & XR.",
+    degree: "UXR Course",
     institute: "UXR Design",
   },
   {
     id: 2,
     date: "2021",
-    degree: "Interaction Design Foundation",
+    degree: "IxDF",
     institute: "IxDF Certification",
   },
   {
     id: 3,
     date: "2017 - 2018",
-    degree: "Middlesex University - London",
+    degree: "Middlesex Uni - London",
     institute: "BSc (Hons) BISM",
   },
 ];
