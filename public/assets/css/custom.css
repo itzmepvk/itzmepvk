@@ -527,6 +527,11 @@ body.modal {
   opacity: 0;
 }
 
+.tokyo_tm_modalbox.opened .box_inner {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 body.dark .tokyo_tm_modalbox_about .description_wrap {
   scrollbar-width: thin;
   scrollbar-color: #777 #34353a;
