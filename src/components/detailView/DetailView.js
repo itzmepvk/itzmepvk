@@ -2136,6 +2136,7 @@ const DetailView = () => {
               style={{
                 marginTop: newsModal?.id === 5 ? "0px" : "40px",
                 position: "relative",
+                width: "100%"
               }}
               className="img-remake"
             />
