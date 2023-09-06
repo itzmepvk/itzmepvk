@@ -1195,7 +1195,7 @@ const DetailView = () => {
                                 lineHeight: "32px",
                                 fontWeight: 600,
                                 color: "#000000",
-                                marginTop: "20.03px",
+                                marginTop: "80px",
                               }}
                             >
                               Persona Identifying
@@ -2092,7 +2092,7 @@ const DetailView = () => {
                             </div>
                             <ul
                               className="m-0 list-none"
-                              style={{ marginTop: "36px" }}
+                              style={{ marginTop: "36px" , marginBottom:"40px"}}
                             >
                               {data[newsModal?.id - 1]?.handOver.map(
                                 (item, index) => (

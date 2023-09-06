@@ -39,7 +39,7 @@ const data = [
   {
     id: 5,
     title: "Real-time video consultation with doctors.",
-    image: "assets/img/news/5.svg",
+    image: "assets/img/news/5.png",
     author: "prototype • UX research • UX Design",
     date: "25 Sep 2022",
     colorCode: "#E9F6F8",

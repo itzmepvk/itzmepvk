@@ -59,25 +59,40 @@ const PasswordModal = () => {
       >
         Enter Password
       </div>
-      <input
-        id="myInput"
-        style={{  marginTop: "56px" }}
-        type="password"
-        className="w-full"
-        onChange={(e) => {
-          if (!e.target.value) {
-            setEmpty(true);
-            setException(false);
-          } else {
-            setPassword(e.target.value);
-            setEmpty(false);
-            setException(false);
-          }
-        }}
-      />{" "}
-      <br />
-      {empty && <span style={{color:"red", fontSize:"10px"}}>Please Enter Password</span>}
-      {exception && <span style={{color:"red", fontSize:"10px"}}>Wrong Password</span>}
+      <div style={{ maxHeight: "100px" }}>
+        <input
+          id="myInput"
+          style={{
+            marginTop: "56px",
+            textAlign: "center",
+            fontSize: "30px",
+            color: "black",
+          }}
+          type="password"
+          className="w-full"
+          onChange={(e) => {
+            if (!e.target.value) {
+              setEmpty(true);
+              setException(false);
+            } else {
+              setPassword(e.target.value);
+              setEmpty(false);
+              setException(false);
+            }
+          }}
+        />{" "}
+        <br />
+        {empty && (
+          <span style={{ color: "black", fontSize: "10px" }}>
+            Please Enter Password
+          </span>
+        )}
+        {exception && (
+          <span style={{ color: "black", fontSize: "10px" }}>
+            Wrong Password
+          </span>
+        )}
+      </div>
       <button
         type="submit"
         className="button-submit bg-black "
@@ -95,7 +110,7 @@ const PasswordModal = () => {
           lineHeight: "40px",
           wordWrap: "break-word",
           float: "right",
-          marginTop:"56px"
+          marginTop: "56px",
         }}
       >
         Submit

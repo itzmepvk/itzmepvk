@@ -76,7 +76,7 @@ const testimonialData = [
     the face of challenges.`,
     authorImage: "assets/img/testimonials/7.svg",
     authorName: "Shazni Fazal",
-    authorDesignation: "Entrepreneur • The Butlers & Mei&Co • Sri Lanka",
+    authorDesignation: "Entrepreneur • The Butlers • Sri Lanka",
   },
 ];
 const Testimonials = () => {
