@@ -708,99 +708,103 @@ const DetailView = () => {
               style={{ cursor: "pointer" }}
             />
           </div>
-          <div className="container">
-            <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[45px] px-0 ">
-              {data[newsModal?.id - 1]?.headerImg ? (
-                <img src={data[newsModal?.id - 1]?.headerImg} className="" />
-              ) : (
-                <center>
-                  <img
-                    src="assets/img/news/loading.gif"
-                    style={{ marginTop: "100px", width: "10%" }}
-                  />
-                </center>
-              )}
+          <div className="">
+            <div className="tokyo_tm_news w-full clear-both h-auto pt-[45px] px-0 ">
+              <div className="container">
+                {data[newsModal?.id - 1]?.headerImg ? (
+                  <img src={data[newsModal?.id - 1]?.headerImg} className="" />
+                ) : (
+                  <center>
+                    <img
+                      src="assets/img/news/loading.gif"
+                      style={{ marginTop: "100px", width: "10%" }}
+                    />
+                  </center>
+                )}
 
-              <p
-                className="date font-montserrat text-[13px] text-[#767676]"
-                style={{ marginTop: "40px" }}
-              >
-                <a
-                  className="text-[#767676] transition-all duration-300 hover:text-black uppercase"
-                  href="#"
+                <p
+                  className="date font-montserrat text-[13px] text-[#767676]"
+                  style={{ marginTop: "40px" }}
                 >
-                  {newsModal?.author}
-                </a>
-              </p>
-              <div
-                className="title_flex w-full h-auto clear-both flex justify-between items-end"
-                style={{ marginTop: "40px" }}
-              >
-                <SectionTitle title={data[newsModal?.id - 1]?.headerTxt} />
-              </div>
+                  <a
+                    className="text-[#767676] transition-all duration-300 hover:text-black uppercase"
+                    href="#"
+                  >
+                    {newsModal?.author}
+                  </a>
+                </p>
+                <div
+                  className="title_flex w-full h-auto clear-both flex justify-between items-end"
+                  style={{ marginTop: "40px" }}
+                >
+                  <SectionTitle title={data[newsModal?.id - 1]?.headerTxt} />
+                </div>
 
+              </div>
               <img
                 src={data[newsModal?.id - 1]?.headerBodyImg}
                 className="img-remake  w-full img-full-width"
                 style={{ marginTop: "40px" }}
               />
 
-              <div
-                className="tokyo_tm_short_info w-full h-auto clear-both float-left flex  pb-[30px] mb-[40px]"
-                style={{ marginTop: "40px" }}
-              >
-                <div className="left w-1/2">
-                  <div className="tokyo_tm_info w-full h-auto clear-both float-left">
-                    <ul className="m-0 list-none">
-                      <li className="m-0 flex">
-                        <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                          Client:
-                        </span>
-                        <span>
-                          <div>
-                            {data[newsModal?.id - 1]?.timelineAndClient.client}
-                          </div>
-                        </span>
-                      </li>
-                      <li className="m-0 flex">
-                        <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                          Timeline:
-                        </span>
-                        <span>
-                          <div>
-                            {data[newsModal?.id - 1]?.timelineAndClient.time}
-                          </div>
-                        </span>
-                      </li>
-                      <li className="m-0 flex">
-                        <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                          Framework:
-                        </span>
-                        <span>
-                          {data[newsModal?.id - 1]?.frameworks.toLocaleString()}
-                        </span>
-                      </li>
-                    </ul>
+              <div className="container">
+                <div
+                  className="tokyo_tm_short_info w-full h-auto clear-both float-left flex  pb-[30px] mb-[40px]"
+                  style={{ marginTop: "40px" }}
+                >
+                  <div className="left w-1/2">
+                    <div className="tokyo_tm_info w-full h-auto clear-both float-left">
+                      <ul className="m-0 list-none">
+                        <li className="m-0 flex">
+                          <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                            Client:
+                          </span>
+                          <span>
+                            <div>
+                              {data[newsModal?.id - 1]?.timelineAndClient.client}
+                            </div>
+                          </span>
+                        </li>
+                        <li className="m-0 flex">
+                          <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                            Timeline:
+                          </span>
+                          <span>
+                            <div>
+                              {data[newsModal?.id - 1]?.timelineAndClient.time}
+                            </div>
+                          </span>
+                        </li>
+                        <li className="m-0 flex">
+                          <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                            Framework:
+                          </span>
+                          <span>
+                            {data[newsModal?.id - 1]?.frameworks.toLocaleString()}
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-                <div className="right w-1/2">
-                  <div className="tokyo_tm_info">
-                    <ul className="m-0 list-none">
-                      <li className="m-0 flex">
-                        <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                          My Role:
-                        </span>
-                        <span>
-                          {data[newsModal?.id - 1]?.myRole.toLocaleString()}
-                        </span>
-                      </li>
-                      <li className="m-0 flex">
-                        <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
-                          Tools:
-                        </span>
-                        <span>{data[newsModal?.id - 1]?.tools.toString()}</span>
-                      </li>
-                    </ul>
+                  <div className="right w-1/2">
+                    <div className="tokyo_tm_info">
+                      <ul className="m-0 list-none">
+                        <li className="m-0 flex">
+                          <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                            My Role:
+                          </span>
+                          <span>
+                            {data[newsModal?.id - 1]?.myRole.toLocaleString()}
+                          </span>
+                        </li>
+                        <li className="m-0 flex">
+                          <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                            Tools:
+                          </span>
+                          <span>{data[newsModal?.id - 1]?.tools.toString()}</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
