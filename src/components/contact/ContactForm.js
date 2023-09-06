@@ -1,3 +1,4 @@
+import axios from "axios";
 import emailjs from "emailjs-com";
 import { useState } from "react";
 const ContactForm = () => {
@@ -10,29 +11,21 @@ const ContactForm = () => {
   const [error, setError] = useState(null);
   const onChange = (e) =>
     setMailData({ ...mailData, [e.target.name]: e.target.value });
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (name.length === 0 || email.length === 0 || message.length === 0) {
       setError(true);
       clearError();
     } else {
-      emailjs
-        .send(
-          "service_seruhwu", // service id
-          "template_21aw58z", // template id
-          mailData,
-          "Q3pccdLZhU-mZT7tQ" // public api
-        )
-        .then(
-          (response) => {
-            setError(false);
-            clearError();
-            setMailData({ name: "", email: "", message: "" });
-          },
-          (err) => {
-            console.log(err.text);
-          }
-        );
+      await axios({
+        method: "post",
+        url: "/api/hello",
+        data: {
+          email: email,
+          name: name,
+          message: message,
+        },
+      });
     }
   };
   const clearError = () => {
