@@ -739,6 +739,10 @@ body.dark .tokyo_tm_modalbox .description_wrap::-webkit-scrollbar-thumb {
   }
 }
 
+.img-full-width {
+  width: 100% !important;
+}
+
 .img-remake {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);

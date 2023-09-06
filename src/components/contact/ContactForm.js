@@ -50,7 +50,7 @@ const ContactForm = () => {
       >
         <div
           className={error ? "empty_notice" : "returnmessage"}
-          style={{ display: error == null ? "none" : "block" }}
+          style={{ display: error == null ? "none" : "block", color: "black" }}
         >
           <span>
             {error
@@ -68,6 +68,7 @@ const ContactForm = () => {
                 id="name"
                 type="text"
                 placeholder="Name"
+                style={{ color: "black" }}
               />
             </li>
             <li className="w-full mb-[30px] float-left">
@@ -78,6 +79,7 @@ const ContactForm = () => {
                 id="email"
                 type="email"
                 placeholder="Email"
+                style={{ color: "black" }}
               />
             </li>
           </ul>
@@ -89,6 +91,7 @@ const ContactForm = () => {
             value={message}
             id="message"
             placeholder="Message"
+            style={{ color: "black" }}
           />
         </div>
         <div className="tokyo_tm_button" data-position="left">

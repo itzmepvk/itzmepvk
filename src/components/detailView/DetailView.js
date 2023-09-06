@@ -90,9 +90,7 @@ const data = [
       "assets/img/news/Group 1000001904.svg",
       "assets/img/news/Group 1000001907.svg",
     ],
-    personaIdentifyingSS: [
-      "assets/img/news/sgPersona.png",
-    ],
+    personaIdentifyingSS: ["assets/img/news/sgPersona.png"],
     keyTakeaways: [
       {
         id: 1,
@@ -131,7 +129,7 @@ as public, private or exclusive.`,
         text: "Daily sync-up with the team to make sure everything on-track",
       },
     ],
-    finalDesign: "assets/img/news/finalDesign.svg",
+    finalDesign: "assets/img/news/finalDesign.png",
     finalDesignTxt: ` Finally, we successfully launched the MVP 3 months later, in
     December 2021. We celebrated over a team call with 300+ clients and
     service providers listed.`,
@@ -227,9 +225,7 @@ as public, private or exclusive.`,
       "assets/img/news/Group 1000001904.svg",
       "assets/img/news/Group 1000001907.svg",
     ],
-    personaIdentifyingSS: [
-      "assets/img/news/millionPersona.png",
-    ],
+    personaIdentifyingSS: ["assets/img/news/millionPersona.png"],
     keyTakeaways: [
       {
         id: 1,
@@ -279,7 +275,7 @@ as public, private or exclusive.`,
     id: 3,
     headerImg: "assets/img/news/lg.svg",
     headerTxt: `LGIM is one of Europe’s largest asset managers, offering investment solutions to a broad range of clients globally.`,
-    headerBodyImg: "assets/img/news/lg-body.svg",
+    headerBodyImg: "assets/img/news/lg-body.png",
     timelineAndClient: {
       time: "Jan 2019 - Current",
       client: "UK & Global",
@@ -727,7 +723,7 @@ const DetailView = () => {
 
               <p
                 className="date font-montserrat text-[13px] text-[#767676]"
-                style={{ marginTop: "32px" }}
+                style={{ marginTop: "40px" }}
               >
                 <a
                   className="text-[#767676] transition-all duration-300 hover:text-black uppercase"
@@ -738,14 +734,14 @@ const DetailView = () => {
               </p>
               <div
                 className="title_flex w-full h-auto clear-both flex justify-between items-end"
-                style={{ marginTop: "32px" }}
+                style={{ marginTop: "40px" }}
               >
                 <SectionTitle title={data[newsModal?.id - 1]?.headerTxt} />
               </div>
 
               <img
                 src={data[newsModal?.id - 1]?.headerBodyImg}
-                className="img-remake  w-full"
+                className="img-remake  w-full img-full-width"
                 style={{ marginTop: "40px" }}
               />
 
@@ -1182,16 +1178,16 @@ const DetailView = () => {
                   ) : newsModal?.id === 2 ? (
                     <>
                       <div className="list w-full h-auto clear-both float-left">
-                        <ul className=" list-none flex flex-wrap img-remake" >
+                        <ul className=" list-none flex flex-wrap img-remake">
                           {[
                             "assets/img/news/ms-needs.svg",
                             "assets/img/news/ms-frus.svg",
                           ].map((el, index) => (
-                            <li className="mb-[40px] w-1/2 pl-[40px]">
+                            <li className="mb-[40px] w-1/2 pr-[40px]">
                               <img src={el} className="w-full " />
                             </li>
                           ))}
-                          <div className="container">
+                          <div className="">
                             <hr />
                             <div
                               style={{
@@ -1199,12 +1195,12 @@ const DetailView = () => {
                                 lineHeight: "32px",
                                 fontWeight: 600,
                                 color: "#000000",
-                                marginTop:"20.03px"
+                                marginTop: "20.03px",
                               }}
                             >
                               Persona Identifying
                             </div>
-                            <br/>
+                            <br />
                             <div className="list w-full h-auto clear-both float-left">
                               <ul className="ml-[-40px] list-none flex flex-wrap">
                                 {data[
@@ -1375,7 +1371,7 @@ const DetailView = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="container" style={{ marginTop: "40px" }}>
+                      <div className="" style={{ marginTop: "40px" }}>
                         <div className="tokyo_tm_news w-full clear-both float-left h-auto  px-0 ">
                           <div className="list w-full h-auto clear-both float-left">
                             <div>
@@ -1385,12 +1381,12 @@ const DetailView = () => {
                                   lineHeight: "32px",
                                   fontWeight: 600,
                                   color: "#000000",
-                                  marginTop:"20.03px"
+                                  marginTop: "20.03px",
                                 }}
                               >
                                 Persona Identifying
                               </div>
-                              <br/>
+                              <br />
                               <div className="list w-full h-auto clear-both float-left">
                                 <ul className="ml-[-40px] list-none flex flex-wrap">
                                   {data[
@@ -1409,7 +1405,7 @@ const DetailView = () => {
                           </div>
                         </div>
                       </div>
-                      <hr style={{ marginTop: "300px" }} />
+                      <hr style={{ marginTop: "400px" }} />
                     </>
                   ) : newsModal?.id === 5 ? (
                     <>
@@ -1528,7 +1524,7 @@ const DetailView = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="container" style={{ marginTop: "40px" }}>
+                      <div className="" style={{ marginTop: "40px" }}>
                         <div className="tokyo_tm_news w-full clear-both float-left h-auto  px-0 ">
                           <div className="list w-full h-auto clear-both float-left">
                             <div>
@@ -1538,12 +1534,12 @@ const DetailView = () => {
                                   lineHeight: "32px",
                                   fontWeight: 600,
                                   color: "#000000",
-                                  marginTop:"20.03px"
+                                  marginTop: "20.03px",
                                 }}
                               >
                                 Persona Identifying
                               </div>
-                              <br/>
+                              <br />
                               <div className="list w-full h-auto clear-both float-left">
                                 <ul className="ml-[-40px] list-none flex flex-wrap">
                                   {data[
@@ -1692,14 +1688,16 @@ const DetailView = () => {
                               {data[newsModal?.id - 1]?.insights.map(
                                 (item, index) => (
                                   <>
-                               
                                     <li
-                                       className="m-0 pl-[25px] relative"
+                                      className="m-0 pl-[25px] relative"
                                       key={item.id}
-                                      style={{ marginTop: "4px", fontSize:" 14.758px",
-                                      fontStyle: "normal",
-                                      fontWeight: 400,
-                                      lineHeight: "33.732px" }}
+                                      style={{
+                                        marginTop: "4px",
+                                        fontSize: " 14.758px",
+                                        fontStyle: "normal",
+                                        fontWeight: 400,
+                                        lineHeight: "33.732px",
+                                      }}
                                     >
                                       <span>
                                         <img
@@ -1711,7 +1709,6 @@ const DetailView = () => {
                                         {item.text}
                                       </span>
                                     </li>
-                                   
                                   </>
                                 )
                               )}
@@ -1748,7 +1745,7 @@ const DetailView = () => {
                     ? "White board session"
                     : ""}
                 </div>
-                <br/>
+                <br />
                 <div
                   className="tokyo_tm_skillbox in w-full h-auto  float-left flex img-remake"
                   style={{ columnGap: "20px" }}
@@ -1830,12 +1827,12 @@ const DetailView = () => {
                           lineHeight: "32px",
                           fontWeight: 600,
                           color: "#000000",
-                          marginTop:"20.03px"
+                          marginTop: "20.03px",
                         }}
                       >
                         Persona Identifying
                       </div>
-                      <br/>
+                      <br />
                       <div className="list w-full h-auto clear-both float-left">
                         <ul className="ml-[-40px] list-none flex flex-wrap">
                           {data[newsModal?.id - 1]?.personaIdentifyingSS.map(
@@ -1873,13 +1870,15 @@ const DetailView = () => {
                         >
                           Key Takeaways
                         </div>
-                        <ul className="m-0 list-none"   style={{ marginTop: "24px" }}>
+                        <ul
+                          className="m-0 list-none"
+                          style={{ marginTop: "24px" }}
+                        >
                           {data[newsModal?.id - 1]?.keyTakeaways.map(
                             (item, index) => (
                               <li
                                 className="m-0 pl-[25px] relative"
                                 key={item.id}
-                              
                               >
                                 <span>
                                   <img
@@ -1911,7 +1910,6 @@ const DetailView = () => {
               className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
               style={{
                 marginTop: newsModal?.id === 5 ? "0px" : "80px",
-        
               }}
             >
               <div
@@ -1987,7 +1985,7 @@ const DetailView = () => {
                             className="img-remake"
                             style={{ marginTop: "40px" }}
                           />
-                          <hr style={{ marginTop: "40px" }} />
+                          <hr style={{ marginTop: "40px", marginBottom: "40px"}} />
                         </>
                       ) : (
                         <></>
@@ -2023,12 +2021,15 @@ const DetailView = () => {
                               lineHeight: "px",
                               wordWrap: "break-word",
                               marginTop: "40px",
-                              marginBottom:"24px"
+                              marginBottom: "24px",
                             }}
                           >
                             A/B Testing
                           </div>
-                          <ul className="m-0 list-none" style={{marginBottom:"40px"}}>
+                          <ul
+                            className="m-0 list-none"
+                            style={{ marginBottom: "40px" }}
+                          >
                             {[
                               "As soon as the high-fidelity screens were completed, we conducted live user testing on people who use co-working spaces to get their feedback and suggestions. For example, we provided three options for each main set of screens, such as the home screen and booking screen. Users liked certain sections of each option, so we finally came up with the final design by mixing and matching the options.",
                             ].map((item, index) => (
@@ -2063,7 +2064,7 @@ const DetailView = () => {
                               lineHeight: "px",
                               wordWrap: "break-word",
                               marginTop: "40px",
-                              marginBottom:"40px"
+                              marginBottom: "40px",
                             }}
                           >
                             Final Design
@@ -2145,7 +2146,7 @@ const DetailView = () => {
           ) : newsModal?.id === 2 ? (
             <>
               <div className="container">
-                <hr style={{marginTop:"100px", marginBottom:"50px"}}/>
+                <hr style={{ marginTop: "100px", marginBottom: "50px" }} />
                 <div
                   style={{
                     color: "black",
@@ -2328,9 +2329,8 @@ const DetailView = () => {
                         }}
                       >
                         {data[newsModal?.id - 1]?.finalDesignTxt}
-                        
                       </div>
-                    <hr /> 
+                      <hr />
                     </div>
                     {/* {newsModal?.id === 1 ? (
                       <>
