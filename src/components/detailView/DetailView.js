@@ -921,17 +921,9 @@ const DetailView = () => {
                 >
                   Tackling the problem
                 </div>
-                <ul className="ml-[-40px] list-none flex flex-wrap">
+                <ul className={`list-none tw-flex md:tw-grid flex-wrap tw-gap-x-7 tw-gap-y-7 ${['tw-grid-cols-1', 'tw-grid-cols-2', 'tw-grid-cols-3', 'tw-grid-cols-4'][data[newsModal?.id - 1]?.tackling.length >= 4? 3: data[newsModal?.id - 1]?.tackling.length - 1]}`}>
                   {data[newsModal?.id - 1]?.tackling.map((service) => (
-                    <li
-                      className={`mb-[40px] w-${
-                        newsModal?.id === 1 || newsModal?.id === 2
-                          ? "1/4"
-                          : newsModal?.id === 3 || newsModal?.id === 5
-                          ? "1/3"
-                          : "1/4"
-                      } pl-[40px]`}
-                      key={service.id}
+                    <li key={service.id}
                     >
                       <div className="list_inner w-full h-full clear-both  relative border-solid border-[rgba(0,0,0,.1)] border bg-white pt-[45px] pr-[20px] pb-[40px] pl-[20px] transition-all duration-300">
                         <span className="number inline-block mb-[25px] relative w-[60px] h-[60px] leading-[60px] text-center rounded-full bg-[rgba(0,0,0,.03)] font-bold text-black font-montserrat transition-all duration-300">
@@ -946,14 +938,14 @@ const DetailView = () => {
                   ))}
                 </ul>
               </div>
-              <hr />
+              {/* <hr /> */}
             </div>
           </div>
 
-          <div className="tokyo_tm_skillbox w-full h-auto clear-both  pt-[90px] px-0 ">
+          <div className="tokyo_tm_skillbox w-full h-auto clear-both  tw-pt-[88px] px-0 ">
             <div className="container">
-              <hr style={{ marginBottom: "80px" }} />
-              <div>
+              <hr />
+              <div className="tw-pt-[88px]">
                 <img src={data[newsModal?.id - 1]?.step1} />
                 <div
                   style={{
@@ -985,7 +977,7 @@ const DetailView = () => {
                 ) : (
                   <>
                     {" "}
-                    <ul className="list-none" style={{ marginTop: "20px" }}>
+                    <ul className="list-none" style={{ marginTop: "40px" }}>
                       <li className="m-0 pl-[25px] relative">
                         <span>
                           <img
@@ -1016,7 +1008,7 @@ const DetailView = () => {
                         color: "black",
                         fontWeight: 600,
                         lineHeight: "32px",
-                        marginTop: "40px",
+                        marginTop: "80px",
                       }}
                     >
                       Some Research Questions
@@ -1063,7 +1055,7 @@ const DetailView = () => {
                       <img
                         src="assets/img/news/ms-pie.svg"
                         className="img-remake  w-full"
-                        style={{ marginTop: "40px" }}
+                        style={{ marginTop: "80px" }}
                       />
                     ) : (
                       <></>
@@ -1071,8 +1063,8 @@ const DetailView = () => {
                   </>
                 )}
               </div>
-              <hr style={{ marginTop: "80px" }} />
-              <div style={{ marginTop: "80px" }}>
+              <hr className="tw-my-[88px]" />
+              <div>
                 <img src={data[newsModal?.id - 1]?.step2} />
                 <div
                   style={{
@@ -1182,30 +1174,32 @@ const DetailView = () => {
                   ) : newsModal?.id === 2 ? (
                     <>
                       <div className="list w-full h-auto clear-both ">
-                        <ul className=" list-none flex flex-wrap img-remake">
+                        <ul className="tw-grid tw-grid-cols-2 tw-gap-10 list-none flex flex-wrap img-remake">
                           {[
                             "assets/img/news/ms-needs.svg",
                             "assets/img/news/ms-frus.svg",
                           ].map((el, index) => (
-                            <li className="mb-[40px] w-1/2 pr-[40px]">
+                            <li className="">
                               <img src={el} className="w-full " />
                             </li>
                           ))}
+                          </ul>
+                          <hr className="tw-my-[88px]" />
+
                           <div className="">
-                            <hr />
                             <div
                               style={{
                                 fontSize: "16px",
                                 lineHeight: "32px",
                                 fontWeight: 600,
                                 color: "#000000",
-                                marginTop: "80px",
+                                // marginTop: "80px",
                               }}
                             >
                               Persona Identifying
                             </div>
                             <br />
-                            <div className="list w-full h-auto clear-both ">
+                            <div className="list w-full h-auto clear-both tw-mt-2 ">
                               <ul className="ml-[-40px] list-none flex flex-wrap">
                                 {data[
                                   newsModal?.id - 1
@@ -1213,14 +1207,14 @@ const DetailView = () => {
                                   <li className=" w-full  pl-[40px]">
                                     <img
                                       src={el}
-                                      className="w-full img-remake"
+                                      className="w-full img-remake tw-h-[95%]"
                                     />
                                   </li>
                                 ))}
                               </ul>
                             </div>
                           </div>
-                        </ul>
+                        {/* </ul> */}
                       </div>
                     </>
                   ) : newsModal?.id === 3 ? (
@@ -1621,12 +1615,12 @@ const DetailView = () => {
                   </div>
                 </div>
               ) : newsModal?.id === 2 ? (
-                <>&nbsp;</>
+                <></>
               ) : (
                 ""
               )}
-              <hr style={{ marginTop: "80px" }} />{" "}
-              <div style={{ marginTop: "80px" }}>
+              <hr className="tw-my-[88px]" />{" "}
+              <div>
                 <img src={data[newsModal?.id - 1]?.step3} />
                 <div
                   style={{
@@ -1683,7 +1677,6 @@ const DetailView = () => {
                   <>
                     <div
                       className="in w-full  clear-both "
-                      style={{ marginBottom: "80px" }}
                     >
                       <>
                         <div className="left ">
@@ -1734,7 +1727,7 @@ const DetailView = () => {
                   </>
                 )}
               </div>
-              <div style={{}}>
+              <div className="tw-mt-[88px]" style={{}}>
                 <div
                   style={{
                     fontSize: "16px",
@@ -1822,7 +1815,7 @@ const DetailView = () => {
             <>
               {" "}
               <div className="container">
-                <div className="tokyo_tm_news w-full clear-both  h-auto pt-[90px] px-0 ">
+                <div className="tokyo_tm_news w-full clear-both  h-auto tw-mt-[88px] px-0 ">
                   <div className="list w-full h-auto clear-both ">
                     <div>
                       <div
