@@ -2017,7 +2017,7 @@ const DetailView = () => {
                               fontWeight: 600,
                               lineHeight: "px",
                               wordWrap: "break-word",
-                              marginTop: "40px",
+                              marginTop: "80px",
                               marginBottom: "24px",
                             }}
                           >
@@ -2035,7 +2035,7 @@ const DetailView = () => {
                                 key={item.id}
                                 style={{ marginTop: "4px" }}
                               >
-                                <span>
+                                <div className="tw-leading-snug">
                                   <img
                                     className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
                                     src="assets/img/svg/rightarrow.svg"
@@ -2043,7 +2043,7 @@ const DetailView = () => {
                                     style={{ top: "13px" }}
                                   />
                                   {item}
-                                </span>
+                                </div>
                               </li>
                             ))}
                           </ul>
