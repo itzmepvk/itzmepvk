@@ -749,14 +749,14 @@ const DetailView = () => {
 
               <div className="container">
                 <div
-                  className="tokyo_tm_short_info w-full h-auto clear-both float-left flex  pb-[30px] mb-[40px]"
+                  className="tokyo_tm_short_info w-full h-auto clear-both  flex  pb-[30px] mb-[40px]"
                   style={{ marginTop: "40px" }}
                 >
                   <div className="left w-1/2">
-                    <div className="tokyo_tm_info w-full h-auto clear-both float-left">
+                    <div className="tokyo_tm_info w-full h-auto clear-both ">
                       <ul className="m-0 list-none">
                         <li className="m-0 flex">
-                          <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                          <span className="min-w-[100px]  mr-[10px] font-bold text-black">
                             Client:
                           </span>
                           <span>
@@ -766,7 +766,7 @@ const DetailView = () => {
                           </span>
                         </li>
                         <li className="m-0 flex">
-                          <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                          <span className="min-w-[100px]  mr-[10px] font-bold text-black">
                             Timeline:
                           </span>
                           <span>
@@ -776,7 +776,7 @@ const DetailView = () => {
                           </span>
                         </li>
                         <li className="m-0 flex">
-                          <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                          <span className="min-w-[100px]  mr-[10px] font-bold text-black">
                             Framework:
                           </span>
                           <span>
@@ -790,7 +790,7 @@ const DetailView = () => {
                     <div className="tokyo_tm_info">
                       <ul className="m-0 list-none">
                         <li className="m-0 flex">
-                          <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                          <span className="min-w-[100px]  mr-[10px] font-bold text-black">
                             My Role:
                           </span>
                           <span>
@@ -798,7 +798,7 @@ const DetailView = () => {
                           </span>
                         </li>
                         <li className="m-0 flex">
-                          <span className="min-w-[100px] float-left mr-[10px] font-bold text-black">
+                          <span className="min-w-[100px]  mr-[10px] font-bold text-black">
                             Tools:
                           </span>
                           <span>{data[newsModal?.id - 1]?.tools.toString()}</span>
@@ -810,9 +810,9 @@ const DetailView = () => {
               </div>
             </div>
           </div>
-          <div className="tokyo_tm_resumebox w-full h-auto clear-both float-left bg-white py-[93px] px-0">
+          <div className="tokyo_tm_resumebox w-full h-auto clear-both  bg-white py-[93px] px-0">
             <div className="container">
-              <div className="in w-full h-auto clear-both float-left">
+              <div className="in w-full h-auto clear-both ">
                 <div>
                   <div
                     style={{
@@ -913,8 +913,8 @@ const DetailView = () => {
           </div>
 
           <div className="container">
-            <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[100px] tw-pt-[88px] px-0 ">
-              <div className="list w-full h-auto clear-both float-left">
+            <div className="tokyo_tm_news w-full clear-both  h-auto pt-[100px] tw-pt-[88px] px-0 ">
+              <div className="list w-full h-auto clear-both ">
                 <div
                   className="text-black text-xl font-semibold leading-loose"
                   style={{ marginBottom: "32px" }}
@@ -933,7 +933,7 @@ const DetailView = () => {
                       } pl-[40px]`}
                       key={service.id}
                     >
-                      <div className="list_inner w-full h-full clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border bg-white pt-[45px] pr-[20px] pb-[40px] pl-[20px] transition-all duration-300">
+                      <div className="list_inner w-full h-full clear-both  relative border-solid border-[rgba(0,0,0,.1)] border bg-white pt-[45px] pr-[20px] pb-[40px] pl-[20px] transition-all duration-300">
                         <span className="number inline-block mb-[25px] relative w-[60px] h-[60px] leading-[60px] text-center rounded-full bg-[rgba(0,0,0,.03)] font-bold text-black font-montserrat transition-all duration-300">
                           {service.id <= 9 ? `0${service.id}` : service.id}
                         </span>
@@ -950,7 +950,7 @@ const DetailView = () => {
             </div>
           </div>
 
-          <div className="tokyo_tm_skillbox w-full h-auto clear-both float-left pt-[90px] px-0 ">
+          <div className="tokyo_tm_skillbox w-full h-auto clear-both  pt-[90px] px-0 ">
             <div className="container">
               <hr style={{ marginBottom: "80px" }} />
               <div>
@@ -1101,14 +1101,14 @@ const DetailView = () => {
                     newsModal?.id === 4 ||
                     newsModal?.id === 5
                       ? ""
-                      : "float-left flex"
+                      : " flex"
                   }`}
                   style={{ marginTop: "40px", marginBottom: "40px" }}
                 >
                   {newsModal?.id === 1 ? (
                     <>
                       <div className="left w-1/2 pr-[50px]">
-                        <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                        <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
                           <ul className="m-0 list-none">
                             {data[newsModal?.id - 1]?.achivements
                               ?.slice(
@@ -1144,7 +1144,7 @@ const DetailView = () => {
                         </div>
                       </div>
                       <div className="right w-1/2 pl-[50px]">
-                        <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                        <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
                           <ul className="m-0 list-none">
                             {data[newsModal?.id - 1]?.achivements
                               ?.slice(
@@ -1181,7 +1181,7 @@ const DetailView = () => {
                     </>
                   ) : newsModal?.id === 2 ? (
                     <>
-                      <div className="list w-full h-auto clear-both float-left">
+                      <div className="list w-full h-auto clear-both ">
                         <ul className=" list-none flex flex-wrap img-remake">
                           {[
                             "assets/img/news/ms-needs.svg",
@@ -1205,7 +1205,7 @@ const DetailView = () => {
                               Persona Identifying
                             </div>
                             <br />
-                            <div className="list w-full h-auto clear-both float-left">
+                            <div className="list w-full h-auto clear-both ">
                               <ul className="ml-[-40px] list-none flex flex-wrap">
                                 {data[
                                   newsModal?.id - 1
@@ -1376,8 +1376,8 @@ const DetailView = () => {
                         </div>
                       </div>
                       <div className="" style={{ marginTop: "40px" }}>
-                        <div className="tokyo_tm_news w-full clear-both float-left h-auto  px-0 ">
-                          <div className="list w-full h-auto clear-both float-left">
+                        <div className="tokyo_tm_news w-full clear-both  h-auto  px-0 ">
+                          <div className="list w-full h-auto clear-both ">
                             <div>
                               <div
                                 style={{
@@ -1391,7 +1391,7 @@ const DetailView = () => {
                                 Persona Identifying
                               </div>
                               <br />
-                              <div className="list w-full h-auto clear-both float-left">
+                              <div className="list w-full h-auto clear-both ">
                                 <ul className="ml-[-40px] list-none flex flex-wrap">
                                   {data[
                                     newsModal?.id - 1
@@ -1529,8 +1529,8 @@ const DetailView = () => {
                         </div>
                       </div>
                       <div className="" style={{ marginTop: "40px" }}>
-                        <div className="tokyo_tm_news w-full clear-both float-left h-auto  px-0 ">
-                          <div className="list w-full h-auto clear-both float-left">
+                        <div className="tokyo_tm_news w-full clear-both  h-auto  px-0 ">
+                          <div className="list w-full h-auto clear-both ">
                             <div>
                               <div
                                 style={{
@@ -1544,7 +1544,7 @@ const DetailView = () => {
                                 Persona Identifying
                               </div>
                               <br />
-                              <div className="list w-full h-auto clear-both float-left">
+                              <div className="list w-full h-auto clear-both ">
                                 <ul className="ml-[-40px] list-none flex flex-wrap">
                                   {data[
                                     newsModal?.id - 1
@@ -1682,12 +1682,12 @@ const DetailView = () => {
                 ) : (
                   <>
                     <div
-                      className="in w-full  clear-both float-left"
+                      className="in w-full  clear-both "
                       style={{ marginBottom: "80px" }}
                     >
                       <>
                         <div className="left ">
-                          <div className="tokyo_tm_skill_list w-full  clear-both float-left">
+                          <div className="tokyo_tm_skill_list w-full  clear-both ">
                             <ul className="m-0 list-none">
                               {data[newsModal?.id - 1]?.insights.map(
                                 (item, index) => (
@@ -1751,7 +1751,7 @@ const DetailView = () => {
                 </div>
                 <br />
                 <div
-                  className="tokyo_tm_skillbox in w-full h-auto  float-left flex img-remake"
+                  className="tokyo_tm_skillbox in w-full h-auto   flex img-remake"
                   style={{ columnGap: "20px" }}
                 >
                   {newsModal?.id === 1 ? (
@@ -1822,8 +1822,8 @@ const DetailView = () => {
             <>
               {" "}
               <div className="container">
-                <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[90px] px-0 ">
-                  <div className="list w-full h-auto clear-both float-left">
+                <div className="tokyo_tm_news w-full clear-both  h-auto pt-[90px] px-0 ">
+                  <div className="list w-full h-auto clear-both ">
                     <div>
                       <div
                         style={{
@@ -1837,7 +1837,7 @@ const DetailView = () => {
                         Persona Identifying
                       </div>
                       <br />
-                      <div className="list w-full h-auto clear-both float-left">
+                      <div className="list w-full h-auto clear-both ">
                         <ul className="ml-[-40px] list-none flex flex-wrap">
                           {data[newsModal?.id - 1]?.personaIdentifyingSS.map(
                             (el, index) => (
@@ -1854,15 +1854,15 @@ const DetailView = () => {
               </div>
               <div className="container">
                 <div
-                  className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
+                  className="tokyo_tm_skillbox w-full clear-both  h-auto px-0"
                   style={{ marginTop: "40px" }}
                 >
                   <div
-                    className="in w-full h-auto clear-both float-left"
+                    className="in w-full h-auto clear-both "
                     style={{}}
                   >
                     <div className="left ">
-                      <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                      <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
                         <div
                           style={{
                             color: "black",
@@ -1911,17 +1911,17 @@ const DetailView = () => {
 
           <div className="container">
             <div
-              className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
+              className="tokyo_tm_skillbox w-full clear-both  h-auto px-0"
               style={{
                 marginTop: newsModal?.id === 5 ? "0px" : "80px",
               }}
             >
               <div
-                className="in w-full h-auto clear-both float-left"
+                className="in w-full h-auto clear-both "
                 style={{}}
               >
                 <div className="left ">
-                  <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                  <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
                     {newsModal?.id === 5 ? (
                       <></>
                     ) : (
@@ -2311,15 +2311,15 @@ const DetailView = () => {
           )}
           <div className="container">
             <div
-              className="tokyo_tm_skillbox w-full clear-both float-left h-auto px-0"
+              className="tokyo_tm_skillbox w-full clear-both  h-auto px-0"
               style={{ marginTop: "40px" }}
             >
               <div
-                className="in w-full h-auto clear-both float-left"
+                className="in w-full h-auto clear-both "
                 style={{}}
               >
                 <div className="left ">
-                  <div className="tokyo_tm_skill_list w-full h-auto clear-both float-left">
+                  <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
                     <hr style={{ marginTop: "80px", marginBottom: "80px" }} />
                     <div>
                       <div
