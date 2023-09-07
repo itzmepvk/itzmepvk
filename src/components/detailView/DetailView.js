@@ -1403,7 +1403,7 @@ const DetailView = () => {
                           </div>
                         </div>
                       </div>
-                      <hr style={{ marginTop: "400px" }} />
+                      {/* <hr style={{ marginTop: "400px" }} /> */}
                     </>
                   ) : newsModal?.id === 5 ? (
                     <>
@@ -1556,7 +1556,7 @@ const DetailView = () => {
                           </div>
                         </div>
                       </div>
-                      <hr style={{ marginTop: "300px" }} />
+                      {/* <hr style={{ marginTop: "300px" }} /> */}
                     </>
                   ) : (
                     <></>
@@ -2060,8 +2060,8 @@ const DetailView = () => {
                               fontWeight: 600,
                               lineHeight: "px",
                               wordWrap: "break-word",
-                              marginTop: "40px",
-                              marginBottom: "40px",
+                              marginTop: "80px",
+                              marginBottom: "24px",
                             }}
                           >
                             Final Design
@@ -2131,7 +2131,7 @@ const DetailView = () => {
             <img
               src={data[newsModal?.id - 1]?.finalDesign}
               style={{
-                marginTop: newsModal?.id === 5 ? "0px" : "40px",
+                marginTop: newsModal?.id === 5 ? "0px" : "0px",
                 position: "relative",
                 width: "100%"
               }}
@@ -2144,7 +2144,7 @@ const DetailView = () => {
           ) : newsModal?.id === 2 ? (
             <>
               <div className="container">
-                <hr style={{ marginTop: "100px", marginBottom: "50px" }} />
+                <hr style={{ marginTop: "80px", marginBottom: "80px" }} />
                 <div
                   style={{
                     color: "black",
@@ -2172,7 +2172,7 @@ const DetailView = () => {
                   many users. During this time, the following questions were
                   encountered.
                 </div>
-                <ul className="m-0 list-none" style={{ marginTop: "10px" }}>
+                <ul className="m-0 list-none" style={{ marginTop: "30px" }}>
                   {[
                     "The high-fidelity wireframe screens and flows were shown to many users. During this time, the following questions were encountered.",
                     "Users had a question about whether they could get in touch with the host if they ran out of available hot desks on a booked day. We addressed this concern by providing the 'Help' option in the hamburger menu.",
@@ -2183,7 +2183,7 @@ const DetailView = () => {
                     <li
                       className="m-0 pl-[25px] relative"
                       key={item.id}
-                      style={{ marginTop: "4px" }}
+                      style={{ marginTop: "26px" }}
                     >
                       <span>
                         <img
