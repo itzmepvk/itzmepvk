@@ -913,7 +913,7 @@ const DetailView = () => {
           </div>
 
           <div className="container">
-            <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[100px] px-0 ">
+            <div className="tokyo_tm_news w-full clear-both float-left h-auto pt-[100px] tw-pt-[88px] px-0 ">
               <div className="list w-full h-auto clear-both float-left">
                 <div
                   className="text-black text-xl font-semibold leading-loose"
