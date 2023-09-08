@@ -275,7 +275,7 @@ as public, private or exclusive.`,
     id: 3,
     headerImg: "assets/img/news/lg.svg",
     headerTxt: `LGIM is one of Europe’s largest asset managers, offering investment solutions to a broad range of clients globally.`,
-    headerBodyImg: "assets/img/news/lg-body.png",
+    headerBodyImg: "assets/img/news/lg-banner.png",
     timelineAndClient: {
       time: "Jan 2019 - Current",
       client: "UK & Global",
