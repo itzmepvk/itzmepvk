@@ -1434,6 +1434,7 @@ const DetailView = () => {
                         style={{
                           display: "flex",
                           justifyContent: "space-around",
+                          marginTop: "80px"
                         }}
                       >
                         <div className="left w-1/2 pr-[50px]">
@@ -1446,12 +1447,14 @@ const DetailView = () => {
                                 fontWeight: 600,
                                 lineHeight: "px",
                                 wordWrap: "break-word",
-                                marginTop: "40px",
+                                // marginTop: "80px",
+                                paddingBottom: "32px",
+                                
                               }}
                             >
                               Major insights from users
                             </div>
-                            <ul className="m-0 list-none">
+                            <ul className="m-0 list-none tw-space-y-6 tw-text-sm">
                               {data[newsModal?.id - 1]?.achivements
                                 ?.slice(
                                   0,
@@ -1494,10 +1497,10 @@ const DetailView = () => {
                                 fontWeight: 600,
                                 lineHeight: "px",
                                 wordWrap: "break-word",
-                                marginTop: "70px",
+                                marginTop: "60px",
                               }}
                             ></div>
-                            <ul className="m-0 list-none">
+                            <ul className="m-0 list-none tw-space-y-6 tw-text-sm">
                               {data[newsModal?.id - 1]?.achivements
                                 ?.slice(
                                   data[newsModal?.id - 1]?.achivements?.length %
@@ -1530,7 +1533,10 @@ const DetailView = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="" style={{ marginTop: "40px" }}>
+
+                      <hr className="tw-my-[80px]" />
+                      
+                      <div className="" style={{ marginTop: "0px" }}>
                         <div className="tokyo_tm_news w-full clear-both  h-auto  px-0 ">
                           <div className="list w-full h-auto clear-both ">
                             <div>
