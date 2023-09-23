@@ -1064,7 +1064,7 @@ const DetailView = () => {
                     </>
                   )}
                 </div>
-                <hr className="tw-my-[88px]" />
+                <hr className="tw-my-[80px]" />
               </div>
               <div>
                 <div className="container">
@@ -1188,7 +1188,7 @@ const DetailView = () => {
                             </li>
                           ))}
                           </ul>
-                          <hr className="tw-my-[88px]" />
+                          <hr className="tw-my-[80px]" />
 
                           <div className="">
                             <div
@@ -1626,7 +1626,7 @@ const DetailView = () => {
                 )}
                 <div>
                   <div className="container">
-                    <hr className="tw-my-[88px]" />{" "}
+                    <hr className="tw-my-[80px]" />{" "}
 
                     <img src={data[newsModal?.id - 1]?.step3} />
                     <div
@@ -1661,7 +1661,8 @@ const DetailView = () => {
                           style={{ marginTop: "20px" }}
                         />
                       <div className="container">
-                        <hr style={{ marginTop: "40px" }} />
+                        {/* <hr style={{ marginTop: "40px" }} /> */}
+                        <hr className="tw-my-[80px]"/>
                         <div
                           style={{
                             color: "black",
@@ -1669,7 +1670,7 @@ const DetailView = () => {
                             fontWeight: 600,
                             lineHeight: "px",
                             wordWrap: "break-word",
-                            marginTop: "40px",
+                            // marginTop: "40px",
                           }}
                         >
                           The client provided the branding and style guide.
@@ -1677,7 +1678,7 @@ const DetailView = () => {
                         <img
                           src={"assets/img/news/lg-guide.svg"}
                           className="img-remake"
-                          style={{ marginTop: "20px" }}
+                          style={{ marginTop: "40px" }}
                         />
                       </div>
                     </div>
@@ -1737,7 +1738,7 @@ const DetailView = () => {
                     </div>
                   )}
                 </div>
-                <div className="tw-mt-[88px]" style={{}}>
+                <div className="tw-mt-[88px]" style={{ display: newsModal?.id === 1 || newsModal?.id === 2? "block":"none"}}>
                   <div
                     className="container"
                     style={{
@@ -1828,8 +1829,8 @@ const DetailView = () => {
             <>
               {" "}
               <div className="container">
-                <hr style={{ marginTop: "40px", marginBottom: "40px"}} />
-                <div className="tokyo_tm_news w-full clear-both  h-auto tw-mt-[88px]--- px-0 ">
+                {/* <hr style={{ marginTop: "40px", marginBottom: "40px"}} /> */}
+                <div className="tokyo_tm_news w-full clear-both  h-auto tw-mt-[88px] px-0 ">
                   <div className="list w-full h-auto clear-both ">
                     <div>
                       <div
@@ -1908,12 +1909,12 @@ const DetailView = () => {
                     </div>
                   </div>
                 </div>
-                <hr style={{ marginTop: "40px", marginBottom: "40px"}} />
+                <hr className="tw-my-[80px]" />
               </div>
             </>
           ):
             <div className="container">
-                <hr style={{ marginTop: "40px", marginBottom: "40px"}} />
+                <hr className="tw-my-[80px]" style={{display: newsModal?.id === 5? "none": "block" }} />
             </div>
           }
 
@@ -1933,8 +1934,10 @@ const DetailView = () => {
                 <div className="left ">
                   <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
                
-                    <div>
-                      <img src={data[newsModal?.id - 1]?.step4} />
+                    <div className="">
+                      {data[newsModal?.id - 1]?.step4 && 
+                        <img src={data[newsModal?.id - 1]?.step4} />
+                      }
                       <div
                         style={{
                           marginTop: "40px",
