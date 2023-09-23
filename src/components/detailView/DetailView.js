@@ -1994,13 +1994,13 @@ const DetailView = () => {
                             src="assets/img/news/lg-wiretest.svg"
                             alt="image"
                             className="img-remake"
-                            style={{ marginTop: "40px" }}
+                            style={{ marginTop: "80px" }}
                           />
                           <img
                             src="assets/img/news/kora-colour.svg"
                             alt="image"
                             className="img-remake"
-                            style={{ marginTop: "40px" }}
+                            style={{ marginTop: "80px" }}
                           />
                           <hr style={{ marginTop: "40px", marginBottom: "40px"}} />
                         </>
