@@ -1554,11 +1554,11 @@ const DetailView = () => {
                               </div>
                               <br />
                               <div className="list w-full h-auto clear-both ">
-                                <ul className="ml-[-40px] list-none flex flex-wrap">
+                                <ul className="list-none flex flex-wrap tw-gap-8 md:tw-grid md:tw-grid-cols-3">
                                   {data[
                                     newsModal?.id - 1
                                   ]?.personaIdentifyingSS.map((el, index) => (
-                                    <li className="mb-[40px] w-1/3 pl-[40px]">
+                                    <li className="">
                                       <img
                                         src={el}
                                         className="w-full img-remake group-hover:tw-grayscale-0"
@@ -2159,7 +2159,7 @@ const DetailView = () => {
             <img
               src={data[newsModal?.id - 1]?.finalDesign}
               style={{
-                marginTop: newsModal?.id === 5 ? "0px" : "0px",
+                marginTop: newsModal?.id === 5 ? "80px" : "0px",
                 position: "relative",
                 width: "100%"
               }}
