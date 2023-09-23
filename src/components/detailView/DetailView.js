@@ -1276,6 +1276,7 @@ const DetailView = () => {
                         style={{
                           display: "flex",
                           justifyContent: "space-around",
+                          marginTop: "80px",
                         }}
                       >
                         <div className="left w-1/2 pr-[50px]">
@@ -1288,12 +1289,14 @@ const DetailView = () => {
                                 fontWeight: 600,
                                 lineHeight: "px",
                                 wordWrap: "break-word",
-                                marginTop: "40px",
+                                // marginTop: "80px",
+                                // marginBottom: "32px",
+                                paddingBottom: "32px",
                               }}
                             >
                               Major insights from Cooks
                             </div>
-                            <ul className="m-0 list-none">
+                            <ul className="m-0 list-none tw-space-y-5">
                               {data[newsModal?.id - 1]?.achivements
                                 ?.slice(
                                   0,
@@ -1336,12 +1339,13 @@ const DetailView = () => {
                                 fontWeight: 600,
                                 lineHeight: "px",
                                 wordWrap: "break-word",
-                                marginTop: "40px",
+                                // marginTop: "40px",
+                                paddingBottom: "32px",
                               }}
                             >
                               Major insights from Hosts
                             </div>
-                            <ul className="m-0 list-none">
+                            <ul className="m-0 list-none tw-space-y-5">
                               {data[newsModal?.id - 1]?.achivements
                                 ?.slice(
                                   data[newsModal?.id - 1]?.achivements?.length %
@@ -1374,7 +1378,7 @@ const DetailView = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="" style={{ marginTop: "40px" }}>
+                      <div className="" style={{ marginTop: "80px" }}>
                         <div className="tokyo_tm_news w-full clear-both  h-auto  px-0 ">
                           <div className="list w-full h-auto clear-both ">
                             <div>
