@@ -1248,7 +1248,7 @@ const DetailView = () => {
                       <img
                         src={"assets/img/news/lg-test.svg"}
                         className="img-remake tw-w-full"
-                        style={{ marginTop: "20px" }}
+                        style={{ marginTop: "80px" }}
                       />
                     </>
                   ) : newsModal?.id === 4 ? (
@@ -2164,7 +2164,7 @@ const DetailView = () => {
                 <div
                   style={{
                     color: "black",
-                    fontSize: 20,
+                    fontSize: "16px",
                     fontFamily: "Poppins",
                     fontWeight: "600",
                     wordWrap: "break-word",
@@ -2221,7 +2221,7 @@ const DetailView = () => {
                 <div
                   style={{
                     color: "black",
-                    fontSize: 20,
+                    fontSize: "16px",
                     fontFamily: "Poppins",
                     fontWeight: "600",
                     wordWrap: "break-word",
@@ -2229,7 +2229,7 @@ const DetailView = () => {
                 >
                   Test & Feedback
                 </div>
-                <ul className="list-none" style={{ marginTop: "20px" }}>
+                <ul className="list-none" style={{ marginTop: "40px", marginBottom: "40px" }}>
                   <li className="m-0 pl-[25px] relative">
                     <span>
                       <img
@@ -2253,7 +2253,7 @@ const DetailView = () => {
                 ].map((el, index) => (
                   <>
                     <div
-                      style={{ marginTop: "16px" }}
+                      style={{ marginTop: "20px" }}
                       className="flex relative"
                     >
                       <div
