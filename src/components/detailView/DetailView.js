@@ -1380,7 +1380,7 @@ const DetailView = () => {
                       </div>
                       <div className="" style={{ marginTop: "80px" }}>
                         <div className="tokyo_tm_news w-full clear-both  h-auto  px-0 ">
-                          <div className="list w-full h-auto clear-both ">
+                          <div className="list w-full h-auto clear-both tw-group">
                             <div>
                               <div
                                 style={{
@@ -1402,7 +1402,7 @@ const DetailView = () => {
                                     <li className="w-1/3">
                                       <img
                                         src={el}
-                                        className="w-full img-remake"
+                                        className="w-full img-remake group-hover:tw-grayscale-0"
                                       />
                                     </li>
                                   ))}
@@ -1538,7 +1538,7 @@ const DetailView = () => {
                       
                       <div className="" style={{ marginTop: "0px" }}>
                         <div className="tokyo_tm_news w-full clear-both  h-auto  px-0 ">
-                          <div className="list w-full h-auto clear-both ">
+                          <div className="list w-full h-auto clear-both tw-group">
                             <div>
                               <div
                                 style={{
@@ -1548,6 +1548,7 @@ const DetailView = () => {
                                   color: "#000000",
                                   marginTop: "20.03px",
                                 }}
+                                className=""
                               >
                                 Persona Identifying
                               </div>
@@ -1560,7 +1561,7 @@ const DetailView = () => {
                                     <li className="mb-[40px] w-1/3 pl-[40px]">
                                       <img
                                         src={el}
-                                        className="w-full img-remake"
+                                        className="w-full img-remake group-hover:tw-grayscale-0"
                                       />
                                     </li>
                                   ))}
