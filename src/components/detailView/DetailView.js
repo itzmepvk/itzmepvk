@@ -2329,7 +2329,7 @@ const DetailView = () => {
               >
                 <div className="left ">
                   <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
-                    <hr style={{ marginTop: "80px", marginBottom: "80px" }} />
+                    <hr style={{ marginTop: "160px", marginBottom: "160px" }} />
                     <div>
                       <div
                         style={{
@@ -2346,109 +2346,6 @@ const DetailView = () => {
                       </div>
                       <hr />
                     </div>
-                    {/* {newsModal?.id === 1 ? (
-                      <>
-                        <hr
-                          style={{ marginTop: "80px", marginBottom: "80px" }}
-                        />
-                        <div>
-                          <div
-                            style={{
-                              color: "#767676",
-                              fontSize: 13,
-                              fontFamily: "Poppins",
-                              fontWeight: "500",
-                              textTransform: "uppercase",
-                              lineHeight: "px",
-                              wordWrap: "break-word",
-                            }}
-                          >
-                            Take aways & Learning
-                          </div>
-                          <div
-                            style={{
-                              color: "black",
-                              fontSize: 20,
-                              fontFamily: "Poppins",
-                              fontWeight: "600",
-                              wordWrap: "break-word",
-                              marginTop: "24px",
-                            }}
-                          >
-                            What I would do better next time.
-                          </div>
-                          <ul
-                            className="m-0 list-none"
-                            style={{ marginTop: "36px" }}
-                          >
-                            <li
-                              className="m-0 pl-[25px] relative"
-                              style={{ marginTop: "4px" }}
-                            >
-                              <span>
-                                <img
-                                  className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                  src="assets/img/svg/rightarrow.svg"
-                                  alt="image"
-                                  style={{ top: "13px" }}
-                                />
-                                <div
-                                  style={{
-                                    marginTop: "40px",
-                                    fontSize: "14px",
-                                    fontWeight: 600,
-                                    lineHeight: "32px",
-                                    color: "#000000",
-                                  }}
-                                >
-                                  More focus on user feedback and do iterations
-                                </div>
-                                <div>
-                                  It is important to focus on users’ qualitative
-                                  research and how they are interacting with the
-                                  application.
-                                </div>
-                              </span>
-                            </li>
-
-                            <li
-                              className="m-0 pl-[25px] relative"
-                              style={{ marginTop: "4px" }}
-                            >
-                              <span>
-                                <img
-                                  className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                  src="assets/img/svg/rightarrow.svg"
-                                  alt="image"
-                                  style={{ top: "13px" }}
-                                />
-                                <div
-                                  style={{
-                                    marginTop: "40px",
-                                    fontSize: "14px",
-                                    fontWeight: 600,
-                                    lineHeight: "32px",
-                                    color: "#000000",
-                                  }}
-                                >
-                                  Make sure your assumptions are actually usable
-                                </div>
-                                <div>
-                                  During testing, I learned that some of my
-                                  assumptions were different from what the users
-                                  wanted, which was a valuable learning
-                                  experience.
-                                </div>
-                              </span>
-                            </li>
-                          </ul>
-                        </div>
-                      </>
-                    ) : newsModal?.id === 2 ? (
-                      <></>
-                    ) : (
-                      <></>
-                    )} */}
                   </div>
                 </div>
               </div>
