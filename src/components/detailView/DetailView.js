@@ -2002,7 +2002,8 @@ const DetailView = () => {
                             alt="image"
                             className="img-remake"
                           />
-                          <hr style={{ marginTop: "40px", marginBottom: "40px"}} />
+                          {/* <hr style={{ marginTop: "40px", marginBottom: "40px"}} /> */}
+                          <hr className="tw-my-[80px]" />
                         </>
                       ) : (
                         <></>
@@ -2287,7 +2288,7 @@ const DetailView = () => {
                 <div
                   style={{
                     color: "black",
-                    fontSize: 20,
+                    fontSize: "16px",
                     fontFamily: "Poppins",
                     fontWeight: "600",
                     wordWrap: "break-word",
@@ -2296,7 +2297,7 @@ const DetailView = () => {
                 >
                   Test & Feedback
                 </div>
-                <ul className="m-0 list-none" style={{ marginTop: "10px" }}>
+                <ul className="m-0 list-none" style={{ marginTop: "40px" }}>
                   {[
                     "We created the high-fidelity design, and the client conducted a test run with both cooks and hosts. We received valuable feedback. After a couple of design iterations, we developed the product and deployed it to the production environment. As it's an iterative process, we continued to receive feedback over time and updated it sprint by sprint.",
                   ].map((item, index) => (
