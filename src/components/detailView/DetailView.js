@@ -932,7 +932,7 @@ const DetailView = () => {
                         <h3 className="title font-bold text-black text-[18px] mb-[15px]">
                           {service.name}
                         </h3>
-                        <p className="text tw-leading-5">{service.text}</p>
+                        <p className="text tw-leading-5 tw-text-[13px] tw-mt-6">{service.text}</p>
                       </div>
                     </li>
                   ))}
