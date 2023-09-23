@@ -925,14 +925,14 @@ const DetailView = () => {
                   {data[newsModal?.id - 1]?.tackling.map((service) => (
                     <li key={service.id}
                     >
-                      <div className="list_inner w-full h-full clear-both  relative border-solid border-[rgba(0,0,0,.1)] border bg-white pt-[45px] pr-[20px] pb-[40px] pl-[20px] transition-all duration-300">
+                      <div className="list_inner w-full h-full clear-both  relative border-solid border-[rgba(0,0,0,.1)] border bg-white tw-pt-[40px] pr-[30px] pb-[40px] pl-[30px] transition-all duration-300">
                         <span className="number inline-block mb-[25px] relative w-[60px] h-[60px] leading-[60px] text-center rounded-full bg-[rgba(0,0,0,.03)] font-bold text-black font-montserrat transition-all duration-300">
                           {service.id <= 9 ? `0${service.id}` : service.id}
                         </span>
                         <h3 className="title font-bold text-black text-[18px] mb-[15px]">
                           {service.name}
                         </h3>
-                        <p className="text">{service.text}</p>
+                        <p className="text tw-leading-5">{service.text}</p>
                       </div>
                     </li>
                   ))}
