@@ -1098,7 +1098,7 @@ const DetailView = () => {
                       ? ""
                       : " flex"
                   }`}
-                  style={{ marginTop: "40px", marginBottom: "40px" }}
+                  style={{ marginTop: "40px"}}
                 >
                   {newsModal?.id === 1 ? (
                     <div className="container">
@@ -1395,11 +1395,11 @@ const DetailView = () => {
                               </div>
                               <br />
                               <div className="list w-full h-auto clear-both ">
-                                <ul className="ml-[-40px] list-none flex flex-wrap">
+                                <ul className="list-none flex flex-wrap tw-flex tw-gap-8">
                                   {data[
                                     newsModal?.id - 1
                                   ]?.personaIdentifyingSS.map((el, index) => (
-                                    <li className="mb-[40px] w-1/3 pl-[40px]">
+                                    <li className="w-1/3">
                                       <img
                                         src={el}
                                         className="w-full img-remake"
@@ -1731,7 +1731,7 @@ const DetailView = () => {
                               <img
                                 src="assets/img/news/lg-mock.svg"
                                 className="img-remake"
-                                style={{ marginTop: "40px" }}
+                                style={{ marginTop: "80px" }}
                               />
                             </>
                           ) : (
