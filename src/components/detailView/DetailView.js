@@ -941,12 +941,11 @@ const DetailView = () => {
               {/* <hr /> */}
             </div>
           </div>
-
-          <div className="tokyo_tm_skillbox w-full h-auto clear-both  tw-pt-[88px] px-0 ">
+          <div className="tokyo_tm_skillbox w-full h-auto clear-both px-0 ">
             <div className="">
               <div className="container">
-                <hr />
-                <div className="tw-pt-[88px]">
+                <hr className="tw-my-[80px]" />
+                <div className="">
                   <img src={data[newsModal?.id - 1]?.step1} />
                   <div
                     style={{
@@ -1728,6 +1727,7 @@ const DetailView = () => {
                               <img
                                 src="assets/img/news/lg-mock.svg"
                                 className="img-remake"
+                                style={{ marginTop: "40px" }}
                               />
                             </>
                           ) : (
