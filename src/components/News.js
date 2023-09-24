@@ -7,28 +7,28 @@ const news = [
   {
     id: 1,
     title: "Format releases a new tool that enables direct video hosting",
-    image: "assets/img/news/1.jpg",
+    image: "/assets/img/news/1.jpg",
     author: "Alex Watson",
     date: "22 Oct 2022",
   },
   {
     id: 2,
     title: "Sony announced two new full frame cameras with zero fanfare",
-    image: "assets/img/news/2.jpg",
+    image: "/assets/img/news/2.jpg",
     author: "Brook Kennedy",
     date: "15 Oct 2022",
   },
   {
     id: 3,
     title: "Why every photographer should shoot film, even in 2022",
-    image: "assets/img/news/3.jpg",
+    image: "/assets/img/news/3.jpg",
     author: "Paola Atkins",
     date: "07 Oct 2022",
   },
   {
     id: 4,
     title: "Stay creative in lockdown with these fun photo projects",
-    image: "assets/img/news/4.jpg",
+    image: "/assets/img/news/4.jpg",
     author: "Kevin Stone",
     date: "25 Sep 2022",
   },
@@ -55,7 +55,7 @@ const News = () => {
                   <div className="image relative overflow-hidden">
                     <img
                       className="min-w-full opacity-0"
-                      src="assets/img/thumbs/40-25.jpg"
+                      src="/assets/img/thumbs/40-25.jpg"
                       alt="image"
                     />
                     <div

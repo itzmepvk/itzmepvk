@@ -12,8 +12,9 @@ const ModalContainer = ({ children, nullValue }) => {
       <div className="box_inner" ref={domNode}>
         <div className="close">
           <a
-            href="#"
-            onClick={() => {
+            role="button"
+            onClick={(e) => {
+              e.preventDefault();
               modalToggle(false);
               nullValue(null);
             }}

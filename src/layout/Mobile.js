@@ -18,7 +18,7 @@ const Mobile = () => {
             <a href="#">
               <img
                 className="max-w-[100px] max-h-[40px] img-remake"
-                src="assets/img/svg/sidebartoggle.svg"
+                src="/assets/img/svg/sidebartoggle.svg"
                 alt="image"
               />
             </a>

@@ -1,13 +1,16 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TokyoContext } from "../Context";
 import SectionContainer from "./SectionContainer";
 import SectionTitle from "./SectionTitle";
+
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const data = [
   {
     id: 1,
     title: "Platform to find global talent & quality service providers",
-    image: "assets/img/news/1.svg",
+    image: "/assets/img/news/1.svg",
     author: "prototype • UX Design • branding",
     date: "22 Oct 2022",
     colorCode: "#FEEDED",
@@ -15,7 +18,7 @@ const data = [
   {
     id: 2,
     title: "The platform enables users to book and lists spaces",
-    image: "assets/img/news/2.svg",
+    image: "/assets/img/news/2.svg",
     author: "prototype • UX Research • UX Design",
     date: "15 Oct 2022",
     colorCode: "#DFF2FB",
@@ -23,7 +26,7 @@ const data = [
   {
     id: 3,
     title: "Europe’s largest asset management system",
-    image: "assets/img/news/3.svg",
+    image: "/assets/img/news/3.svg",
     author: "prototype • UX research • UX Design",
     date: "07 Oct 2022",
     colorCode: "#E5F1FA",
@@ -31,7 +34,7 @@ const data = [
   {
     id: 4,
     title: "The platform brings skilled cooks to the homes",
-    image: "assets/img/news/4.svg",
+    image: "/assets/img/news/4.svg",
     author: "prototype • UX research • UX Design",
     date: "25 Sep 2022",
     colorCode: "#E6F7F4",
@@ -39,7 +42,7 @@ const data = [
   {
     id: 5,
     title: "Real-time video consultation with doctors.",
-    image: "assets/img/news/5.png",
+    image: "/assets/img/news/5.png",
     author: "prototype • UX research • UX Design",
     date: "25 Sep 2022",
     colorCode: "#E9F6F8",
@@ -47,37 +50,42 @@ const data = [
 ];
 
 const Portfolio = () => {
+
+  const router = useRouter()
+
   const [enter, setEnter] = useState({ id: null, visible: false });
-  const { setPasswordModal, setNewsModal, modalToggle, savePwd, navChange } =
+  const { setPasswordModal, setNewsModal, modalToggle, savePwd, navChange, passwordModal } =
     useContext(TokyoContext);
-  const [news, setNews] = useState(data);
+  // const [news, setNews] = useState(data);
   const [loader, setLoader] = useState(false);
   const [key, setKey] = useState("*");
-  const handleFilterKeyChange = (key) => () => {
-    setKey(key);
-    setLoader(true);
-    setTimeout(() => {
-      setLoader(false);
-    }, [500]);
-    switch (key) {
-      case "*":
-        setNews(data);
-        break;
-      case "UX Design":
-        setNews(
-          data.filter((el) =>
-            el.author.toLowerCase().includes(key.toLowerCase())
-          )
-        );
-        break;
-      case "Branding":
-        setNews(
-          data.filter((el) =>
-            el.author.toLowerCase().includes(key.toLowerCase())
-          )
-        );
+  const [clickedItem, setClickedItem] = useState(null)
+
+  const navigateTo = (link) => {
+    router.push(`/portfolio/${link}`, null, {scroll: false})
+  }
+
+  const categoryMapping = {
+    'ux-design': 'UX Design',
+    'branding': 'branding'
+  }
+
+  const isActiveLink = (href) => {
+    return router.asPath === href
+  }
+
+  const category = router.query.category ?? 'all'
+  const keyword = categoryMapping[category]?? null
+
+  const news = category === 'all'? data: keyword? data.filter(el =>  el.author.toLowerCase().includes(keyword.toLowerCase())): []
+
+  useEffect(() => {
+    if(savePwd && clickedItem?.id) {
+      router.push(`/portfolio/${clickedItem?.id}`)
     }
-  };
+  }, [clickedItem?.id, savePwd])
+
+
   return (
     <SectionContainer name={"portfolio"}>
       <div className="container">
@@ -91,65 +99,18 @@ const Portfolio = () => {
               <div className="portfolio_filter">
                 <ul className="list-none">
                   <li className="mr-[25px] inline-block">
-                    <a
-                      href="#"
-                      className={`current text-${
-                        key === "*" ? "black" : "[#767676]"
-                      } inline-block font-medium font-montserrat transition-all duration-300 hover:text-black`}
-                      onClick={handleFilterKeyChange("*")}
-                    >
-                      All
-                    </a>
+                    <Link href="/portfolio" className={`current inline-block font-medium font-montserrat transition-all duration-300 hover:text-black ${isActiveLink('/portfolio')? 'tw-text-black':'tw-text-[#767676]'}`}>All</Link>
+
                   </li>
                   <li className="mr-[25px] inline-block">
-                    <a
-                      className={`text-${
-                        key === "UX Design" ? "black" : "[#767676]"
-                      } inline-block font-medium font-montserrat transition-all duration-300 hover:text-black`}
-                      href="#"
-                      onClick={handleFilterKeyChange("UX Design")}
-                    >
-                      UX Design
-                    </a>
+                    <Link href="/portfolio?category=ux-design" className={`current inline-block font-medium font-montserrat transition-all duration-300 hover:text-black ${isActiveLink('/portfolio?category=ux-design')? 'tw-text-black':'tw-text-[#767676]'}`}>UX Design</Link>
+
                   </li>
                   <li className="mr-[25px] inline-block">
-                    <a
-                      className={`text-${
-                        key === "Branding" ? "black" : "[#767676]"
-                      } inline-block font-medium font-montserrat transition-all duration-300 hover:text-black`}
-                      href="#"
-                      onClick={handleFilterKeyChange("Branding")}
-                    >
-                      Branding
-                    </a>
+                    <Link href="/portfolio?category=branding" className={`current inline-block font-medium font-montserrat transition-all duration-300 hover:text-black ${isActiveLink('/portfolio?category=branding')? 'tw-text-black':'tw-text-[#767676]'}`}>Branding</Link>
+
+                
                   </li>
-                  {/* <li className="mr-[25px] inline-block">
-                    <a
-                      className="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black"
-                      href="#"
-                      onClick={handleFilterKeyChange("soundcloud")}
-                    >
-                      Soundcloud
-                    </a>
-                  </li>
-                  <li className="mr-[25px] inline-block">
-                    <a
-                      className="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black"
-                      href="#"
-                      onClick={handleFilterKeyChange("image")}
-                    >
-                      Image
-                    </a>
-                  </li>
-                  <li className="inline-block">
-                    <a
-                      className="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black"
-                      href="#"
-                      onClick={handleFilterKeyChange("detail")}
-                    >
-                      Detail
-                    </a>
-                  </li> */}
                 </ul>
               </div>
             </div>
@@ -168,7 +129,7 @@ const Portfolio = () => {
                         backgroundColor:
                           enter.visible && item.id === enter.id
                             ? item.colorCode
-                            : "",
+                            : "unset",
                       }}
                       onMouseOver={() =>
                         setEnter({ id: index + 1, visible: true })
@@ -179,7 +140,7 @@ const Portfolio = () => {
                     >
                       <img
                         className="min-w-full opacity-0 "
-                        src="assets/img/thumbs/40-25.jpg"
+                        src="/assets/img/thumbs/40-25.jpg"
                         alt="image"
                       />
                       <div
@@ -189,13 +150,16 @@ const Portfolio = () => {
                       />
                       <a
                         className="tokyo_tm_full_link"
-                        href="#"
+                        role="button"
                         onClick={() => {
                           modalToggle(true);
                           if (savePwd) {
                             setNewsModal(item);
-                            navChange("detailview");
-                          } else setPasswordModal(item);
+                            navigateTo(item.id);
+                          } else { 
+                              setPasswordModal(item);
+                              setClickedItem(item)
+                          }
                         }}
                       />
                     </div>
@@ -206,13 +170,16 @@ const Portfolio = () => {
                             {/* By{" "} */}
                             <a
                               className="text-[#767676] transition-all duration-300 hover:text-black uppercase"
-                              href="#"
+                              role="button"
                               onClick={() => {
                                 modalToggle(true);
                                 if (savePwd) {
                                   setNewsModal(item);
-                                  navChange("detailview");
-                                } else setPasswordModal(item);
+                                  navigateTo(item.id);
+                                } else { 
+                                    setPasswordModal(item);
+                                    setClickedItem(item)
+                                }
                               }}
                             >
                               {item.author}
@@ -224,13 +191,16 @@ const Portfolio = () => {
                       <h3 className="title mb-[10px] leading-[1.4]">
                         <a
                           className="text-black text-[18px] font-semibold inline-block transition-all duration-300 hover:text-black"
-                          href="#"
+                          role="button"
                           onClick={() => {
                             modalToggle(true);
                             if (savePwd) {
                               setNewsModal(item);
-                              navChange("detailview");
-                            } else setPasswordModal(item);
+                              navigateTo(item.id)
+                            } else { 
+                                setPasswordModal(item);
+                                setClickedItem(item)
+                            }
                           }}
                         >
                           {item.title}
@@ -238,13 +208,16 @@ const Portfolio = () => {
                       </h3>
                       <div className="tokyo_tm_read_more">
                         <a
-                          href="#"
+                          role="button"
                           onClick={() => {
                             modalToggle(true);
                             if (savePwd) {
                               setNewsModal(item);
-                              navChange("detailview");
-                            } else setPasswordModal(item);
+                              navigateTo(item.id);
+                            } else { 
+                                setPasswordModal(item);
+                                setClickedItem(item)
+                            }
                           }}
                         >
                           <span>Read More</span>

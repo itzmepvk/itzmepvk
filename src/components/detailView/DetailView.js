@@ -2,13 +2,14 @@ import { TokyoContext } from "@/src/Context";
 import { useContext, useEffect, useState } from "react";
 import SectionContainer from "../SectionContainer";
 import SectionTitle from "../SectionTitle";
+import { useRouter } from "next/router";
 
 const data = [
   {
     id: 1,
-    headerImg: "assets/img/news/sg.svg",
+    headerImg: "/assets/img/news/sg.svg",
     headerTxt: `The SquadGurus Global Network has the marketplace for cloud & software development outsourcing.`,
-    headerBodyImg: "assets/img/news/sg-body.svg",
+    headerBodyImg: "/assets/img/news/sg-body.svg",
     timelineAndClient: {
       time: "July 2021, Current",
       client: "United States, Boston",
@@ -28,7 +29,7 @@ const data = [
         text: [
           "Analyzing competitors such as GoCatalant, UpWork, Freelancer,and Zoho Recruite.",
         ],
-        image: "assets/img/news/1.jpg",
+        image: "/assets/img/news/1.jpg",
       },
       {
         id: 2,
@@ -36,7 +37,7 @@ const data = [
         text: [
           "Understanding the requirements, user journey, user needs, and pain points.",
         ],
-        image: "assets/img/news/2.jpg",
+        image: "/assets/img/news/2.jpg",
       },
       {
         id: 3,
@@ -44,7 +45,7 @@ const data = [
         text: [
           "Mapping out the access and actions for each user (Client, and Service Provider).",
         ],
-        image: "assets/img/news/3.jpg",
+        image: "/assets/img/news/3.jpg",
       },
       {
         id: 4,
@@ -52,16 +53,16 @@ const data = [
         text: [
           "Create wireframes, turn into hi-fi prototypes, test with users, gather feedback, and iterate.",
         ],
-        image: "assets/img/news/4.jpg",
+        image: "/assets/img/news/4.jpg",
       },
     ],
 
-    step1: "assets/img/news/competitive-analysis.svg",
-    step2: "assets/img/news/interviews.svg",
-    step3: "assets/img/news/personal-mapping.svg",
-    step4: "assets/img/news/final-design.svg",
+    step1: "/assets/img/news/competitive-analysis.svg",
+    step2: "/assets/img/news/interviews.svg",
+    step3: "/assets/img/news/personal-mapping.svg",
+    step4: "/assets/img/news/final-design.svg",
 
-    offeringImg: "assets/img/news/offering.svg",
+    offeringImg: "/assets/img/news/offering.svg",
     achivements: [
       { id: 1, text: "Current frustrations & pain points" },
       { id: 2, text: "What did they really want?" },
@@ -85,12 +86,12 @@ const data = [
       { id: 3, text: "Classify personas" },
     ],
     personaMappingSS: [
-      "assets/img/news/Group 1000001905.svg",
-      "assets/img/news/Group 1000001906.svg",
-      "assets/img/news/Group 1000001904.svg",
-      "assets/img/news/Group 1000001907.svg",
+      "/assets/img/news/Group 1000001905.svg",
+      "/assets/img/news/Group 1000001906.svg",
+      "/assets/img/news/Group 1000001904.svg",
+      "/assets/img/news/Group 1000001907.svg",
     ],
-    personaIdentifyingSS: ["assets/img/news/sgPersona.png"],
+    personaIdentifyingSS: ["/assets/img/news/sgPersona.png"],
     keyTakeaways: [
       {
         id: 1,
@@ -117,7 +118,7 @@ as public, private or exclusive.`,
         text: "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
       },
     ],
-    brandLogo: "assets/img/news/sgBrandLogo.png",
+    brandLogo: "/assets/img/news/sgBrandLogo.png",
     handOver: [
       { id: 1, text: " Final MVP prototype design approval" },
       {
@@ -129,7 +130,7 @@ as public, private or exclusive.`,
         text: "Daily sync-up with the team to make sure everything on-track",
       },
     ],
-    finalDesign: "assets/img/news/finalDesign.png",
+    finalDesign: "/assets/img/news/finalDesign.png",
     finalDesignTxt: ` Finally, we successfully launched the MVP 3 months later, in
     December 2021. We celebrated over a team call with 300+ clients and
     service providers listed.`,
@@ -137,9 +138,9 @@ as public, private or exclusive.`,
 
   {
     id: 2,
-    headerImg: "assets/img/news/million.svg",
+    headerImg: "/assets/img/news/million.svg",
     headerTxt: `The MillionSpaces enables users to book co-working spaces & space owners to list in the platform.`,
-    headerBodyImg: "assets/img/news/million-bg.svg",
+    headerBodyImg: "/assets/img/news/million-bg.svg",
     timelineAndClient: {
       time: "May 2019 - June 2021",
       client: "Australia, Singapore, Sri Lanka",
@@ -158,7 +159,7 @@ as public, private or exclusive.`,
         text: [
           "User research: Insights from interviews and surveys drive understanding.",
         ],
-        image: "assets/img/news/1.jpg",
+        image: "/assets/img/news/1.jpg",
       },
       {
         id: 2,
@@ -166,7 +167,7 @@ as public, private or exclusive.`,
         text: [
           "User persona, empathy map - Understand needs and frustrations deeply.",
         ],
-        image: "assets/img/news/2.jpg",
+        image: "/assets/img/news/2.jpg",
       },
       {
         id: 3,
@@ -174,7 +175,7 @@ as public, private or exclusive.`,
         text: [
           "Idea brainstorming, whiteboard sessions fuel creativity, innovative solutions.",
         ],
-        image: "assets/img/news/3.jpg",
+        image: "/assets/img/news/3.jpg",
       },
       {
         id: 4,
@@ -182,16 +183,16 @@ as public, private or exclusive.`,
         text: [
           "Create wireframes, turn into hi-fi prototypes, test with users, gather feedback, and iterate.",
         ],
-        image: "assets/img/news/4.jpg",
+        image: "/assets/img/news/4.jpg",
       },
     ],
 
-    step1: "assets/img/news/domain-understand.svg",
-    step2: "assets/img/news/define-information.svg",
-    step3: "assets/img/news/design-ideation.svg",
-    step4: "assets/img/news/wireframe-test.svg",
+    step1: "/assets/img/news/domain-understand.svg",
+    step2: "/assets/img/news/define-information.svg",
+    step3: "/assets/img/news/design-ideation.svg",
+    step4: "/assets/img/news/wireframe-test.svg",
 
-    offeringImg: "assets/img/news/offering.svg",
+    offeringImg: "/assets/img/news/offering.svg",
     achivements: [
       { id: 1, text: "Current frustrations & pain points" },
       { id: 2, text: "What did they really want?" },
@@ -220,12 +221,12 @@ as public, private or exclusive.`,
       },
     ],
     personaMappingSS: [
-      "assets/img/news/Group 1000001905.svg",
-      "assets/img/news/Group 1000001906.svg",
-      "assets/img/news/Group 1000001904.svg",
-      "assets/img/news/Group 1000001907.svg",
+      "/assets/img/news/Group 1000001905.svg",
+      "/assets/img/news/Group 1000001906.svg",
+      "/assets/img/news/Group 1000001904.svg",
+      "/assets/img/news/Group 1000001907.svg",
     ],
-    personaIdentifyingSS: ["assets/img/news/millionPersona.png"],
+    personaIdentifyingSS: ["/assets/img/news/millionPersona.png"],
     keyTakeaways: [
       {
         id: 1,
@@ -252,7 +253,7 @@ as public, private or exclusive.`,
         text: "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
       },
     ],
-    brandLogo: "assets/img/news/brandLogoSg.svg",
+    brandLogo: "/assets/img/news/brandLogoSg.svg",
     handOver: [
       { id: 1, text: " Final MVP prototype design approval" },
       {
@@ -264,7 +265,7 @@ as public, private or exclusive.`,
         text: "Daily sync-up with the team to make sure everything on-track",
       },
     ],
-    finalDesign: "assets/img/news/ms-finalD.svg",
+    finalDesign: "/assets/img/news/ms-finalD.svg",
     finalDesignTxt: ` Finally, after a span of 4 months, we achieved a
     successful product launch in July 2021. To
     commemorate this milestone, we organized a
@@ -273,9 +274,9 @@ as public, private or exclusive.`,
   },
   {
     id: 3,
-    headerImg: "assets/img/news/lg.svg",
+    headerImg: "/assets/img/news/lg.svg",
     headerTxt: `LGIM is one of Europe’s largest asset managers, offering investment solutions to a broad range of clients globally.`,
-    headerBodyImg: "assets/img/news/lg-banner.png",
+    headerBodyImg: "/assets/img/news/lg-banner.png",
     timelineAndClient: {
       time: "Jan 2019 - Current",
       client: "UK & Global",
@@ -294,7 +295,7 @@ as public, private or exclusive.`,
         text: [
           "Client interaction: Understanding users, effective communication for successful outcomes.",
         ],
-        image: "assets/img/news/1.jpg",
+        image: "/assets/img/news/1.jpg",
       },
       {
         id: 2,
@@ -302,7 +303,7 @@ as public, private or exclusive.`,
         text: [
           "Task enumeration: Organizing information architecture for improved user experience.",
         ],
-        image: "assets/img/news/2.jpg",
+        image: "/assets/img/news/2.jpg",
       },
       {
         id: 3,
@@ -310,15 +311,15 @@ as public, private or exclusive.`,
         text: [
           "Idea brainstorming, whiteboard sessions fuel creativity, innovative solutions.",
         ],
-        image: "assets/img/news/3.jpg",
+        image: "/assets/img/news/3.jpg",
       },
     ],
 
-    step1: "assets/img/news/domain-understand3.svg",
-    step2: "assets/img/news/define-problem.svg",
-    step3: "assets/img/news/wireframe-test3.svg",
+    step1: "/assets/img/news/domain-understand3.svg",
+    step2: "/assets/img/news/define-problem.svg",
+    step3: "/assets/img/news/wireframe-test3.svg",
 
-    offeringImg: "assets/img/news/offering.svg",
+    offeringImg: "/assets/img/news/offering.svg",
     achivements: [
       { id: 1, text: "Current frustrations & pain points" },
       { id: 2, text: "What did they really want?" },
@@ -347,15 +348,15 @@ as public, private or exclusive.`,
       },
     ],
     personaMappingSS: [
-      "assets/img/news/Group 1000001905.svg",
-      "assets/img/news/Group 1000001906.svg",
-      "assets/img/news/Group 1000001904.svg",
-      "assets/img/news/Group 1000001907.svg",
+      "/assets/img/news/Group 1000001905.svg",
+      "/assets/img/news/Group 1000001906.svg",
+      "/assets/img/news/Group 1000001904.svg",
+      "/assets/img/news/Group 1000001907.svg",
     ],
     personaIdentifyingSS: [
-      "assets/img/news/ms-sahan.svg",
-      "assets/img/news/ms-nimesha.svg",
-      "assets/img/news/ms-vishnu.svg",
+      "/assets/img/news/ms-sahan.svg",
+      "/assets/img/news/ms-nimesha.svg",
+      "/assets/img/news/ms-vishnu.svg",
     ],
     keyTakeaways: [
       {
@@ -383,7 +384,7 @@ as public, private or exclusive.`,
         text: "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
       },
     ],
-    brandLogo: "assets/img/news/brandLogoSg.svg",
+    brandLogo: "/assets/img/news/brandLogoSg.svg",
     handOver: [
       { id: 1, text: " Final MVP prototype design approval" },
       {
@@ -395,14 +396,14 @@ as public, private or exclusive.`,
         text: "Daily sync-up with the team to make sure everything on-track",
       },
     ],
-    finalDesign: "assets/img/news/ms-finalD.svg",
+    finalDesign: "/assets/img/news/ms-finalD.svg",
     finalDesignTxt: ` In April 2019, after 4 months, we achieved a successful product MVP launch. Working on a complex fintech platform expanded my understanding of international pension investments.`,
   },
   {
     id: 4,
-    headerImg: "assets/img/news/kora.svg",
+    headerImg: "/assets/img/news/kora.svg",
     headerTxt: `Kora brings skilled cooks to the homes of people who appreciate the flavors and benefits of a home cooked meal.`,
-    headerBodyImg: "assets/img/news/kora-bg.svg",
+    headerBodyImg: "/assets/img/news/kora-bg.svg",
     timelineAndClient: {
       time: "Oct 2019 - May 2020",
       client: "US",
@@ -421,7 +422,7 @@ as public, private or exclusive.`,
         text: [
           "Client interaction: Understanding users, effective communication for successful outcomes.",
         ],
-        image: "assets/img/news/1.jpg",
+        image: "/assets/img/news/1.jpg",
       },
       {
         id: 2,
@@ -429,7 +430,7 @@ as public, private or exclusive.`,
         text: [
           "User persona, empathy map - Understand needs and frustrations deeply.",
         ],
-        image: "assets/img/news/2.jpg",
+        image: "/assets/img/news/2.jpg",
       },
       {
         id: 3,
@@ -437,7 +438,7 @@ as public, private or exclusive.`,
         text: [
           "Idea brainstorming, whiteboard sessions fuel creativity, innovative solutions.",
         ],
-        image: "assets/img/news/2.jpg",
+        image: "/assets/img/news/2.jpg",
       },
       {
         id: 4,
@@ -445,16 +446,16 @@ as public, private or exclusive.`,
         text: [
           "Create wireframes, turn into hi-fi prototypes, test with users, gather feedback, and iterate.",
         ],
-        image: "assets/img/news/3.jpg",
+        image: "/assets/img/news/3.jpg",
       },
     ],
 
-    step1: "assets/img/news/domain-understand.svg",
-    step2: "assets/img/news/define-information.svg",
-    step3: "assets/img/news/design-ideation.svg",
-    step4: "assets/img/news/wireframe-test.svg",
+    step1: "/assets/img/news/domain-understand.svg",
+    step2: "/assets/img/news/define-information.svg",
+    step3: "/assets/img/news/design-ideation.svg",
+    step4: "/assets/img/news/wireframe-test.svg",
 
-    offeringImg: "assets/img/news/offering.svg",
+    offeringImg: "/assets/img/news/offering.svg",
     achivements: [
       { id: 1, text: "Current frustrations & pain points" },
       { id: 2, text: "What did they really want?" },
@@ -479,14 +480,14 @@ as public, private or exclusive.`,
       },
     ],
     personaMappingSS: [
-      "assets/img/news/Group 1000001905.svg",
-      "assets/img/news/Group 1000001906.svg",
-      "assets/img/news/Group 1000001904.svg",
-      "assets/img/news/Group 1000001907.svg",
+      "/assets/img/news/Group 1000001905.svg",
+      "/assets/img/news/Group 1000001906.svg",
+      "/assets/img/news/Group 1000001904.svg",
+      "/assets/img/news/Group 1000001907.svg",
     ],
     personaIdentifyingSS: [
-      "assets/img/news/kora-cook.svg",
-      "assets/img/news/kora-host.svg",
+      "/assets/img/news/kora-cook.svg",
+      "/assets/img/news/kora-host.svg",
     ],
     keyTakeaways: [
       {
@@ -514,7 +515,7 @@ as public, private or exclusive.`,
         text: "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
       },
     ],
-    brandLogo: "assets/img/news/brandLogoSg.svg",
+    brandLogo: "/assets/img/news/brandLogoSg.svg",
     handOver: [
       { id: 1, text: " Final MVP prototype design approval" },
       {
@@ -526,14 +527,14 @@ as public, private or exclusive.`,
         text: "Daily sync-up with the team to make sure everything on-track",
       },
     ],
-    finalDesign: "assets/img/news/ms-finalD.svg",
+    finalDesign: "/assets/img/news/ms-finalD.svg",
     finalDesignTxt: ` In February 2020, after 4 months, we successfully launched the product MVP—a small yet captivating concept to work on. This experience provided insights into the workings of new product concepts through design thinking and brainstorming.`,
   },
   {
     id: 5,
-    headerImg: "assets/img/news/odoc.svg",
+    headerImg: "/assets/img/news/odoc.svg",
     headerTxt: `oDoc allows you to connect with doctors, receive medical advice, and obtain a prescription if needed.`,
-    headerBodyImg: "assets/img/news/odoc-bg.svg",
+    headerBodyImg: "/assets/img/news/odoc-bg.svg",
     timelineAndClient: {
       time: "Mar 2015 - Nov 2016",
       client: "Singapore, India, Sri Lanka",
@@ -552,7 +553,7 @@ as public, private or exclusive.`,
         text: [
           "Client interaction: Understanding users, effective communication for successful outcomes.",
         ],
-        image: "assets/img/news/1.jpg",
+        image: "/assets/img/news/1.jpg",
       },
       {
         id: 2,
@@ -560,7 +561,7 @@ as public, private or exclusive.`,
         text: [
           "Task enumeration: Organizing information architecture for improved user experience.",
         ],
-        image: "assets/img/news/2.jpg",
+        image: "/assets/img/news/2.jpg",
       },
       {
         id: 3,
@@ -568,15 +569,15 @@ as public, private or exclusive.`,
         text: [
           "Idea brainstorming, whiteboard sessions fuel creativity, innovative solutions.",
         ],
-        image: "assets/img/news/3.jpg",
+        image: "/assets/img/news/3.jpg",
       },
     ],
 
-    step1: "assets/img/news/domain-understand3.svg",
-    step2: "assets/img/news/define-problem.svg",
-    step3: "assets/img/news/wireframe-test3.svg",
+    step1: "/assets/img/news/domain-understand3.svg",
+    step2: "/assets/img/news/define-problem.svg",
+    step3: "/assets/img/news/wireframe-test3.svg",
 
-    offeringImg: "assets/img/news/offering.svg",
+    offeringImg: "/assets/img/news/offering.svg",
     achivements: [
       {
         id: 1,
@@ -618,15 +619,15 @@ as public, private or exclusive.`,
       },
     ],
     personaMappingSS: [
-      "assets/img/news/Group 1000001905.svg",
-      "assets/img/news/Group 1000001906.svg",
-      "assets/img/news/Group 1000001904.svg",
-      "assets/img/news/Group 1000001907.svg",
+      "/assets/img/news/Group 1000001905.svg",
+      "/assets/img/news/Group 1000001906.svg",
+      "/assets/img/news/Group 1000001904.svg",
+      "/assets/img/news/Group 1000001907.svg",
     ],
     personaIdentifyingSS: [
-      "assets/img/news/odocSS1.svg",
-      "assets/img/news/odocSS2.svg",
-      "assets/img/news/odocSS3.svg",
+      "/assets/img/news/odocSS1.svg",
+      "/assets/img/news/odocSS2.svg",
+      "/assets/img/news/odocSS3.svg",
     ],
     keyTakeaways: [
       {
@@ -654,7 +655,7 @@ as public, private or exclusive.`,
         text: "Within a week, after couple of iterations the high-fidelity design was ready to test with real users",
       },
     ],
-    brandLogo: "assets/img/news/brandLogoSg.svg",
+    brandLogo: "/assets/img/news/brandLogoSg.svg",
     handOver: [
       { id: 1, text: " Final MVP prototype design approval" },
       {
@@ -666,20 +667,28 @@ as public, private or exclusive.`,
         text: "Daily sync-up with the team to make sure everything on-track",
       },
     ],
-    finalDesign: "assets/img/news/odocFinal.svg",
+    finalDesign: "/assets/img/news/odocFinal.svg",
     finalDesignTxt: ` In March 2015, after six months, we completed a fully functional mobile application to present to an investor, ultimately leading to the securing of $1 million in funding.`,
   },
 ];
 
 const DetailView = () => {
-  const { newsModal, setNewsModal, navChange } = useContext(TokyoContext);
   const [loading, setLoading] = useState(true);
+  const router = useRouter()
+  const slug = router.query.slug
+
+  const newsModal = data.find(x => x.id == slug)
+
 
   useEffect(() => {
-    if (newsModal?.id) {
+    if (slug) {
       setLoading(false);
+
+      if(!newsModal?.id){
+        router.push('/not-found')
+      }
     }
-  }, [newsModal?.id]);
+  }, [newsModal?.id, slug]);
 
   return (
     <SectionContainer name={"detailview"}>
@@ -687,7 +696,7 @@ const DetailView = () => {
         <>
           <center>
             <img
-              src="assets/img/news/loading.gif"
+              src="/assets/img/news/loading.gif"
               style={{ marginTop: "100px", width: "10%" }}
             />
           </center>
@@ -699,11 +708,10 @@ const DetailView = () => {
             style={{ position: "sticky", top: 0, zIndex: 1 }}
           >
             <img
-              src="assets/img/news/back-arrow.svg"
+              src="/assets/img/news/back-arrow.svg"
               onClick={() => {
-                navChange("portfolio");
+                router.back()
                 setLoading(true);
-                setNewsModal({});
               }}
               style={{ cursor: "pointer" }}
             />
@@ -716,7 +724,7 @@ const DetailView = () => {
                 ) : (
                   <center>
                     <img
-                      src="assets/img/news/loading.gif"
+                      src="/assets/img/news/loading.gif"
                       style={{ marginTop: "100px", width: "10%" }}
                     />
                   </center>
@@ -982,7 +990,7 @@ const DetailView = () => {
                           <span>
                             <img
                               className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                              src="assets/img/svg/rightarrow.svg"
+                              src="/assets/img/svg/rightarrow.svg"
                               alt="image"
                               style={{ top: "13px" }}
                             />
@@ -1019,6 +1027,7 @@ const DetailView = () => {
                             <div
                               style={{ marginTop: "16px" }}
                               className="flex relative"
+                              key={index}
                             >
                               <span
                                 style={{
@@ -1053,7 +1062,7 @@ const DetailView = () => {
                       </div>
                       {newsModal?.id === 2 ? (
                         <img
-                          src="assets/img/news/ms-pie.svg"
+                          src="/assets/img/news/ms-pie.svg"
                           className="img-remake  w-full"
                           style={{ marginTop: "80px" }}
                         />
@@ -1127,7 +1136,7 @@ const DetailView = () => {
                                   <span>
                                     <img
                                       className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                      src="assets/img/svg/rightarrow.svg"
+                                      src="/assets/img/svg/rightarrow.svg"
                                       alt="image"
                                       style={{ top: "13px" }}
                                     />
@@ -1162,7 +1171,7 @@ const DetailView = () => {
                                   <span>
                                     <img
                                       className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                      src="assets/img/svg/rightarrow.svg"
+                                      src="/assets/img/svg/rightarrow.svg"
                                       alt="image"
                                       style={{ top: "13px" }}
                                     />
@@ -1179,10 +1188,10 @@ const DetailView = () => {
                       <div className="list w-full h-auto clear-both ">
                         <ul className="tw-grid tw-grid-cols-2 tw-gap-10 list-none flex flex-wrap img-remake">
                           {[
-                            "assets/img/news/ms-needs.svg",
-                            "assets/img/news/ms-frus.svg",
+                            "/assets/img/news/ms-needs.svg",
+                            "/assets/img/news/ms-frus.svg",
                           ].map((el, index) => (
-                            <li className="">
+                            <li className="" key={index}>
                               <img src={el} className="w-full " />
                             </li>
                           ))}
@@ -1207,7 +1216,7 @@ const DetailView = () => {
                                 {data[
                                   newsModal?.id - 1
                                 ]?.personaIdentifyingSS.map((el, index) => (
-                                  <li className=" w-full  pl-[40px]">
+                                  <li className=" w-full  pl-[40px]" key={index}>
                                     <img
                                       src={el}
                                       className="w-full img-remake tw-h-[95%]"
@@ -1231,7 +1240,7 @@ const DetailView = () => {
                             <span>
                               <img
                                 className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                src="assets/img/svg/rightarrow.svg"
+                                src="/assets/img/svg/rightarrow.svg"
                                 alt="image"
                                 style={{ top: "13px" }}
                               />
@@ -1245,7 +1254,7 @@ const DetailView = () => {
                         </ul>
                       </div>
                       <img
-                        src={"assets/img/news/lg-test.svg"}
+                        src={"/assets/img/news/lg-test.svg"}
                         className="img-remake tw-w-full"
                         style={{ marginTop: "80px" }}
                       />
@@ -1257,7 +1266,7 @@ const DetailView = () => {
                           <span>
                             <img
                               className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                              src="assets/img/svg/rightarrow.svg"
+                              src="/assets/img/svg/rightarrow.svg"
                               alt="image"
                               style={{ top: "13px" }}
                             />
@@ -1318,7 +1327,7 @@ const DetailView = () => {
                                     <span>
                                       <img
                                         className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                        src="assets/img/svg/rightarrow.svg"
+                                        src="/assets/img/svg/rightarrow.svg"
                                         alt="image"
                                         style={{ top: "13px" }}
                                       />
@@ -1366,7 +1375,7 @@ const DetailView = () => {
                                     <span>
                                       <img
                                         className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                        src="assets/img/svg/rightarrow.svg"
+                                        src="/assets/img/svg/rightarrow.svg"
                                         alt="image"
                                         style={{ top: "13px" }}
                                       />
@@ -1399,7 +1408,7 @@ const DetailView = () => {
                                   {data[
                                     newsModal?.id - 1
                                   ]?.personaIdentifyingSS.map((el, index) => (
-                                    <li className="w-1/3">
+                                    <li className="w-1/3" key={index}>
                                       <img
                                         src={el}
                                         className="w-full img-remake group-hover:tw-grayscale-0"
@@ -1420,7 +1429,7 @@ const DetailView = () => {
                           <span>
                             <img
                               className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                              src="assets/img/svg/rightarrow.svg"
+                              src="/assets/img/svg/rightarrow.svg"
                               alt="image"
                               style={{ top: "13px" }}
                             />
@@ -1476,7 +1485,7 @@ const DetailView = () => {
                                     <span>
                                       <img
                                         className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                        src="assets/img/svg/rightarrow.svg"
+                                        src="/assets/img/svg/rightarrow.svg"
                                         alt="image"
                                         style={{ top: "13px" }}
                                       />
@@ -1521,7 +1530,7 @@ const DetailView = () => {
                                     <span>
                                       <img
                                         className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                        src="assets/img/svg/rightarrow.svg"
+                                        src="/assets/img/svg/rightarrow.svg"
                                         alt="image"
                                         style={{ top: "13px" }}
                                       />
@@ -1558,7 +1567,7 @@ const DetailView = () => {
                                   {data[
                                     newsModal?.id - 1
                                   ]?.personaIdentifyingSS.map((el, index) => (
-                                    <li className="">
+                                    <li className="" key={index}>
                                       <img
                                         src={el}
                                         className="w-full img-remake group-hover:tw-grayscale-0"
@@ -1596,6 +1605,7 @@ const DetailView = () => {
                           <div
                             style={{ marginTop: "16px" }}
                             className="flex relative"
+                            key={index}
                           >
                             <span
                               style={{
@@ -1666,7 +1676,7 @@ const DetailView = () => {
                   {newsModal?.id === 3 ? (
                     <div className="">
                       <img
-                          src={"assets/img/news/lg-test0.svg"}
+                          src={"/assets/img/news/lg-test0.svg"}
                           className="img-remake tw-w-full"
                           style={{ marginTop: "20px" }}
                         />
@@ -1686,7 +1696,7 @@ const DetailView = () => {
                           The client provided the branding and style guide.
                         </div>
                         <img
-                          src={"assets/img/news/lg-guide.svg"}
+                          src={"/assets/img/news/lg-guide.svg"}
                           className="img-remake"
                           style={{ marginTop: "40px" }}
                         />
@@ -1705,29 +1715,27 @@ const DetailView = () => {
                               <ul className="m-0 list-none">
                                 {data[newsModal?.id - 1]?.insights.map(
                                   (item, index) => (
-                                    <>
-                                      <li
-                                        className="m-0 pl-[25px] relative"
-                                        key={item.id}
-                                        style={{
-                                          marginTop: "4px",
-                                          fontSize: " 14.758px",
-                                          fontStyle: "normal",
-                                          fontWeight: 400,
-                                          lineHeight: "33.732px",
-                                        }}
-                                      >
-                                        <span>
-                                          <img
-                                            className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                            src="assets/img/svg/rightarrow.svg"
-                                            alt="image"
-                                            style={{ top: "16px" }}
-                                          />
-                                          {item.text}
-                                        </span>
-                                      </li>
-                                    </>
+                                    <li
+                                      className="m-0 pl-[25px] relative"
+                                      key={item.id}
+                                      style={{
+                                        marginTop: "4px",
+                                        fontSize: " 14.758px",
+                                        fontStyle: "normal",
+                                        fontWeight: 400,
+                                        lineHeight: "33.732px",
+                                      }}
+                                    >
+                                      <span>
+                                        <img
+                                          className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
+                                          src="/assets/img/svg/rightarrow.svg"
+                                          alt="image"
+                                          style={{ top: "16px" }}
+                                        />
+                                        {item.text}
+                                      </span>
+                                    </li>
                                   )
                                 )}
                               </ul>
@@ -1736,7 +1744,7 @@ const DetailView = () => {
                           {newsModal?.id === 4 ? (
                             <>
                               <img
-                                src="assets/img/news/lg-mock.svg"
+                                src="/assets/img/news/lg-mock.svg"
                                 className="img-remake"
                                 style={{ marginTop: "80px" }}
                               />
@@ -1791,6 +1799,7 @@ const DetailView = () => {
                             )
                             .map((el, index) => (
                               <img
+                                key={index}
                                 src={el}
                                 className="w-full"
                                 style={{ paddingTop: "24px" }}
@@ -1812,6 +1821,7 @@ const DetailView = () => {
                             )
                             .map((el, index) => (
                               <img
+                                key={index}
                                 src={el}
                                 className="w-full "
                                 style={{ paddingTop: "24px" }}
@@ -1822,7 +1832,7 @@ const DetailView = () => {
                     ) : newsModal?.id === 2 ? (
                       <>
                         <img
-                          src="assets/img/news/ms-board.svg"
+                          src="/assets/img/news/ms-board.svg"
                           className="w-full img-remake"
                         />
                       </>
@@ -1860,7 +1870,7 @@ const DetailView = () => {
                         <ul className="ml-[-40px] list-none flex flex-wrap">
                           {data[newsModal?.id - 1]?.personaIdentifyingSS.map(
                             (el, index) => (
-                              <li className="mb-[40px]  pl-[40px]">
+                              <li className="mb-[40px]  pl-[40px]" key={index}>
                                 <img src={el} className="w-full img-remake" />
                               </li>
                             )
@@ -1906,7 +1916,7 @@ const DetailView = () => {
                                 <span>
                                   <img
                                     className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                    src="assets/img/svg/rightarrow.svg"
+                                    src="/assets/img/svg/rightarrow.svg"
                                     alt="image"
                                     style={{ top: "13px" }}
                                   />
@@ -1983,7 +1993,7 @@ const DetailView = () => {
                                 <span>
                                   <img
                                     className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                    src="assets/img/svg/rightarrow.svg"
+                                    src="/assets/img/svg/rightarrow.svg"
                                     alt="image"
                                     style={{ top: "13px" }}
                                   />
@@ -1998,14 +2008,14 @@ const DetailView = () => {
                       ) : newsModal?.id === 4 ? (
                         <>
                           <img
-                            src="assets/img/news/lg-wiretest.svg"
+                            src="/assets/img/news/lg-wiretest.svg"
                             alt="image"
                             className="img-remake"
                             style={{ marginTop: "80px" }}
                           />
                           <hr className="tw-my-[80px]" />
                           <img
-                            src="assets/img/news/kora-colour.svg"
+                            src="/assets/img/news/kora-colour.svg"
                             alt="image"
                             className="img-remake"
                           />
@@ -2066,7 +2076,7 @@ const DetailView = () => {
                                 <div className="tw-leading-snug">
                                   <img
                                     className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                    src="assets/img/svg/rightarrow.svg"
+                                    src="/assets/img/svg/rightarrow.svg"
                                     alt="image"
                                     style={{ top: "13px" }}
                                   />
@@ -2076,7 +2086,7 @@ const DetailView = () => {
                             ))}
                           </ul>
                           <img
-                            src="assets/img/news/ms-final0.svg"
+                            src="/assets/img/news/ms-final0.svg"
                             className="img-remake"
                             style={{ marginTop: "20px" }}
                           />
@@ -2129,7 +2139,7 @@ const DetailView = () => {
                                     <span>
                                       <img
                                         className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                                        src="assets/img/svg/rightarrow.svg"
+                                        src="/assets/img/svg/rightarrow.svg"
                                         alt="image"
                                         style={{ top: "13px" }}
                                       />
@@ -2216,7 +2226,7 @@ const DetailView = () => {
                       <span>
                         <img
                           className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                          src="assets/img/svg/rightarrow.svg"
+                          src="/assets/img/svg/rightarrow.svg"
                           alt="image"
                           style={{ top: "13px" }}
                         />
@@ -2246,7 +2256,7 @@ const DetailView = () => {
                     <span>
                       <img
                         className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                        src="assets/img/svg/rightarrow.svg"
+                        src="/assets/img/svg/rightarrow.svg"
                         alt="image"
                         style={{ top: "13px" }}
                       />
@@ -2267,6 +2277,7 @@ const DetailView = () => {
                     <div
                       style={{ marginTop: "20px" }}
                       className="flex relative"
+                      key={index}
                     >
                       <div
                         style={{
@@ -2316,7 +2327,7 @@ const DetailView = () => {
                       <span>
                         <img
                           className=" text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                          src="assets/img/svg/rightarrow.svg"
+                          src="/assets/img/svg/rightarrow.svg"
                           alt="image"
                           style={{ top: "13px" }}
                         />

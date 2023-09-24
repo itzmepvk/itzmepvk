@@ -8,22 +8,22 @@ import { TokyoContext } from "../Context";
 const socialIcon = [
   {
     id: 1,
-    iconName: "assets/img/svg/social/linkdin.svg",
+    iconName: "/assets/img/svg/social/linkdin.svg",
     link: "https://www.linkedin.com/in/itzmepvk/",
   },
   {
     id: 2,
-    iconName: "assets/img/svg/social/youtube.svg",
+    iconName: "/assets/img/svg/social/youtube.svg",
     link: "https://www.youtube.com/@itzmepvk",
   },
   {
     id: 3,
-    iconName: "assets/img/svg/social/mail.svg",
+    iconName: "/assets/img/svg/social/mail.svg",
     link: "mailto:me@itzmepvk.com",
   },
   {
     id: 4,
-    iconName: "assets/img/svg/social/contact.svg",
+    iconName: "/assets/img/svg/social/contact.svg",
     link: "mailto:+94715124609",
   },
 ];

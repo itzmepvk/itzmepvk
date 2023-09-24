@@ -7,7 +7,7 @@ const ServiceModal = () => {
     <ModalContainer nullValue={setServiceModal}>
       <div className="service_popup_informations w-full h-auto clear-both float-left">
         <div className="image">
-          <img src="assets/img/thumbs/4-2.jpg" alt="" />
+          <img src="/assets/img/thumbs/4-2.jpg" alt="" />
           <div
             className="main"
             data-img-url={serviceModal.image}

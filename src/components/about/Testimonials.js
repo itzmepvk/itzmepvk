@@ -8,7 +8,7 @@ const testimonialData = [
     successful product innovations.A humble
     team player, it was a pleasure working with
     him.Best wishes ahead.`,
-    authorImage: "assets/img/testimonials/1.svg",
+    authorImage: "/assets/img/testimonials/1.svg",
     authorName: "Crishantha Nanayakkara",
     authorDesignation: "Enterprise Architect • ICTA • Sri Lanka",
   },
@@ -19,7 +19,7 @@ const testimonialData = [
     forward-thinking and problem-solving skills,
     he was a fantastic team player, committed to
     our success. Grateful for his contributions.`,
-    authorImage: "assets/img/testimonials/2.svg",
+    authorImage: "/assets/img/testimonials/2.svg",
     authorName: "Deepa Sureka",
     authorDesignation: "CEO, Kora Life • Rakuten • San Francisco",
   },
@@ -30,7 +30,7 @@ const testimonialData = [
     the business purpose by asking the right
     questions. A great team player, looking
     forward to future collaborations.`,
-    authorImage: "assets/img/testimonials/3.svg",
+    authorImage: "/assets/img/testimonials/3.svg",
     authorName: "Rohan Perera",
     authorDesignation: "EXcubed • CTO • United Kingdom",
   },
@@ -41,7 +41,7 @@ const testimonialData = [
     for their purpose. His ability to take ownership
     and see projects through makes him truly
     exceptional.`,
-    authorImage: "assets/img/testimonials/4.svg",
+    authorImage: "/assets/img/testimonials/4.svg",
     authorName: "Azmina Rasheed",
     authorDesignation: "Client Success • Director • Australia",
   },
@@ -52,7 +52,7 @@ const testimonialData = [
     end users, crafting unique materials for
     guaranteed satisfaction. Working with him
     is a pleasure and a productivity boost!`,
-    authorImage: "assets/img/testimonials/5.svg",
+    authorImage: "/assets/img/testimonials/5.svg",
     authorName: "Sharya Unamboowe",
     authorDesignation: "Corporate Development • WSO2 • Sri Lanka",
   },
@@ -63,7 +63,7 @@ const testimonialData = [
     forward and infusing each product with his
     remarkable attention to detail and creativity.
     Undoubtedly a valuable asset.`,
-    authorImage: "assets/img/testimonials/6.svg",
+    authorImage: "/assets/img/testimonials/6.svg",
     authorName: "Shabina Mahuroof",
     authorDesignation: "Director • IdeaPoint • Canada",
   },
@@ -74,7 +74,7 @@ const testimonialData = [
     task. He's a dedicated, deadline-driven
     professional who remains undeterred even in
     the face of challenges.`,
-    authorImage: "assets/img/testimonials/7.svg",
+    authorImage: "/assets/img/testimonials/7.svg",
     authorName: "Shazni Fazal",
     authorDesignation: "Entrepreneur • The Butlers • Sri Lanka",
   },

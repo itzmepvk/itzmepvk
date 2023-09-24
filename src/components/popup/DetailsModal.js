@@ -8,7 +8,7 @@ const DetailsModal = () => {
     <ModalContainer nullValue={setPortfolioDetailsModal}>
       <div className="popup_details">
         <div className="top_image">
-          <img src="assets/img/thumbs/4-2.jpg" alt="image" />
+          <img src="/assets/img/thumbs/4-2.jpg" alt="image" />
           <div
             className="main"
             data-img-url={portfolioDetailsModal.thumbnail}
@@ -86,12 +86,12 @@ const DetailsModal = () => {
                 <div className="my_image relative">
                   <img
                     className="opacity-0 min-w-full"
-                    src="assets/img/thumbs/4-2.jpg"
+                    src="/assets/img/thumbs/4-2.jpg"
                     alt="image"
                   />
                   <div
                     className="main absolute inset-0 bg-no-repeat bg-center bg-cover"
-                    data-img-url="assets/img/portfolio/1.jpg"
+                    data-img-url="/assets/img/portfolio/1.jpg"
                     style={{
                       backgroundImage: `url(${portfolioDetailsModal.bigImage})`,
                     }}
@@ -105,12 +105,12 @@ const DetailsModal = () => {
                   <div className="my_image relative">
                     <img
                       className="opacity-0 min-w-full"
-                      src="assets/img/thumbs/4-2.jpg"
+                      src="/assets/img/thumbs/4-2.jpg"
                       alt="image"
                     />
                     <div
                       className="main absolute inset-0 bg-no-repeat bg-center bg-cover"
-                      data-img-url="assets/img/portfolio/2.jpg"
+                      data-img-url="/assets/img/portfolio/2.jpg"
                       style={{
                         backgroundImage: `url(${img})`,
                       }}

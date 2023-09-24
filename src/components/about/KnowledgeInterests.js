@@ -30,7 +30,7 @@ const KnowledgeInterests = () => {
                     <span>
                       <img
                         className="svg text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                        src="assets/img/svg/rightarrow.svg"
+                        src="/assets/img/svg/rightarrow.svg"
                         alt="image"
                       />
                       {item.text}
@@ -51,7 +51,7 @@ const KnowledgeInterests = () => {
                     <span>
                       <img
                         className="svg text-black w-[10px] h-[10px] absolute left-0 top-1/2 translate-y-[-50%]"
-                        src="assets/img/svg/rightarrow.svg"
+                        src="/assets/img/svg/rightarrow.svg"
                         alt="image"
                       />
                       {item.text}

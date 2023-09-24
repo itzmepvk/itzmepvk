@@ -35,10 +35,10 @@ const initialState = {
   passwordModal: null,
   savePwd: null,
   menus: [
-    { id: 1, name: "Home", href: "home" },
-    { id: 2, name: "portfolio", href: "portfolio" },
-    { id: 3, name: "contact", href: "contact" },
-    { id: 4, name: "detailview", href: "detailview" },
+    { id: 1, name: "Home", href: "/" },
+    { id: 2, name: "Portfolio", href: "/portfolio" },
+    { id: 3, name: "Contact", href: "/contact" },
+    { id: 4, name: "detailview", href: "/detailview" },
   ],
 };
 
