@@ -65,12 +65,11 @@ const data = [
     offeringImg: "/assets/img/news/offering.svg",
     achivements: [
       { id: 1, text: "Current frustrations & pain points" },
-      { id: 2, text: "What did they really want?" },
-      { id: 3, text: "What did they really need?" },
-      { id: 4, text: "Interviewed with Clients" },
-      { id: 5, text: "Service Providers & Admin" },
-      { id: 6, text: "20+ user interviews" },
-      { id: 7, text: "I gathered some other insights as well" },
+      { id: 2, text: "Interviewed with Clients, Service Providers & Admin" },
+      { id: 3, text: "What did they really want?" },
+      { id: 4, text: "20+ user interviews" },
+      { id: 5, text: "What did they really need?" },
+      { id: 6, text: "I gathered some other insights as well" },
     ],
     researchQuestions: [
       "What do SquadGurus admins expect to do in the platform and what are their permissions?",
@@ -1111,22 +1110,10 @@ const DetailView = () => {
                 >
                   {newsModal?.id === 1 ? (
                     <div className="container">
-                      <div className="left w-1/2 pr-[50px]">
-                        <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
-                          <ul className="m-0 list-none">
+                      <div className="tw-mb-[40px]">
+                        <div className="tokyo_tm_skill_list w-full h-auto clear-both">
+                          <ul className="m-0 list-none md:tw-grid tw-grid-cols-2">
                             {data[newsModal?.id - 1]?.achivements
-                              ?.slice(
-                                0,
-                                data[newsModal?.id - 1]?.achivements?.length %
-                                  2 ===
-                                  0
-                                  ? data[newsModal?.id - 1]?.achivements
-                                      ?.length / 2
-                                  : data[newsModal?.id - 1]?.achivements
-                                      ?.length /
-                                      2 +
-                                      1
-                              )
                               .map((item) => (
                                 <li
                                   className="m-0 pl-[25px] relative"
@@ -1147,7 +1134,7 @@ const DetailView = () => {
                           </ul>
                         </div>
                       </div>
-                      <div className="right w-1/2 pl-[50px]">
+                      {/* <div className="right w-1/2 pl-[50px]">
                         <div className="tokyo_tm_skill_list w-full h-auto clear-both ">
                           <ul className="m-0 list-none">
                             {data[newsModal?.id - 1]?.achivements
@@ -1181,7 +1168,7 @@ const DetailView = () => {
                               ))}
                           </ul>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   ) : newsModal?.id === 2 ? (
                     <div className="container">
