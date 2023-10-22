@@ -22,18 +22,6 @@ const Contact = () => {
               <br />
             </span>
             <span className="text-black text-base font-semibold underline leading-loose">
-              me@itzmepvk.com
-            </span>
-            <span className="text-neutral-500 text-base font-medium leading-loose">
-              {" "}
-            </span>
-            <span className="text-neutral-500 text-base font-normal leading-loose">
-              or
-            </span>
-            <span className="text-neutral-500 text-base font-medium leading-loose">
-              {" "}
-            </span>
-            <span className="text-black text-base font-semibold underline leading-loose">
               itzmepvk@gmail.com
             </span>
             <span className="text-neutral-500 text-base font-medium leading-loose">

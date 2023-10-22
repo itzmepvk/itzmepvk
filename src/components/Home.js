@@ -19,7 +19,7 @@ const socialIcon = [
   {
     id: 3,
     iconName: "/assets/img/svg/social/mail.svg",
-    link: "mailto:me@itzmepvk.com",
+    link: "mailto:itzmepvk@gmail.com",
   },
   {
     id: 4,
